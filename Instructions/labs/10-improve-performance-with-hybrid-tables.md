@@ -41,11 +41,11 @@ lab:
     
     `git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst DP500`
    
-1. When the repository has been cloned, open the D drive in the file explorer to ensure the files have been downloaded. Do not close the command prompt window, you will use it in the next task, Deploy an Azure SQL Database.
+1. 리포지토리가 복제된 경우 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다. **명령 프롬프트 창을 닫습니다**.
 
 ### <a name="deploy-an-azure-sql-database"></a>Azure SQL Database 배포 
 
-In this task, you'll create an Azure SQL database that you'll use as a data source for Power BI. Running the setup script will create the Azure SQL database server and load the AdventureWorksDW2022 database.
+이 작업에서는 Power BI의 데이터 원본으로 사용할 Azure SQL 데이터베이스를 만듭니다. 설치 스크립트를 실행하면 Azure SQL 데이터베이스 서버가 만들어지고 AdventureWorksDW2022 데이터베이스가 로드됩니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
 
@@ -54,7 +54,7 @@ In this task, you'll create an Azure SQL database that you'll use as a data sour
 2. **D:\DP500\Allfiles\10** 폴더로 이동합니다.
 
 3. 두 번 클릭하여 **setup2.ps1** 파일 스크립트를 엽니다.
-    - Read through the script in notepad if you're interested in understanding what resources the script is setting up. The lines beginning with # denote what the script is doing.
+    - 스크립트가 설정하는 리소스를 이해하려면 메모장에서 스크립트를 읽어 보세요. #으로 시작하는 줄은 스크립트가 수행하는 작업을 나타냅니다.
     - 스크립트를 닫습니다.
 
 5. 작업 표시줄의 검색 상자에 `PowerShell`를 입력합니다.  
@@ -76,7 +76,7 @@ In this task, you'll create an Azure SQL database that you'll use as a data sour
 
     ![](../images/powershell-script.png)
 
-2. When prompted, enter your <bpt id="p1">**</bpt>Azure account username<ept id="p1">**</ept>, <bpt id="p2">**</bpt>password<ept id="p2">**</ept>, and <bpt id="p3">**</bpt>resource group name<ept id="p3">**</ept>. Press <bpt id="p1">**</bpt>Enter<ept id="p1">**</ept>. 
+2. 메시지가 표시되면 **Azure 계정 사용자 이름**, **암호** 및 **리소스 그룹 이름**을 입력합니다. **Enter** 키를 누릅니다. 
 
     ![](../images/powershell-enter-account-info.png)
 
@@ -87,7 +87,7 @@ In this task, you'll create an Azure SQL database that you'll use as a data sour
 
 ### <a name="set-up-the-azure-sql-database"></a>Azure SQL Database 설정
 
-In this task, you will set up the Azure SQL Database to allow connections from your virtual machine's (VM's) IP address. This script will take about 10 minutes to run after you enter your username, password, and resource group.
+이 작업에서는 VM(가상 머신)의 IP 주소에서 연결을 허용하도록 Azure SQL Database를 설정합니다. 이 스크립트는 사용자 이름, 암호 및 리소스 그룹을 입력한 후 실행하는 데 약 10분이 걸립니다.
 
 1. 웹 브라우저에서 [https://portal.azure.com](https://portal.azure.com/)로 이동합니다.
 
@@ -115,7 +115,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image12.png)
 
-8. Keep the Azure portal web browser session open. You will need to copy the database connection string in the <bpt id="p1">**</bpt>Set up Power BI Desktop task<ept id="p1">**</ept>.
+8. Azure Portal 웹 브라우저 세션을 열어 두세요. **Power BI Desktop 설정 작업**에서 데이터베이스 연결 문자열을 복사해야 합니다.
 
 ### <a name="set-up-the-power-bi-service"></a>Power BI 서비스 설정
 
@@ -191,7 +191,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image15.png)
 
-6. In the <bpt id="p1">**</bpt>SQL Server database<ept id="p1">**</ept> window, in the <bpt id="p2">**</bpt>Server<ept id="p2">**</ept> box, replace the text with the lab Azure SQL Database server. This is located in the Azure portal, SQL databases.
+6. **SQL Server 데이터베이스** 창의 **서버** 상자에서 텍스트를 랩 Azure SQL Database 서버로 바꿉니다. Azure Portal, SQL 데이터베이스에 있습니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image15a.png)
 
@@ -215,7 +215,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image15b.png)
 
-11.  Select <bpt id="p1">**</bpt>OK<ept id="p1">**</ept>.
+11.  **확인**을 선택합니다.
     ![](../images/dp500-improve-performance-with-hybrid-tables-image19.png)
 
 12. **데이터 원본 설정** 창에서 **닫기**를 선택합니다.
@@ -234,7 +234,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
 17. **저장**을 선택합니다.
 
-18. If you're not already signed in, at the top-right corner of Power BI Desktop, select <bpt id="p1">**</bpt>Sign In<ept id="p1">**</ept>. Use the lab credentials to complete the sign in process.
+18. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
     중요: Power BI 서비스에 로그인하는 데 사용한 것과 동일한 자격 증명을 사용해야 합니다.
 
@@ -254,7 +254,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 보기로 전환합니다.
+1. **모델** 뷰로 전환합니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image24.png)
 
@@ -446,11 +446,15 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image54.png)
 
-5. 창에서 TBC
+5. 창에서 사용자 이름 및 암호를 입력하고 프라이버시 수준을 조직으로 설정합니다.
+       
+    사용자 이름: `sqladmin`
 
-6. TODO: 스크린샷
+    암호: `P@ssw0rd01`
 
-7. **로그인**을 선택합니다.
+    ![](../images/dp500-improve-performance-with-hybrid-tables-image54b.png)
+
+6. **로그인**을 선택합니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image55.png)
 
@@ -566,7 +570,7 @@ In this task, you will set up the Azure SQL Database to allow connections from y
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image70.png)
 
-5. **서버에 연결** 창에서 **서버 이름** 드롭다운 목록이 랩 Azure SQL Database 서버로 설정되어 있는지 확인합니다.
+5. **데이터베이스 엔진에 연결** 창에서 **서버 이름** 드롭다운 목록이 랩 Azure SQL Database 서버로 설정되어 있는지 확인합니다.
 
 6. **인증** 드롭다운 목록에서 **Azure Active Directory - 암호**를 선택합니다.
 
