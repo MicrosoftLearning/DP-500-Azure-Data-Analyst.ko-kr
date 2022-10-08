@@ -6,7 +6,7 @@ lab:
 
 # <a name="explore-a-relational-data-warehouse"></a>랩 – 관계형 데이터 웨어하우스 탐색
 
-Azure Synapse Analytics is built on a scalable set capabilities to support enterprise data warehousing; including file-based data analytics in a data lake as well as large-scale relational data warehouses and the data transfer and transformation pipelines used to load them. In this lab, you'll explore how to use a dedicated SQL pool in Azure Synapse Analytics to store and query data in a relational data warehouse.
+Azure Synapse Analytics는 데이터 레이크의 파일 기반 데이터 분석뿐만 아니라 대규모 관계형 데이터 웨어하우스 및 이를 로드하는 데 사용되는 데이터 전송 및 변환 파이프라인을 포함하여 엔터프라이즈 데이터 웨어하우징을 지원하는 확장 가능한 집합 기능을 기반으로 합니다. 이 랩에서는 Azure Synapse Analytics의 전용 SQL 풀을 사용하여 관계형 데이터 웨어하우스에 데이터를 저장하고 쿼리하는 방법을 살펴봅니다.
 
 이 랩을 완료하는 데 약 **45**분이 걸립니다.
 
@@ -16,18 +16,18 @@ Azure Synapse Analytics is built on a scalable set capabilities to support enter
 
 ## <a name="provision-an-azure-synapse-analytics-workspace"></a>Azure Synapse Analytics 작업 영역 프로비저닝
 
-An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> provides a central point for managing data and data processing runtimes. You can provision a workspace using the interactive interface in the Azure portal, or you can deploy a workspace and resources within it by using a script or template. In most production scenarios, it's best to automate provisioning with scripts and templates so that you can incorporate resource deployment into a repeatable development and operations (<bpt id="p1">*</bpt>DevOps<ept id="p1">*</ept>) process.
+Azure Synapse Analytics *작업 영역*은 데이터 및 데이터 처리 런타임을 관리하기 위한 중앙 지점을 제공합니다. Azure Portal 대화형 인터페이스를 사용하여 작업 영역을 프로비전하거나 스크립트 또는 템플릿을 사용하여 작업 영역 및 리소스를 배포할 수 있습니다. 대부분의 프로덕션 시나리오에서는 리소스 배포를 *DevOps*(반복 가능한 개발 및 작업) 프로세스에 통합할 수 있도록 스크립트 및 템플릿을 사용하여 프로비저닝을 자동화하는 것이 가장 좋습니다.
 
 이 연습에서는 PowerShell 스크립트와 ARM 템플릿의 조합을 사용하여 Azure Synapse Analytics 작업 영역을 프로비저닝합니다.
 
 1. `https://portal.azure.com`에서 [Azure Portal](https://portal.azure.com)에 로그인합니다.
-2. Use the <bpt id="p1">**</bpt>[<ph id="ph1">\&gt;</ph>_]<ept id="p1">**</ept> button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a <bpt id="p2">***</bpt>PowerShell<ept id="p2">***</ept> environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+2. 페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
 
     ![Cloud Shell 창이 있는 Azure Portal](../images/cloud-shell.png)
 
     > **참고**: 이전에 *Bash* 환경을 사용하는 클라우드 셸을 만들었다면 클라우드 셸 창의 왼쪽 위에 있는 드롭다운 메뉴를 사용하여 ***PowerShell***로 변경합니다.
 
-3. Azure Synapse Analytics는 데이터 레이크의 파일 기반 데이터 분석뿐만 아니라 대규모 관계형 데이터 웨어하우스 및 이를 로드하는 데 사용되는 데이터 전송 및 변환 파이프라인을 포함하여 엔터프라이즈 데이터 웨어하우징을 지원하는 확장 가능한 집합 기능을 기반으로 합니다.
+3. 창 맨 위에 있는 구분 기호 막대를 끌거나 창 오른쪽 위에 있는 **&#8212;** , **&#9723;** 및 **X** 아이콘을 사용하여 Cloud Shell 크기를 조정하여 창을 최소화, 최대화하고 닫을 수 있습니다. Azure Cloud Shell 사용에 관한 자세한 내용은 [Azure Cloud Shell 설명서](https://docs.microsoft.com/azure/cloud-shell/overview)를 참조하세요.
 
 4. PowerShell 창에서 다음 명령을 입력하여 이 리포지토리를 복제합니다.
 
@@ -48,7 +48,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
 
     > **참고**: 이 암호를 기억하세요.
 
-8. 이 랩에서는 Azure Synapse Analytics의 전용 SQL 풀을 사용하여 관계형 데이터 웨어하우스에 데이터를 저장하고 쿼리하는 방법을 살펴봅니다.
+8. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 10분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다. 기다리는 동안 Azure Synapse Analytics 설명서에서 [Azure Synapse Analytics의 서버리스 SQL 풀](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) 문서를 검토합니다.
 
 ## <a name="explore-the-data-warehouse-schema"></a>데이터 웨어하우스 스키마 탐색
 
@@ -60,30 +60,30 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
 2. Synapse 작업 영역에 있는 **개요** 페이지의 **Synapse Studio 열기** 카드에서 **열기**를 선택하여 새 브라우저 탭에서 Synapse Studio 엽니다. 메시지가 표시되면 로그인합니다.
 3. Synapse Studio 왼쪽에 있는 **&rsaquo;&rsaquo;** 아이콘을 사용하여 메뉴를 확장합니다. 이렇게 하면 Synapse Studio에서 리소스를 관리하고 데이터 분석 작업을 수행하는 데 사용할 여러 페이지가 표시됩니다.
 4. **관리** 페이지에서 **SQL 풀** 탭이 선택되어 있는지 확인하고 **sql*xxxxxxx*** 전용 SQL 풀을 선택하고 **&#9655;** 아이콘을 사용하여 시작합니다. 메시지가 표시되면 다시 시작하려는지 확인합니다.
-5. Wait for the SQL pool to resume. This can take a few minutes. Use the <bpt id="p1">**</bpt>&amp;#8635; Refresh<ept id="p1">**</ept> button to check its status periodically. The status will show as <bpt id="p1">**</bpt>Online<ept id="p1">**</ept> when it is ready.
+5. SQL 풀이 다시 시작될 때까지 기다립니다. 몇 분 정도 걸릴 수 있습니다. **&#8635; 새로 고침** 단추를 사용하여 상태를 주기적으로 확인합니다. 상태가 준비되면 **온라인** 상태로 표시됩니다.
 
 ### <a name="view-the-tables-in-the-database"></a>데이터베이스의 테이블 보기
 
 1. Synapse Studio **데이터** 페이지를 선택하고 **작업 영역** 탭이 선택되어 있고 **SQL 데이터베이스** 범주가 포함되어 있는지 확인합니다.
 2. **SQL 데이터베이스**, **sql*xxxxxxx*** 풀 및 해당 **Tables** 폴더를 확장하여 데이터베이스의 테이블을 확인합니다.
 
-    A relational data warehouse is typically based on a schema that consists of <bpt id="p1">*</bpt>fact<ept id="p1">*</ept> and <bpt id="p2">*</bpt>dimension<ept id="p2">*</ept> tables. The tables are optimized for analytical queries in which numeric metrics in the fact tables are aggregated by attributes of the entities represented by the dimension tables - for example, enabling you to aggregate Internet sales revenue by product, customer, date, and so on.
+    관계형 데이터 웨어하우스는 일반적으로 *팩* 트 테이블과 *차원* 테이블로 구성된 스키마를 기반으로 합니다. 테이블은 팩트 테이블의 숫자 메트릭이 차원 테이블이 나타내는 엔터티의 특성에 의해 집계되는 분석 쿼리에 최적화되어 있습니다. 예를 들어 제품, 고객, 날짜 등을 기준으로 인터넷 판매 수익을 집계할 수 있습니다.
     
-3. Expand the <bpt id="p1">**</bpt>dbo.FactInternetSales<ept id="p1">**</ept> table and its <bpt id="p2">**</bpt>Columns<ept id="p2">**</ept> folder to see the columns in this table. Note that many of the columns are <bpt id="p1">*</bpt>keys<ept id="p1">*</ept> that reference rows in the dimension tables. Others are numeric values (<bpt id="p1">*</bpt>measures<ept id="p1">*</ept>) for analysis.
+3. dbo를 확장합니다 **. FactInternetSales** 테이블 및 해당 **Columns** 폴더를 사용하여 이 테이블의 열을 확인합니다. 대부분의 열은 차원 테이블의 행을 참조하는 *키* 입니다. 다른 값은 분석을 위한 숫자 값(*측정값*)입니다.
     
-    키는 팩트 테이블을 하나 이상의 차원 테이블과 연결하기 위해 사용되며, *별표 스키* 마인 경우가 많습니다. 팩트 테이블이 각 차원 테이블과 직접 관련된 경우(가운데에 팩트 테이블이 있는 다중 뾰족한 "별"을 형성).
+    키는 팩트 테이블을 별 *표* 스키마에서 하나 이상의 차원 테이블과 연결하기 위해 사용됩니다. 팩트 테이블이 각 차원 테이블과 직접 관련된 경우(가운데에 팩트 테이블이 있는 다중 뾰족한 "별"을 형성).
 
-4. View the columns for the <bpt id="p1">**</bpt>dbo.DimPromotion<ept id="p1">**</ept> table, and note that it has a unique <bpt id="p2">**</bpt>PromotionKey<ept id="p2">**</ept> that uniquely identifies each row in the table. It also has an <bpt id="p1">**</bpt>AlternateKey<ept id="p1">**</ept>.
+4. dbo의 열을 봅니다 **. DimPromotion** 테이블에는 테이블의 각 행을 고유하게 식별하는 고유한 **PromotionKey** 가 있습니다. 또한 **** 속성도 포함합니다.
 
-    Usually, data in a data warehouse has been imported from one or more transactional sources. The <bpt id="p1">*</bpt>alternate<ept id="p1">*</ept> key reflects the business identifier for the instance of this entity in the source, but a unique numeric <bpt id="p2">*</bpt>surrogate<ept id="p2">*</ept> key is usually generated to uniquely identify each row in the data warehouse dimension table. One of the benefits of this approach is that it enables the data warehouse to contain multiple instances of the same entity at different points in time (for example, records for the same customer reflecting their address at the time an order was placed).
+    일반적으로 데이터 웨어하우스의 데이터는 하나 이상의 트랜잭션 원본에서 가져왔습니다. *대체* 키는 원본에서 이 엔터티의 인스턴스에 대한 비즈니스 식별자를 반영하지만, 일반적으로 데이터 웨어하우스 차원 테이블의 각 행을 고유하게 식별하기 위해 고유한 숫자 *서로게이트* 키가 생성됩니다. 이 방법의 이점 중 하나는 데이터 웨어하우스가 서로 다른 시점에 동일한 엔터티의 여러 인스턴스를 포함할 수 있다는 것입니다(예: 주문이 배치될 때 주소를 반영하는 동일한 고객에 대한 레코드).
 
 5. dbo의 열을 봅니다 **. DimProduct**에는 dbo를 참조하는 **ProductSubcategoryKey** 열이 포함되어 있습니다 **. DimProductSubcategory** 테이블- dbo를 참조하는 **ProductCategoryKey** 열이 차례로 포함됩니다  **. DimProductCategory** 테이블.
 
-    Azure Synapse Analytics *작업 영역*은 데이터 및 데이터 처리 런타임을 관리하기 위한 중앙 지점을 제공합니다.
+    경우에 따라 차원이 부분적으로 여러 관련 테이블로 정규화되어 하위 범주 및 범주로 그룹화할 수 있는 제품과 같은 다양한 수준의 세분성을 허용합니다. 이로 인해 간단한 별표가 *눈송* 이 스키마로 확장되고 중앙 팩트 테이블이 차원 테이블과 관련되어 추가 차원 테이블과 관련됩니다.
 
 6. dbo의 열을 봅니다 **. DimDate** 테이블은 요일, 월, 월, 연도, 일 이름, 월 이름 등을 포함하여 날짜의 다양한 임시 특성을 반영하는 여러 열을 포함합니다.
 
-    Azure Portal 대화형 인터페이스를 사용하여 작업 영역을 프로비전하거나 스크립트 또는 템플릿을 사용하여 작업 영역 및 리소스를 배포할 수 있습니다.
+    데이터 웨어하우스의 시간 차원은 일반적으로 팩트 테이블의 측정값을 집계하려는 세분성의 가장 작은 임시 단위(종종 차원의 *세* 분성)에 대한 행을 포함하는 차원 테이블로 구현됩니다. 이 경우 측정값을 집계할 수 있는 가장 낮은 곡물은 개별 날짜이며 테이블에는 첫 번째 날짜부터 데이터에서 참조된 마지막 날짜까지의 각 날짜에 대한 행이 포함됩니다. **DimDate** 테이블의 특성을 사용하면 분석가가 일관된 임시 특성 집합을 사용하여 팩트 테이블의 날짜 키를 기준으로 측정값을 집계할 수 있습니다(예: 주문 날짜를 기준으로 월별 주문 보기). **FactInternetSales** 테이블에는 **DimDate** 테이블과 관련된 세 가지 키인 **OrderDateKey**, **DueDateKey 및 ShipDateKey**가 포함되어 **있습니다**.
 
 ## <a name="query-the-data-warehouse-tables"></a>데이터 웨어하우스 테이블 쿼리
 
@@ -91,10 +91,10 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
 
 ### <a name="query-fact-and-dimension-tables"></a>팩트 테이블과 차원 테이블 비교
 
-대부분의 프로덕션 시나리오에서는 리소스 배포를 *DevOps*(반복 가능한 개발 및 작업) 프로세스에 통합할 수 있도록 스크립트 및 템플릿을 사용하여 프로비저닝을 자동화하는 것이 가장 좋습니다.
+관계형 데이터 웨어하우스의 숫자 값은 여러 특성에서 데이터를 집계하는 데 사용할 수 있는 관련 차원 테이블이 있는 팩트 테이블에 저장됩니다. 이 디자인은 관계형 데이터 웨어하우스의 대부분의 쿼리에 관련 테이블(JOIN 절 사용)에서 데이터 집계 및 그룹화(집계 함수 및 GROUP BY 절 사용)가 포함됨을 의미합니다.
 
 1. **데이터** 페이지에서 **sql*xxxxxxx*** SQL 풀을 선택하고 **...** 메뉴에서 **새 SQL 스크립트** > **빈 스크립트**를 선택합니다.
-2. When a new <bpt id="p1">**</bpt>SQL Script 1<ept id="p1">**</ept> tab opens, in its <bpt id="p2">**</bpt>Properties<ept id="p2">**</ept> pane, change the name of the script to <bpt id="p3">**</bpt>Analyze Internet Sales<ept id="p3">**</ept> and change the <bpt id="p4">**</bpt>Result settings per query<ept id="p4">**</ept> to return all rows. Then use the <bpt id="p1">**</bpt>Publish<ept id="p1">**</ept> button on the toolbar to save the script, and use the <bpt id="p2">**</bpt>Properties<ept id="p2">**</ept> button (which looks similar to <bpt id="p3">**</bpt>&amp;#128463;.<ept id="p3">**</ept>) on the right end of the toolbar to close the <bpt id="p4">**</bpt>Properties<ept id="p4">**</ept> pane so you can see the script pane.
+2. 새 **SQL 스크립트 1** 탭이 열리면 **속성** 창에서 스크립트 이름을 **인터넷 판매 분석** 으로 변경하고 **쿼리당 결과 설정을** 변경하여 모든 행을 반환합니다. 그런 다음 도구 모음에서 **게시**를 선택하여 스크립트를 저장하고 도구 모음의 오른쪽 끝에 있는 **속성** 단추( **&#128463;.** 와 유사함)를 사용하여 **속성** 창을 숨깁니다.
 3. 빈 새 코드 셀에 다음 코드를 추가합니다.
 
     ```sql
@@ -106,7 +106,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     ORDER BY Year;
     ```
 
-4. Use the <bpt id="p1">**</bpt>&amp;#9655; Run<ept id="p1">**</ept> button to run the script, and review the results, which should show the Internet sales totals for each year. This query joins the fact table for Internet sales to a time dimension table based on the order date, and aggregates the sales amount measure in the fact table by the calendar month attribute of the dimension table.
+4. **&#9655; 실행** 단추를 사용하여 스크립트를 실행하고 결과를 검토합니다. 그러면 매년 인터넷 판매 합계가 표시됩니다. 이 쿼리는 인터넷 판매 팩트 테이블을 주문 날짜에 따라 시간 차원 테이블에 조인하고 팩트 테이블의 판매 금액 측정값을 차원 테이블의 달력 월 특성별로 집계합니다.
 
 5. 다음과 같이 쿼리를 수정하여 시간 차원의 월 특성을 추가한 다음 수정된 쿼리를 실행합니다.
 
@@ -120,7 +120,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     ORDER BY Year, Month;
     ```
 
-    Note that the attributes in the time dimension enable you to aggregate the measures in the fact table at multiple hierarchical levels - in this case, year and month. This is a common pattern in data warehouses.
+    시간 차원의 특성을 사용하면 팩트 테이블의 측정값을 여러 계층적 수준(이 경우 연도 및 월)으로 집계할 수 있습니다. 이는 데이터 웨어하우스의 일반적인 패턴입니다.
 
 6. 다음과 같이 쿼리를 수정하여 월을 제거하고 집계에 두 번째 차원을 추가한 다음 실행하여 결과를 확인합니다(각 지역의 연간 인터넷 판매 합계 표시).
 
@@ -136,7 +136,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     ORDER BY Year, Region;
     ```
 
-    페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다.
+    지리란 고객 차원을 통한 인터넷 판매 팩트 테이블과 관련된 *눈송* 이 차원입니다. 따라서 지역별로 인터넷 판매를 집계하려면 쿼리에 두 개의 조인이 필요합니다.
 
 7. 쿼리를 수정하고 다시 실행하여 다른 눈송이 차원을 추가하고 제품 범주별 연간 지역 매출을 집계합니다.
 
@@ -183,7 +183,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     ORDER BY Region;
     ```
 
-2. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
+2. 새 쿼리 코드만 선택하고 **&#9655; 실행** 단추를 사용하여 실행합니다. 그런 다음 다음 표와 유사하게 표시되는 결과를 검토합니다.
 
     | 지역 | RowNumber | OrderNo | LineItem | SalesAmount | RegionTotal | RegionAverage |
     |--|--|--|--|--|--|--|
@@ -217,7 +217,7 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     - 각 판매 주문 품목에 대한 행이 있습니다.
     - 행은 판매가 이루어진 지역에 따라 파티션으로 구성됩니다.
     - 각 지리적 파티션 내의 행은 판매 금액 순서로 번호가 매겨집니다(최하위에서 가장 높음).
-    - 각 행에 대해 품목 판매액과 지역 총 및 평균 판매액이 포함됩니다.
+    - 각 행에 대해 품목 판매 금액과 지역 총 및 평균 판매 금액이 포함됩니다.
 
 3. 기존 쿼리에서 다음 코드를 추가하여 GROUP BY 쿼리 내에서 창 함수를 적용하고 총 판매액에 따라 각 지역의 도시 순위를 지정합니다.
 
@@ -236,19 +236,19 @@ An Azure Synapse Analytics <bpt id="p1">*</bpt>workspace<ept id="p1">*</ept> pro
     ORDER BY Region;
     ```
 
-4. Select only the new query code, and use the <bpt id="p1">**</bpt>&amp;#9655; Run<ept id="p1">**</ept> button to run it. Then review the results, and observe the following:
+4. 새 쿼리 코드만 선택하고 **&#9655; 실행** 단추를 사용하여 실행합니다. 그런 다음, 결과를 검토하고 다음을 관찰합니다.
     - 결과에는 지역별로 그룹화된 각 도시에 대한 행이 포함됩니다.
-    - 각 도시에 대한 총 판매액(개별 판매액 합계)이 계산됩니다.
-    - 지역별 총 판매액(지역의 각 도시에 대한 판매 금액 합계 합계)은 지역 파티션을 기준으로 계산됩니다.
+    - 각 도시에 대해 총 판매액(개별 판매액 합계)이 계산됩니다.
+    - 지역별 판매 합계(지역의 각 도시에 대한 총 판매 금액 합계)는 지역 파티션을 기준으로 계산됩니다.
     - 지역 파티션 내의 각 도시에 대한 순위는 도시당 총 판매액을 내림차순으로 정렬하여 계산됩니다.
 
 5. 업데이트된 스크립트를 게시하여 변경 내용을 저장합니다.
 
-> <bpt id="p1">**</bpt>Tip<ept id="p1">**</ept>: ROW_NUMBER and RANK are examples of ranking functions available in Transact-SQL. For more details, see the <bpt id="p1">[</bpt>Ranking Functions<ept id="p1">](https://docs.microsoft.com/sql/t-sql/functions/ranking-functions-transact-sql)</ept> reference in the Transact-SQL language documentation.
+> **팁**: ROW_NUMBER 및 RANK는 Transact-SQL에서 사용할 수 있는 순위 함수의 예입니다. 자세한 내용은 Transact-SQL 언어 설명서의 [순위 함수](https://docs.microsoft.com/sql/t-sql/functions/ranking-functions-transact-sql) 참조를 참조하세요.
 
 ### <a name="retrieve-an-approximate-count"></a>대략적인 개수 검색
 
-When exploring very large volumes of data, queries can take significant time and resources to run. Often, data analysis doesn't require absolutely precise values - a comparison of approximate values may be sufficient.
+매우 많은 양의 데이터를 탐색할 때 쿼리를 실행하는 데 상당한 시간과 리소스가 걸릴 수 있습니다. 데이터 분석에는 절대적으로 정확한 값이 필요하지 않은 경우가 많습니다. 근사값을 비교하면 충분할 수 있습니다.
 
 1. 기존 쿼리에서 다음 코드를 추가하여 각 연도의 판매 주문 수를 검색합니다.
 
@@ -261,10 +261,10 @@ When exploring very large volumes of data, queries can take significant time and
     ORDER BY CalendarYear;
     ```
 
-2. 창 맨 위에 있는 구분 기호 막대를 끌거나 창 오른쪽 위에 있는 **&#8212;** , **&#9723;** 및 **X** 아이콘을 사용하여 Cloud Shell 크기를 조정하여 창을 최소화, 최대화하고 닫을 수 있습니다.
+2. 새 쿼리 코드만 선택하고 **&#9655; 실행** 단추를 사용하여 실행합니다. 그런 다음, 반환되는 출력을 검토합니다.
     - 쿼리 아래의 **결과** 탭에서 각 연도의 주문 수를 확인합니다.
     - **메시지** 탭에서 쿼리의 총 실행 시간을 봅니다.
-3. Azure Cloud Shell 사용에 관한 자세한 내용은 [Azure Cloud Shell 설명서](https://docs.microsoft.com/azure/cloud-shell/overview)를 참조하세요.
+3. 쿼리를 다음과 같이 수정하여 매년 대략적인 개수를 반환합니다. 그런 다음 쿼리를 다시 실행합니다.
 
     ```sql
     SELECT d.CalendarYear AS CalendarYear,
@@ -276,8 +276,8 @@ When exploring very large volumes of data, queries can take significant time and
     ```
 
 4. 반환되는 출력을 검토합니다.
-    - On the <bpt id="p1">**</bpt>Results<ept id="p1">**</ept> tab under the query, view the order counts for each year. These should be within 2% of the actual counts retrieved by the previous query.
-    - On the <bpt id="p1">**</bpt>Messages<ept id="p1">**</ept> tab, view the total execution time for the query. This should be shorter than for the previous query.
+    - 쿼리 아래의 **결과** 탭에서 각 연도의 주문 수를 확인합니다. 이러한 값은 이전 쿼리에서 검색한 실제 개수의 2% 이내여야 합니다.
+    - **메시지** 탭에서 쿼리의 총 실행 시간을 봅니다. 이전 쿼리보다 짧아야 합니다.
 
 5. 스크립트를 게시하여 변경 내용을 저장합니다.
 
@@ -288,12 +288,12 @@ When exploring very large volumes of data, queries can take significant time and
 1. **sql*xxxxxxx*** SQL 풀에 대한 빈 스크립트를 새로 만들고 **Reseller Sales 분석**이라는 이름으로 저장합니다.
 2. 스크립트에서 SQL 쿼리를 만들어 **FactResellerSales** 팩트 테이블 및 관련 차원 테이블을 기반으로 다음 정보를 찾습니다.
     - 회계 연도 및 분기당 판매된 항목의 총 수량입니다.
-    - 판매한 직원과 관련된 회계 연도, 분기 및 판매 지역별 판매 항목의 총 수량입니다.
+    - 판매한 직원과 관련된 회계 연도, 분기 및 판매 지역당 판매된 항목의 총 수량입니다.
     - 제품 범주별 회계 연도, 분기 및 판매 지역별 판매 항목의 총 수량입니다.
-    - 연도의 총 판매액을 기준으로 회계 연도당 각 판매 지역 순위입니다.
+    - 연도의 총 판매액을 기준으로 회계 연도당 각 판매 지역의 순위입니다.
     - 각 판매 지역의 연간 대략 판매 주문 수입니다.
 
-    > **팁**: 쿼리를 Synapse Studio **개발** 페이지의 **솔루션** 스크립트와 비교합니다.
+    > **팁**: 쿼리를 Synapse Studio **개발** 페이지의 **솔루션** 스크립트에 있는 쿼리와 비교합니다.
 
 3. 쿼리를 실험하여 데이터 웨어하우스 스키마의 나머지 테이블을 여가로 탐색합니다.
 4. 완료되면 **관리** 페이지에서 **sql*xxxxxxx*** 전용 SQL 풀을 일시 중지합니다.

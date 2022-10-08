@@ -60,7 +60,7 @@ lab:
 
     ```https://github.com/TabularEditor/TabularEditor/releases```
     
-1. Scroll down to the <bpt id="p1">**</bpt>Assets<ept id="p1">**</ept> section and select the <bpt id="p2">**</bpt>TabularEditor.Installer.msi<ept id="p2">**</ept> file. This will initiate the file install.
+1. **자산** 섹션까지 아래로 스크롤하여 **TabularEditor.Installer.msi** 파일을 선택합니다. 그러면 파일 설치가 시작됩니다.
 
 1. 완료되면 **파일 열기**를 선택하여 설치 관리자를 실행합니다.
 
@@ -192,11 +192,11 @@ lab:
 
 ## <a name="create-a-calculation-group"></a>계산 그룹 만들기
 
-Now you'll create two calculation groups. The first will support time intelligence. The second will support currency conversion.
+이 단원에서는 계산 그룹을 두 개 만듭니다. 첫 번째는 시간 인텔리전스를 지원하고 두 번째는 통화 환산을 지원합니다.
 
 ### <a name="create-the-time-intelligence-calculation-group"></a>시간 인텔리전스 계산 그룹 만들기
 
-Use Tabular Editor to create the <bpt id="p1">**</bpt>Time Intelligence<ept id="p1">**</ept> calculation group. It will simplify the creation of many time-related calculations, including PY (prior year), YoY (year-over-year), and YoY % (year-over-year percentage). The calculation group will allow analyzing any measure by using different Time Intelligence calculations.
+테이블 형식 편집기를 사용하여 **시간 인텔리전스** 계산 그룹을 만듭니다. 이렇게 하면 PY(이전 연도), YoY(전년 대비), YoY%(전년 대비 백분율)를 비롯한 여러 시간 관련 계산의 만들기를 간소화합니다. 계산 그룹을 사용하면 다양한 시간 인텔리전스 계산을 사용하여 측정값을 분석할 수 있습니다.
 
 Power BI Desktop은 계산 그룹의 생성 또는 관리를 지원하지 않습니다.
 
@@ -336,7 +336,7 @@ Power BI Desktop은 계산 그룹의 생성 또는 관리를 지원하지 않습
 
 ### <a name="create-the-currency-conversion-calculation-group"></a>통화 환산 계산 그룹 만들기
 
-Now you'll create the <bpt id="p1">**</bpt>Currency Conversion<ept id="p1">**</ept> calculation group. It will provide flexibility to convert the <bpt id="p1">**</bpt>Sales<ept id="p1">**</ept> table measures to a selected currency. It will also apply appropriate formatting for the selected currency.
+이제 **통화 환산** 계산 그룹을 만듭니다. **Sales** 테이블 측정값을 선택한 통화로 환산할 수 있는 유연성을 제공합니다. 또한 선택한 통화에 적절한 서식을 적용합니다.
 
 1.  Power BI Desktop에서 **데이터** 보기로 전환합니다.
 
@@ -383,7 +383,7 @@ Now you'll create the <bpt id="p1">**</bpt>Currency Conversion<ept id="p1">**</e
     ```
     SELECTEDVALUE ( 'Currency'[FormatString] )
     ```
-    This formula returns the format string of the selected currency. This way, formatting is dynamically driven by the data in the <bpt id="p1">**</bpt>Currency<ept id="p1">**</ept> dimension table.
+    이 수식은 선택한 통화의 서식 문자열을 반환합니다. 이러한 방식으로 서식 지정은 **통화** 차원 테이블의 데이터에 의해 동적으로 구동됩니다.
 
 9.  변경 내용을 Power BI Desktop 모델에 저장합니다.
 

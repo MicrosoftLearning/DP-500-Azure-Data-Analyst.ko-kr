@@ -10,7 +10,7 @@ lab:
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
-In this lab, you will configure a report to use automatic page refresh. That way, it will be possible for report consumers to monitor real-time internet sales results.
+이 랩에서는 자동 페이지 새로 고침을 사용하도록 보고서를 구성합니다. 이렇게 하면 보고서 소비자가 실시간 인터넷 판매 결과를 모니터링할 수 있습니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -55,7 +55,7 @@ In this lab, you will configure a report to use automatic page refresh. That way
 
     ![](../images/dp500-monitor-data-in-real-time-image1.png)
 
-2. In the <bpt id="p1">**</bpt>Connect to Server<ept id="p1">**</ept> window, ensure that the <bpt id="p2">**</bpt>Server name<ept id="p2">**</ept> dropdown list is set to <bpt id="p3">**</bpt>localhost<ept id="p3">**</ept>, and that the Authentication dropdown list is set to <bpt id="p4">**</bpt>Windows Authentication<ept id="p4">**</ept>.
+2. **서버에 연결** 창에서 **서버 이름** 드롭다운 목록이 **localhost**로 설정되어 있고 인증 드롭다운 목록이 **Windows 인증**으로 설정되어 있는지 확인합니다.
     ![](../images/dp500-monitor-data-in-real-time-image2.png)
 
 3. **연결**을 선택합니다.

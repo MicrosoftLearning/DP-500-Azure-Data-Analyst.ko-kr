@@ -10,7 +10,7 @@ lab:
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
-In this lab, you will use Power BI Desktop to develop a data model over the Azure Synapse Adventure Works data warehouse. The data model will allow you to publish a semantic layer over the data warehouse.
+이 랩에서는 Power BI Desktop을 사용하여 Azure Synapse Adventure Works 데이터 웨어하우스를 통해 데이터 모델을 개발합니다. 데이터 모델을 사용하면 데이터 웨어하우스를 통해 의미 체계 계층을 게시할 수 있습니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -29,13 +29,13 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
    > **참고**: git 복제본을 사용하여 Azure Synapse Analytics에 데이터를 이미 로드한 경우 이 작업을 건너뛰고 **Power BI 설정**으로 진행할 수 있습니다.
 
 1. VM 오른쪽의 리소스 탭에 있는 로그인 정보를 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다.
-2. Use the <bpt id="p1">**</bpt>[<ph id="ph1">\&gt;</ph>_]<ept id="p1">**</ept> button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a <bpt id="p2">***</bpt>PowerShell<ept id="p2">***</ept> environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+2. 페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
 
     ![Cloud Shell 창이 있는 Azure Portal](../images/cloud-shell.png)
 
     > **참고**: 이전에 *Bash* 환경을 사용하는 클라우드 셸을 만들었다면 클라우드 셸 창의 왼쪽 위에 있는 드롭다운 메뉴를 사용하여 ***PowerShell***로 변경합니다.
 
-3. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the <bpt id="p1">**</bpt>&amp;#8212;<ept id="p1">**</ept>, <bpt id="p2">**</bpt>&amp;#9723;<ept id="p2">**</ept>, and <bpt id="p3">**</bpt>X<ept id="p3">**</ept> icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the <bpt id="p1">[</bpt>Azure Cloud Shell documentation<ept id="p1">](https://docs.microsoft.com/azure/cloud-shell/overview)</ept>.
+3. 창 맨 위에 있는 구분 기호 막대를 끌거나 창 오른쪽 위에 있는 **&#8212;** , **&#9723;** 및 **X** 아이콘을 사용하여 Cloud Shell 크기를 조정하여 창을 최소화, 최대화하고 닫을 수 있습니다. Azure Cloud Shell 사용에 관한 자세한 내용은 [Azure Cloud Shell 설명서](https://docs.microsoft.com/azure/cloud-shell/overview)를 참조하세요.
 
 4. PowerShell 창에서 다음 명령을 입력하여 리포지토리를 복제합니다.
 
@@ -56,7 +56,7 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
     > **참고**: 이 암호를 기억하세요!
 
 7. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 20분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다.
-8. After creating the Synapse workspace and SQL Pool and loading the data, the script pauses the pool to prevent unnecessary Azure charges. When you're ready to work with your data in Azure Synapse Analytics, you'll need to resume the SQL Pool.
+8. Synapse 작업 영역 및 SQL 풀을 만들고 데이터를 로드한 후 스크립트는 불필요한 Azure 요금이 청구되지 않도록 풀을 일시 중지합니다. Azure Synapse Analytics에서 데이터를 사용할 준비가 되면 SQL 풀을 다시 시작해야 합니다.
 
 ### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
 
@@ -91,14 +91,14 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
 
     ![](../images/dp500-create-a-star-schema-model-image2.png)
 
-3. At the top-right corner of Power BI Desktop, if you're not already signed in, select <bpt id="p1">**</bpt>Sign In<ept id="p1">**</ept>. Use the lab credentials to complete the sign in process.
+3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image3.png)
-4. 이 랩에서는 Power BI Desktop을 사용하여 Azure Synapse Adventure Works 데이터 웨어하우스를 통해 데이터 모델을 개발합니다.
+4. Microsoft Edge의 Power BI 가입 페이지로 리디렉션됩니다. **계속**을 선택하여 가입을 완료합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image3b.png)
 
-5. 데이터 모델을 사용하면 데이터 웨어하우스를 통해 의미 체계 계층을 게시할 수 있습니다.
+5. 10자리 전화 번호를 입력하고 **시작**을 선택합니다. 다시 한 번 **시작**을 선택합니다. Power BI로 리디렉션됩니다.
 
 1. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
 
@@ -122,11 +122,11 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
 
     ![](../images/dp500-create-a-star-schema-model-image2b.png)
 
-1. Navigate back to Power BI Desktop. If you see <bpt id="p1">**</bpt>Sign in<ept id="p1">**</ept> in the top right corner of the screen, sign-in again using the credentials provided on the Resources tab of the lab environment. If you are already signed in, proceed to the next step.
+1. Power BI Desktop으로 다시 이동합니다. 화면의 오른쪽 위 모서리에 **로그인**이 보이면 랩 환경의 리소스 탭에 제공된 자격 증명을 사용하여 다시 로그인합니다. 이미 로그인한 경우 다음 단계로 진행합니다.
 
     <img width="80" alt="image" src="https://user-images.githubusercontent.com/77289548/166337862-538a1900-ec67-44d1-905f-d404c5b0a58a.png">
 
-1. Go to Power BI Desktop and select <bpt id="p1">**</bpt>File<ept id="p1">**</ept> then <bpt id="p2">**</bpt>Options and settings<ept id="p2">**</ept> then <bpt id="p3">**</bpt>Options<ept id="p3">**</ept> then <bpt id="p4">**</bpt>Security<ept id="p4">**</ept> and under Authentication Browser check <bpt id="p5">**</bpt>Use my default web browser<ept id="p5">**</ept> and select <bpt id="p6">**</bpt>OK<ept id="p6">**</ept>. Close Power BI Desktop. Do not save your file.
+1. Power BI Desktop으로 이동한 다음 **파일**, **옵션 및 설정**을 선택한 다음 **옵션**, **보안**을 차례로 선택하고 인증 브라우저에서 **기본 웹 브라우저 사용**, **확인**을 차례로 선택합니다. Power BI Desktop을 닫습니다. 파일을 저장하지 마세요.
 
     다음 연습에서 Power BI Desktop을 다시 엽니다.
 
@@ -138,7 +138,7 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
 
 1. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
-1. Select <bpt id="p1">**</bpt>Azure Synapse Analytics<ept id="p1">**</ept> from Azure services. Select your Synapse workspace.
+1. Azure 서비스에서 **Azure Synapse Analytics**를 선택합니다. Synapse 작업 영역을 선택합니다.
 
    ![](../images/dp500-create-a-star-schema-model-image3c.png)
 
@@ -185,7 +185,7 @@ In this lab, you will use Power BI Desktop to develop a data model over the Azur
 
     ![](../images/dp500-create-a-star-schema-model-image4.png)
 
-3. In the <bpt id="p1">**</bpt>Develop<ept id="p1">**</ept> pane, expand <bpt id="p2">**</bpt>Power BI<ept id="p2">**</ept>, then expand the workspace, and then select <bpt id="p3">**</bpt>Power BI datasets<ept id="p3">**</ept>. If not present, Click <bpt id="p1">**</bpt>Publish all<ept id="p1">**</ept> to publish Workspace and refresh the browser.
+3. **개발** 창에서 **Power BI**, 작업 영역을 차례로 확장한 다음 **Power BI 데이터 세트**를 선택합니다. 없는 경우 **모두 게시**를 클릭하여 작업 영역을 게시하고 브라우저를 새로 고칩니다.
 
     ![](../images/dp500-create-a-star-schema-model-image5.png)
 

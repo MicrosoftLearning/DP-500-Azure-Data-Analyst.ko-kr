@@ -44,7 +44,7 @@ lab:
 
 ## <a name="use-best-practice-analyzer"></a>모범 사례 분석기 사용
 
-In this exercise, you will install Tabular Editor 2 and load Best Practice Analyzer (BPA) rules. You will review the BPA rules, and then address specific issues found in the data model.
+이 연습에서는 테이블 형식 편집기 2를 설치하고 BPA(모범 사례 분석기) 규칙을 로드합니다. BPA 규칙을 검토한 다음 데이터 모델에 있는 특정 문제를 해결합니다.
 
 BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 잠재적인 모델링 실수나 수행할 수 있는 변경 내용을 알리는 무료 타사 도구입니다. 여기에는 성능 향상을 위해 적용할 수 있는 명명, 사용자 환경 및 일반적인 최적화에 대한 권장 사항이 포함됩니다. 자세한 내용은 [모델 성능 향상을 위한 모범 사례 규칙](https://powerbi.microsoft.com/blog/best-practice-rules-to-improve-your-models-performance/)을 참조하세요.
 
@@ -63,7 +63,7 @@ BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 �
 
     ```https://github.com/TabularEditor/TabularEditor/releases```
     
-1. Scroll down to the <bpt id="p1">**</bpt>Assets<ept id="p1">**</ept> section and select the <bpt id="p2">**</bpt>TabularEditor.Installer.msi<ept id="p2">**</ept> file. This will initiate the file install.
+1. **자산** 섹션까지 아래로 스크롤하여 **TabularEditor.Installer.msi** 파일을 선택합니다. 그러면 파일 설치가 시작됩니다.
 
 1. 완료되면 **파일 열기**를 선택하여 설치 관리자를 실행합니다.
 
@@ -308,8 +308,8 @@ DAX 쿼리를 최적화하기 위해 DAX Studio를 다운로드하여 설치합�
 
     ```https://daxstudio.org/downloads/```
     
-1. Select <bpt id="p1">**</bpt>DAX Studio v.2.x.x (installer)<ept id="p1">**</ept> - this will initiate the file install.
-    <bpt id="p1">*</bpt>note: The version of DAX studio will change slightly over time. Download the latest release.<ept id="p1">*</ept>
+1. **DAX Studio v.2.x.x(설치 관리자)** 를 선택하면 파일 설치가 시작됩니다.
+                    참고: DAX Studio의 버전은 시간이 지남에 따라 약간 변경됩니다. 최신 릴리스를 다운로드하세요.
 
 1. 완료되면 **파일 열기**를 선택하여 설치 관리자를 실행합니다.
 
@@ -333,8 +333,8 @@ DAX 쿼리를 최적화하기 위해 DAX Studio를 다운로드하여 설치합�
     ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31e.png)
 1. **설치**를 선택합니다.
 
-1. Upon completion, with <bpt id="p1">**</bpt>Launch DAX Studio<ept id="p1">**</ept> selected, select <bpt id="p2">**</bpt>Finish<ept id="p2">**</ept>. This will open DAX Studio.
-    <ph id="ph1">![</ph>Graphical user interface, application Description automatically generated<ph id="ph2">](../images/dp500-use-tools-to-optimize-power-bi-performance-image31f.png)</ph>
+1. 완료되면 **DAX Studio 시작**이 선택된 상태에서 **마침**을 선택합니다. 그러면 DAX Studio가 열립니다.
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31f.png)
 
 1. **연결** 창에서 **PBI/SSDT 모델** 옵션을 선택합니다.
 

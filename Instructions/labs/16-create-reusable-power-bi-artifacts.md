@@ -10,7 +10,7 @@ lab:
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
-In this lab, you will create a specialized Power BI dataset that extends a core dataset. The specialized dataset will enable the analysis of US sales per capita.
+이 랩에서는 핵심 데이터 세트를 확장하는 특수 Power BI 데이터 세트를 만듭니다. 특수 데이터 세트를 사용하면 1인당 미국 매출을 분석할 수 있습니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -59,7 +59,7 @@ In this lab, you will create a specialized Power BI dataset that extends a core 
 
     중요: Power BI Desktop에서 로그인하는 데 사용한 것과 동일한 자격 증명을 사용해야 합니다.
 
-3. 오른쪽 위에서 프로필 아이콘을 선택한 다음, **평가판 시작**을 선택합니다.
+3. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image1.png)
 
@@ -104,7 +104,7 @@ In this lab, you will create a specialized Power BI dataset that extends a core 
 
 3. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Create reusable Power BI artifacts.pbix** 파일을 두 번 클릭합니다.
 
-4. If you're not already signed in, at the top-right corner of Power BI Desktop, select <bpt id="p1">**</bpt>Sign In<ept id="p1">**</ept>. Use the lab credentials to complete the sign in process.
+4. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image7.png)
 
@@ -112,7 +112,7 @@ In this lab, you will create a specialized Power BI dataset that extends a core 
 
 이 작업에서는 데이터 모델을 검토합니다.
 
-1. Power BI Desktop의 왼쪽에서 **모델** 뷰로 전환합니다.
+1. Power BI Desktop의 왼쪽에서 **모델** 보기로 전환합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image8.png)
 
@@ -150,7 +150,7 @@ In this lab, you will create a specialized Power BI dataset that extends a core 
 
 ## <a name="create-a-specialized-dataset"></a>특수 데이터 세트 만들기
 
-In this exercise, you will create a specialized dataset to allow the analysis of US sales per capita. Because the core dataset doesn't contain population values, you will add a new table to extend the model.
+이 연습에서는 1인당 미국 매출을 분석할 수 있는 특수 데이터 세트를 만듭니다. 핵심 데이터 세트에는 인구 값이 포함되어 있지 않으므로 새 테이블을 추가하여 모델을 확장합니다.
 
 ### <a name="create-a-live-connection"></a>라이브 연결 만들기
 
@@ -217,7 +217,7 @@ In this exercise, you will create a specialized dataset to allow the analysis of
     ![](../images/dp500-create-reusable-power-bi-artifacts-image25.png)
 
     참고: 이 모델을 변경하는 옵션이 표시되지 않으면 미리 보기 기능, PBI 데이터 세트용 DirectQuery, AS를 사용하도록 설정해야 합니다.
-    - Navigate to <bpt id="p1">**</bpt>File<ept id="p1">**</ept><ph id="ph1"> &gt; </ph><bpt id="p2">**</bpt>Options and settings<ept id="p2">**</ept><ph id="ph2"> &gt; </ph><bpt id="p3">**</bpt>Options<ept id="p3">**</ept>, and in the Preview features section, select the DirectQuery for Power BI datasets and Analysis Services checkbox to enable this preview feature. You may need to restart Power BI Desktop for the change to take effect. 
+    - **파일** > **옵션 및 설정** > **옵션**으로 이동하고 미리 보기 기능 섹션에서 Power BI 데이터 세트 및 Analysis Services용 DirectQuery 확인란을 선택하여 이 미리 보기 기능을 사용하도록 설정합니다. 변경 내용을 적용하려면 Power BI Desktop을 다시 시작해야 할 수도 있습니다. 
 
 2. 메시지가 표시되면 대화 상자 창 메시지를 읽은 다음, **Add a local model**(로컬 모델 추가)을 선택합니다.
 
@@ -421,7 +421,7 @@ In this exercise, you will create a specialized dataset to allow the analysis of
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image59.png)
 
-4. 게시가 성공하면 **가져오기**를 선택합니다.
+4. 게시에 성공하면 **가져오기**를 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image60.png)
 

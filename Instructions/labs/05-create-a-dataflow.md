@@ -10,7 +10,7 @@ lab:
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
-In this lab, you will create a dataflow to deliver date dimension data sourced from the Azure Synapse Adventure Works data warehouse. The dataflow will provide a consistent definition of date-related data for use by the organization's business analysts.
+이 랩에서는 Azure Synapse Adventure Works 데이터 웨어하우스에서 원본이 되는 날짜 차원 데이터를 배달하는 데이터 흐름을 만듭니다. 데이터 흐름은 조직의 비즈니스 분석가가 사용할 날짜 관련 데이터에 대한 일관된 정의를 제공합니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -27,13 +27,13 @@ In this lab, you will create a dataflow to deliver date dimension data sourced f
    > **참고**: git 복제본을 사용하여 Azure Synapse Analytics에 데이터를 이미 로드한 경우 이 작업을 건너뛰고 **Power BI 설정**으로 진행할 수 있습니다.
 
 1. VM 오른쪽의 리소스 탭에 있는 로그인 정보를 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다.
-2. Use the <bpt id="p1">**</bpt>[<ph id="ph1">\&gt;</ph>_]<ept id="p1">**</ept> button to the right of the search bar at the top of the page to create a new Cloud Shell in the Azure portal, selecting a <bpt id="p2">***</bpt>PowerShell<ept id="p2">***</ept> environment and creating storage if prompted. The cloud shell provides a command line interface in a pane at the bottom of the Azure portal, as shown here:
+2. 페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
 
     ![Cloud Shell 창이 있는 Azure Portal](../images/cloud-shell.png)
 
     > **참고**: 이전에 *Bash* 환경을 사용하는 클라우드 셸을 만들었다면 클라우드 셸 창의 왼쪽 위에 있는 드롭다운 메뉴를 사용하여 ***PowerShell***로 변경합니다.
 
-3. Note that you can resize the cloud shell by dragging the separator bar at the top of the pane, or by using the <bpt id="p1">**</bpt>&amp;#8212;<ept id="p1">**</ept>, <bpt id="p2">**</bpt>&amp;#9723;<ept id="p2">**</ept>, and <bpt id="p3">**</bpt>X<ept id="p3">**</ept> icons at the top right of the pane to minimize, maximize, and close the pane. For more information about using the Azure Cloud Shell, see the <bpt id="p1">[</bpt>Azure Cloud Shell documentation<ept id="p1">](https://docs.microsoft.com/azure/cloud-shell/overview)</ept>.
+3. 창 맨 위에 있는 구분 기호 막대를 끌거나 창 오른쪽 위에 있는 **&#8212;** , **&#9723;** 및 **X** 아이콘을 사용하여 Cloud Shell 크기를 조정하여 창을 최소화, 최대화하고 닫을 수 있습니다. Azure Cloud Shell 사용에 관한 자세한 내용은 [Azure Cloud Shell 설명서](https://docs.microsoft.com/azure/cloud-shell/overview)를 참조하세요.
 
 4. PowerShell 창에서 다음 명령을 입력하여 리포지토리를 복제합니다.
 
@@ -55,7 +55,7 @@ In this lab, you will create a dataflow to deliver date dimension data sourced f
 
 7. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 20분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다.
 
-1. After creating the Synapse workspace and SQL Pool and loading the data, the script pauses the pool to prevent unnecessary Azure charges. When you're ready to work with your data in Azure Synapse Analytics, you'll need to resume the SQL Pool.
+1. Synapse 작업 영역 및 SQL 풀을 만들고 데이터를 로드한 후 스크립트는 불필요한 Azure 요금이 청구되지 않도록 풀을 일시 중지합니다. Azure Synapse Analytics에서 데이터를 사용할 준비가 되면 SQL 풀을 다시 시작해야 합니다.
 
 ### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
 
@@ -94,7 +94,7 @@ In this lab, you will create a dataflow to deliver date dimension data sourced f
 
 1. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Create a dataflow.pbix** 파일을 두 번 클릭합니다.
 
-1. If you're not already signed in, at the top-right corner of Power BI Desktop, select <bpt id="p1">**</bpt>Sign In<ept id="p1">**</ept>. Use the lab credentials to complete the sign in process.
+1. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
     ![](../images/dp500-create-a-dataflow-image2.png)
 
@@ -163,9 +163,11 @@ In this lab, you will create a dataflow to deliver date dimension data sourced f
 
 1. 검색 창을 사용하여 Azure Synapse Analytics를 찾습니다. 
 
-1. 이 랩에서는 Azure Synapse Adventure Works 데이터 웨어하우스에서 원본이 되는 날짜 차원 데이터를 배달하는 데이터 흐름을 만듭니다.
+1. Azure Synapse Analytics 인스턴스를 선택합니다.
+    ![](../images/synapse-instance.png)
 
-1. 데이터 흐름은 조직의 비즈니스 분석가가 사용할 날짜 관련 데이터에 대한 일관된 정의를 제공합니다.
+1. 전용 SQL 풀을 찾아 선택합니다.
+    ![](../images/dedicated-sql-pool.png)
 
 1. 전용 SQL 풀을 다시 시작합니다.
 
@@ -175,7 +177,7 @@ In this lab, you will create a dataflow to deliver date dimension data sourced f
 
 ## <a name="develop-a-dataflow"></a>데이터 흐름 개발
 
-In this exercise, you will develop a dataflow to support Power BI model development. It will provide a consistent representation of the data warehouse date dimension table.
+이 연습에서는 Power BI 모델 개발을 지원하는 데이터 흐름을 개발합니다. 데이터 웨어하우스 날짜 차원 테이블의 일관된 표현을 제공합니다.
 
 ### <a name="review-the-data-model"></a>데이터 모델 검토
 
@@ -221,7 +223,7 @@ In this exercise, you will develop a dataflow to support Power BI model developm
      - Azure Portal에서 서버 이름 입력 ![](../images/synapse-sql-pool-connection-string.png)
      
         서버 이름은 synapsewsxxxxx.sql.azuresynapse.net과 유사해야 합니다.
-     - Ensure the Authentication kind is <bpt id="p1">**</bpt>Organizational account<ept id="p1">**</ept>. If you are prompted to sign in, use the lab provided credentials.
+     - 인증 종류가 **조직 계정**인지 확인합니다. 로그인하라는 메시지가 표시되면 랩에서 제공한 자격 증명을 사용합니다.
      ![](../images/synapse-sql-pool-sign-in.png)
 
 1. 오른쪽 아래에서 **다음**을 선택합니다.

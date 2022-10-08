@@ -61,7 +61,7 @@ lab:
 
 1. 잠재적인 보안 위험을 승인하라는 메시지가 표시되면 **확인**을 선택합니다.
 
-1. Enter the SQLServerInstance, SqlServerDatabase, and Culture as provided below. Select <bpt id="p1">**</bpt>Load<ept id="p1">**</ept>.
+1. 아래에 제공된 대로 SQLServerInstance, SqlServerDatabase, Culture를 입력합니다. **로드**를 선택합니다.
 
     SqlServerInstance = ```localhost```
 
@@ -77,9 +77,9 @@ lab:
 
 1. 네이티브 데이터베이스 쿼리 창에서 **실행**을 선택합니다.
 
-1. Save the file. On the <bpt id="p1">**</bpt>File<ept id="p1">**</ept> ribbon tab, select <bpt id="p2">**</bpt>Save as<ept id="p2">**</ept>.
+1. 파일을 저장합니다. **파일** 리본 탭에서 **다른 이름으로 저장**을 선택합니다.
 
-1. In the <bpt id="p1">**</bpt>Save As<ept id="p1">**</ept> window, go to the <bpt id="p2">**</bpt>D:\DP500\Allfiles\08\MySolution<ept id="p2">**</ept> folder. The file name is Sales Analysis - Create a composite model.pbix.
+1. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\08\MySolution** 폴더로 이동합니다. 파일 이름은 Sales Analysis - Create a composite model.pbix입니다.
 
 1. **저장**을 선택합니다.
 
@@ -325,7 +325,7 @@ lab:
 
 ### <a name="finish-up"></a>완료
 
-완료하겠습니다.
+이 작업에서는 마무리합니다.
 
 1. Power BI Desktop 파일을 저장합니다.
 

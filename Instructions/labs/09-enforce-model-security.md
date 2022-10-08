@@ -10,7 +10,7 @@ lab:
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
-In this lab, you will update a pre-developed data model to enforce security. Specifically, salespeople at the Adventure Works company should only be able to see sales data related to their assigned sales region.
+이 랩에서는 미리 개발된 데이터 모델을 업데이트하여 보안을 적용합니다. 특히 Adventure Works 회사의 영업 사원은 할당된 판매 지역과 관련된 판매 데이터만 볼 수 있어야 합니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -61,7 +61,7 @@ In this lab, you will update a pre-developed data model to enforce security. Spe
 
 3. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Enforce model security.pbix** 파일을 두 번 클릭합니다.
 
-4. If you're not already signed in, at the top-right corner of Power BI Desktop, select <bpt id="p1">**</bpt>Sign In<ept id="p1">**</ept>. Use the lab credentials to complete the sign in process.
+4. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
     ![](../images/dp500-enforce-model-security-image2.png)
 
@@ -251,7 +251,7 @@ In this lab, you will update a pre-developed data model to enforce security. Spe
 
 ### <a name="configure-row-level-security"></a>행 수준 보안 구성
 
-In this task, you will see how to configure row-level security in the Power BI service. This task relies on the existence of a <bpt id="p1">**</bpt>Salespeaople_Australia<ept id="p1">**</ept> security group in the tenant you are working in. Please read through the tasks, but note that you will not be able to complete them in the absence of the existence of the security group. After reading through, proceed to the Clean Up task.
+이 작업에서는 Power BI 서비스에서 행 수준 보안을 구성하는 방법을 살펴봅니다. 이 작업은 작업 중인 테넌트에 **Salespeaople_Australia** 보안 그룹이 있는지 여부에 따라 달라집니다. 작업 내용을 읽어보세요. 보안 그룹이 없으면 작업을 완료할 수 없습니다. 읽은 후 정리 작업을 진행합니다.
 
 1. Power BI 서비스(웹 브라우저)로 전환합니다.
 

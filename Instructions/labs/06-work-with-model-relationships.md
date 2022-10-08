@@ -10,7 +10,7 @@ lab:
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
-In this lab, you will work with model relationships specifically to address the need for role-playing dimensions. It will involve working with active and inactive relationships, and also Data Analysis Expressions (DAX) functions that modify relationship behavior.
+이 랩에서는 모델 관계를 사용하여 특히 롤플레잉 차원의 필요성을 해결합니다. 활성 및 비활성 관계, 그리고 관계 동작을 수정하는 DAX(Data Analysis Expressions) 함수도 사용됩니다.
 
 이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
 
@@ -22,7 +22,7 @@ In this lab, you will work with model relationships specifically to address the 
 
 ## <a name="explore-model-relationships"></a>모델 관계 살펴보기
 
-In this exercise, you will open a pre-developed Power BI Desktop solution to learn about the data model. You will then explore the behavior of active model relationships.
+이 연습에서는 미리 개발된 Power BI Desktop 솔루션을 열고 데이터 모델에 대해 알아봅니다. 그런 다음 활성 모델 관계의 동작을 탐색합니다.
 
 ## <a name="get-started"></a>시작
 ### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
