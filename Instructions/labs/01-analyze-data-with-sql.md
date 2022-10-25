@@ -83,7 +83,7 @@ SQL은 아마도 전 세계에서 데이터 작업에 가장 많이 사용되는
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/csv/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/csv/',
             FORMAT = 'CSV',
             PARSER_VERSION='2.0'
         ) AS [result]
@@ -106,7 +106,7 @@ SQL은 아마도 전 세계에서 데이터 작업에 가장 많이 사용되는
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/csv/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/csv/',
             FORMAT = 'CSV',
             PARSER_VERSION='2.0'
         )
@@ -146,7 +146,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/',
             FORMAT = 'PARQUET'
         ) AS [result]
     ```
@@ -159,7 +159,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
            COUNT(*) AS OrderedItems
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/',
             FORMAT = 'PARQUET'
         ) AS [result]
     GROUP BY YEAR(OrderDate)
@@ -177,7 +177,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
            COUNT(*) AS OrderedItems
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/year=*/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/year=*/',
             FORMAT = 'PARQUET'
         ) AS [result]
     WHERE [result].filepath(1) IN ('2019', '2020')
@@ -203,7 +203,7 @@ JSON은 또 다른 인기 있는 데이터 형식이므로 서버리스 SQL 풀�
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/',
             FORMAT = 'CSV',
             PARSER_VERSION = '2.0'
         ) AS [result]
@@ -221,7 +221,7 @@ JSON은 또 다른 인기 있는 데이터 형식이므로 서버리스 SQL 풀�
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/',
             FORMAT = 'CSV',
             FIELDTERMINATOR ='0x0b',
             FIELDQUOTE = '0x0b',
@@ -239,7 +239,7 @@ JSON은 또 다른 인기 있는 데이터 형식이므로 서버리스 SQL 풀�
            Doc
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/**',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/json/',
             FORMAT = 'CSV',
             FIELDTERMINATOR ='0x0b',
             FIELDQUOTE = '0x0b',
