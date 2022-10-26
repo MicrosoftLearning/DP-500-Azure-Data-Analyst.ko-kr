@@ -1,0 +1,545 @@
+---
+lab:
+  title: 모델 보안 강화
+  module: Design and build tabular models
+---
+
+# <a name="enforce-model-security"></a>모델 보안 강화
+
+## <a name="overview"></a>개요
+
+**이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
+
+이 랩에서는 미리 개발된 데이터 모델을 업데이트하여 보안을 적용합니다. 특히 Adventure Works 회사의 영업 사원은 할당된 판매 지역과 관련된 판매 데이터만 볼 수 있어야 합니다.
+
+이 랩에서는 다음 사항들을 수행하는 방법에 대해 알아봅니다.
+
+- 정적 역할을 만듭니다.
+
+- 동적 역할을 만듭니다.
+
+- 역할을 확인합니다.
+
+- 데이터 세트 역할에 보안 주체를 매핑합니다.
+
+## <a name="get-started"></a>시작
+
+이 연습에서는 환경을 준비합니다.
+
+### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+
+1. 시작 메뉴에서 명령 프롬프트를 엽니다.
+
+    ![](../images/command-prompt.png)
+
+1. 명령 프롬프트 창에서 다음을 입력하여 D 드라이브로 이동합니다.
+
+    `d:` 
+
+   Enter 키를 누릅니다.
+
+    ![](../images/command-prompt-2.png)
+
+
+1. 명령 프롬프트 창에서 다음 명령을 입력하여 과정 파일을 다운로드하고 DP500 폴더에 저장합니다.
+    
+    `git clone https://github.com/MicrosoftLearning/DP-500-Azure-Data-Analyst DP500`
+   
+1. 리포지토리가 복제되면 명령 프롬프트 창을 닫습니다. 
+   
+1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
+
+### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+
+이 작업에서는 Power BI Desktop을 설정합니다.
+
+1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image1.png)
+
+2. **D:\DP500\Allfiles\09\Starter** 폴더로 이동합니다.
+
+3. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Enforce model security.pbix** 파일을 두 번 클릭합니다.
+
+4. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
+
+    ![](../images/dp500-enforce-model-security-image2.png)
+
+5. 파일을 저장하려면 **파일** 리본에서 **다른 이름으로 저장**을 선택합니다.
+
+6. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\09\MySolution** 폴더로 이동합니다.
+
+7. **저장**을 선택합니다.
+
+    행 수준 보안을 적용하도록 Power BI Desktop 솔루션을 업데이트합니다.
+
+### <a name="sign-in-to-the-power-bi-service"></a>Power BI 서비스에 로그인
+
+이 작업에서는 Power BI 서비스에 로그인하고, 평가판 라이선스를 시작하여 작업 영역을 만듭니다.
+
+중요: VM 환경에서 Power BI를 이미 설정한 경우 다음 작업을 계속 진행합니다.
+
+1. 웹 브라우저에서 [https://powerbi.com](https://powerbi.com/)로 이동합니다.
+
+2. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
+
+    중요: Power BI Desktop에서 로그인하는 데 사용한 것과 동일한 자격 증명을 사용해야 합니다.
+
+3. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image3.png)
+
+4. 메시지가 표시되면 **평가판 시작**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image4.png)
+
+5. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
+
+    팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
+
+
+### <a name="create-a-workspace"></a>작업 영역 만들기
+
+이 작업에서는 작업 영역을 만듭니다.
+
+1. Power BI 서비스에서 작업 영역을 만들려면 왼쪽에 있는 **탐색** 창에서 **작업 영역**을 선택한 다음, **작업 영역 만들기**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image5.png)
+
+
+2. 오른쪽에 있는 **작업 영역 만들기** 창에서 **작업 영역 이름** 상자에 작업 영역의 이름을 입력합니다.
+
+    작업 영역 이름은 테넌트 내에서 고유해야 합니다.
+
+    ![](../images/dp500-enforce-model-security-image6.png)
+
+3. **저장**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image7.png)
+
+    일단 만들어지면 작업 영역이 열립니다. 이후 연습에서는 이 작업 영역에 대한 데이터 세트를 게시합니다.
+
+### <a name="review-the-data-model"></a>데이터 모델 검토
+
+이 작업에서는 데이터 모델을 검토합니다.
+
+1. Power BI Desktop의 왼쪽에서 **모델** 보기로 전환합니다.
+
+    ![](../images/dp500-enforce-model-security-image8.png)
+
+
+2. 모델 다이어그램을 사용하여 모델 디자인을 검토합니다.
+
+    ![](../images/dp500-enforce-model-security-image9.png)
+
+    이 모델은 여섯 개의 차원 테이블과 한 개의 팩트 테이블로 구성됩니다. **Sales** 팩트 테이블에는 판매 주문 세부 정보가 저장됩니다. 이 테이블은 표준 별모양 스키마 디자인입니다.
+
+3. **Sales Territory** 테이블을 확장하여 엽니다.
+
+    ![](../images/dp500-enforce-model-security-image10.png)
+
+4. 테이블에 **Region** 열이 포함되어 있습니다.
+
+    **Region** 열에는 Adventure Works 판매 지역이 저장됩니다. 이 조직에서는 영업 사원이 할당된 판매 지역과 관련된 데이터만 볼 수 있습니다. 이 랩에서는 데이터 권한을 적용하는 두 가지 행 수준 보안 기술을 구현합니다.
+
+## <a name="create-static-roles"></a>정적 역할 만들기
+
+이 연습에서는 정적 역할을 만들고 유효성을 검사한 다음 보안 주체를 데이터 세트 역할에 매핑하는 방법을 살펴봅니다.
+
+### <a name="create-static-roles"></a>정적 역할 만들기
+
+이 작업에서는 두 개의 정적 역할을 만듭니다.
+
+1. **보고서** 보기로 전환합니다.
+
+    ![](../images/dp500-enforce-model-security-image11.png)
+
+2. 누적 세로 막대형 차트 시각적 개체의 범례에서는 현재 여러 지역을 볼 수 있습니다.
+
+    ![](../images/dp500-enforce-model-security-image12.png)
+
+    지금은 차트가 지나치게 복잡해 보이는데, 이는 모든 지역이 표시되기 때문입니다. 솔루션이 행 수준 보안을 적용하면 보고서 소비자는 한 지역만 볼 수 있습니다.
+
+
+3. 보안 역할을 추가하려면 **모델링** 리본 탭의 **보안** 그룹 내에서 **역할 관리**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image13.png)
+
+4. **역할 관리** 창에서 **만들기**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image14.png)
+
+5. 역할의 이름을 지정하려면 선택한 텍스트를 **Australia**로 바꾼 다음 **Enter** 키를 누릅니다.
+
+    ![](../images/dp500-enforce-model-security-image15.png)
+
+
+6. **테이블** 목록에서 **Sales Territory** 테이블에 해당하는 줄임표를 선택한 다음 **필터 추가** >  **[Region]** 을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image16.png)
+
+7. **테이블 필터 DAX 식** 상자에서 **Value**를 **Australia**로 바꿉니다.
+
+    ![](../images/dp500-enforce-model-security-image17.png)
+
+    이 식은 **Region** 열을 값 **Australia**로 필터링합니다.
+
+8. 다른 역할을 만들려면 **만들기**를 누릅니다.
+
+    ![](../images/dp500-enforce-model-security-image18.png)
+
+
+9. 이 작업의 단계를 반복하여 **Canada**를 기준으로 **Region** 열을 필터링하는 **Canada**라는 역할을 만듭니다.
+
+    ![](../images/dp500-enforce-model-security-image19.png)
+
+    이 랩에서는 역할을 두 개만 만듭니다. 그러나 실제 솔루션에서는 11개 Adventure Works 지역 각각에 대한 역할을 만들어야 합니다.
+
+10. **저장**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image20.png)
+
+### <a name="validate-the-static-roles"></a>정적 역할의 유효성 검사
+
+이 작업에서는 정적 역할 중 한 가지 역할의 유효성을 검사합니다.
+
+1. **모델링** 리본 탭의 **보안** 그룹 내에서 **표시 방법**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image21.png)
+
+
+2. **역할로 보기** 창에서 **Australia** 역할을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image22.png)
+
+3. **확인**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image23.png)
+
+4. 보고서 페이지에서 누적 세로 막대형 차트 시각적 개체가 오스트레일리아에 대한 데이터만 표시합니다.
+
+    ![](../images/dp500-enforce-model-security-image24.png)
+
+5. 보고서 위쪽에서 적용된 역할을 확인하는 노란색 배너가 있습니다.
+
+    ![](../images/dp500-enforce-model-security-image25.png)
+
+6. 역할을 사용하여 보기를 중지하려면 노란색 배너 오른쪽에서 **보기 중지**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image26.png)
+
+### <a name="publish-the-report"></a>보고서 게시
+
+이 태스크에서는 보고서를 게시합니다.
+
+1. Power BI Desktop 파일을 저장합니다.
+
+    ![](../images/dp500-enforce-model-security-image27.png)
+ 
+
+2. 보고서를 게시하려면 **홈** 리본 탭에서 **게시**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image28.png)
+
+3. **Power BI에 게시** 창에서 작업 영역을 선택한 다음, **선택**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image29.png)
+
+4. 게시에 성공하면 **가져오기**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image30.png)
+
+### <a name="configure-row-level-security-optional"></a>행 수준 보안 구성
+
+이 작업에서는 Power BI 서비스에서 행 수준 보안을 구성하는 방법을 살펴봅니다. 
+
+이 작업은 작업 중인 테넌트에 **Salespeaople_Australia** 보안 그룹이 있는지 여부에 따라 달라집니다. 작업 내용을 읽어보세요. 보안 그룹이 없으면 작업을 완료할 수 없습니다. 읽은 후 정리 작업을 진행합니다. Power BI 서비스(웹 브라우저)로 전환합니다. 작업 영역 방문 페이지에 **Sales Analysis - Enforce model security** 데이터 세트가 있습니다. 이 데이터 세트 위에 커서를 가져가 줄임표가 나타나면 줄임표를 선택한 다음 **보안**을 선택합니다.
+
+1. ***보안** 옵션은 보안 그룹 및 사용자를 포함하는 Microsoft Azure AD(Azure Active Director) 보안 주체 매핑을 지원합니다.*
+
+2. 왼쪽에는 역할 목록이 있고 **Australia**가 선택되어 있습니다.
+
+    ![](../images/dp500-enforce-model-security-image31.png)
+
+
+3. **멤버** 상자에서 **Salespeople_Australia** 입력을 시작합니다.
+
+    ![](../images/dp500-enforce-model-security-image32.png)
+
+    5~8단계는 Salespeople_Australia 보안 그룹의 생성 또는 존재에 따라 달라지기 때문에 데모용으로만 사용됩니다. 보안 그룹을 만들 수 있는 권한과 지식이 있는 경우 자유롭게 진행하세요. 그렇지 않으면 정리 작업을 계속 진행합니다.
+
+4. **추가**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image33.png)
+
+5. 역할 매핑을 완료하려면 **저장**을 선택합니다. 
+
+    이제 **Salespeople_Australia** 보안 그룹의 모든 멤버가 **Australia** 역할에 매핑되어 데이터 액세스가 호주 판매만 볼 수 있도록 제한됩니다.
+
+    ![](../images/dp500-enforce-model-security-image34.png)
+
+6. 실제 솔루션에서 각 역할은 보안 그룹에 매핑되어야 합니다.
+
+    ![](../images/dp500-enforce-model-security-image35.png)
+
+7. 이 디자인 방식은 각 지역에 대한 보안 그룹이 있을 때 간단하고 효과적입니다. 그러나 단점이 있습니다. 만들기 및 설정에 더 많은 노력이 필요합니다. 또한 새 지역이 온보딩될 때 데이터 세트를 업데이트하고 다시 게시해야 합니다.
+
+    ![](../images/dp500-enforce-model-security-image36.png)
+
+    다음 연습에서는 데이터 기반 동적 역할을 만듭니다. 이 디자인 방식은 이러한 단점을 해결하는 데 도움이 될 수 있습니다.
+
+    작업 영역 방문 페이지로 돌아가려면 **탐색** 창에서 작업 영역을 선택합니다.
+
+    솔루션 정리
+
+    이 작업에서는 데이터 세트 및 모델 역할을 제거하여 솔루션을 정리합니다.
+
+8. 데이터 세트를 제거하려면 데이터 세트 위에 커서를 가져가 줄임표가 나타나면 줄임표를 선택한 다음 **삭제**를 선택합니다.
+
+
+### <a name="clean-up-the-solution"></a>다음 연습에서는 수정된 데이터 세트를 다시 게시합니다.
+
+삭제를 확인할지 묻는 프롬프트가 표시되면 **삭제**를 선택합니다.
+
+1. Power BI Desktop으로 전환합니다.
+
+    ![](../images/dp500-enforce-model-security-image37.png)
+
+    보안 역할을 삭제하려면 **모델링** 리본 탭의 **보안** 그룹 내에서 **역할 관리**를 선택합니다.
+
+2. **역할 관리** 창에서 첫 번째 역할을 제거하려면 **삭제**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image38.png)
+
+3. 삭제를 확인하라는 메시지가 표시되면 **예, 삭제합니다**를 누릅니다.
+ 
+
+4. 또한 두 번째 역할을 제거합니다.
+
+    ![](../images/dp500-enforce-model-security-image39.png)
+
+5. **저장**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image40.png)
+
+6. 동적 역할 만들기
+
+    ![](../images/dp500-enforce-model-security-image41.png)
+
+7. 이 연습에서는 모델에 테이블을 추가하고, 동적 역할을 만들고 유효성을 검사한 다음, 보안 주체를 데이터 세트 역할에 매핑합니다.
+
+8. Salesperson 테이블 추가
+
+    ![](../images/dp500-enforce-model-security-image42.png)
+
+
+## <a name="create-a-dynamic-role"></a>이 작업에서는 모델에 **Salesperson** 테이블을 추가합니다.
+
+**모델** 보기로 전환합니다.
+
+### <a name="add-the-salesperson-table"></a>**홈** 리본 탭의 **쿼리** 그룹 내에서 **데이터 변환**을 선택합니다.
+
+**Power Query 편집기** 창의 (왼쪽에 있는) **쿼리** 창에서 **Customer** 쿼리를 마우스 오른쪽 단추로 클릭한 다음 **중복**을 선택합니다.
+
+1. **Customer** 쿼리에는 데이터 웨어하우스를 연결하는 단계가 이미 포함되어 있으므로 복제하는 것이 새 쿼리 개발을 시작하는 효율적인 방법입니다.
+
+    ![](../images/dp500-enforce-model-security-image43.png)
+
+2. 오른쪽에 있는 **쿼리 설정** 창의 **이름** 상자에서 텍스트를 **Salesperson**으로 바꿉니다.
+
+    ![](../images/dp500-enforce-model-security-image44.png)
+
+
+3. **적용된 단계** 목록에서 **제거된 다른 열** 단계(세 번째 단계)를 마우스 오른쪽 단추로 클릭한 다음 **끝까지 삭제**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image45.png)
+
+    단계 삭제를 확인하라는 메시지가 표시되면 **삭제**를 선택합니다.
+
+4. 다른 데이터 웨어하우스 테이블에서 데이터를 가져오려면 **적용된 단계** 목록의 **탐색** 단계(두 번째 단계)에서 (오른쪽에 있는) 기어 아이콘을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image46.png)
+
+
+5. **탐색** 창에서 **DimEmployee** 테이블을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image47.png)
+
+6. **확인**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image48.png)
+
+7. 불필요한 열을 제거하려면 **홈** 리본 탭의 **열 병합** 그룹에서 **열 선택** 아이콘을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image49.png)
+
+8. **열 선택** 창에서 **(모든 열 선택)** 항목을 선택 취소합니다.
+
+    ![](../images/dp500-enforce-model-security-image50.png)
+
+
+9. 다음 세 개의 열을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image51.png)
+
+10. EmployeeKey
+
+    ![](../images/dp500-enforce-model-security-image52.png)
+
+11. SalesTerritoryKey
+
+    ![](../images/dp500-enforce-model-security-image53.png)
+
+12. EmailAddress
+
+    - **확인**을 선택합니다.
+
+    - **EmailAddress** 열의 이름을 바꾸고 **EmailAddress** 열 머리글을 두 번 클릭합니다.
+
+    - 텍스트를 **UPN**으로 바꾸고 **Enter** 키를 누릅니다.
+
+13. UPN은 사용자 계정 이름의 약어입니다. 이 열의 값은 Azure AD 계정 이름과 일치합니다.
+
+    ![](../images/dp500-enforce-model-security-image54.png)
+
+14. 테이블을 모델로 로드하려면 **홈** 리본 탭에서 **닫기&amp;적용** 아이콘을 선택합니다.
+
+15. 모델에 테이블이 추가되면 **Sales Territory** 테이블과의 관계가 자동으로 생성됩니다.
+
+    관계 구성
+
+    ![](../images/dp500-enforce-model-security-image55.png)
+
+16. 이 작업에서는 새 관계의 속성을 구성합니다.
+
+    ![](../images/dp500-enforce-model-security-image56.png)
+
+17. **Salesperson** 테이블과 **Sales Territory** 테이블 간의 관계를 마우스 오른쪽 단추로 클릭한 다음 **속성**을 선택합니다.
+
+### <a name="configure-the-relationship"></a>**관계 편집** 창의 **교차 필터 방향** 드롭다운 목록에서 **모두**를 선택합니다.
+
+**보안 필터 양방향으로 적용** 확인란을 선택합니다.
+
+1. **Sales Territory** 테이블에서 **Salesperson** 테이블로 일대다 관계가 있으므로 필터는 **Sales Territory** 테이블에서 **Salesperson** 테이블로만 전파됩니다. 다른 방향으로 강제로 전파하려면 교차 필터 방향을 둘 다로 설정해야 합니다.
+
+    ![](../images/dp500-enforce-model-security-image57.png)
+
+
+2. **확인**을 선택합니다.
+
+3. 테이블을 숨기려면 **Salesperson** 테이블의 오른쪽 위에서 눈 모양 아이콘을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image58.png)
+
+    **Salesperson** 테이블의 용도는 데이터 권한을 적용하는 것입니다. 숨겨지면 보고서 작성자와 Q&A 환경에 테이블이나 필드가 표시되지 않습니다.
+
+4. 동적 역할 만들기
+
+    ![](../images/dp500-enforce-model-security-image59.png)
+
+5. 이 작업에서는 모델의 데이터에 따라 사용 권한을 적용하는 동적 역할을 만듭니다.
+
+    ![](../images/dp500-enforce-model-security-image60.png)
+
+    **보고서** 보기로 전환합니다.
+ 
+
+### <a name="create-a-dynamic-role"></a>보안 역할을 추가하려면 **모델링** 리본 탭의 **보안** 그룹 내에서 **역할 관리**를 선택합니다.
+
+**역할 관리** 창에서 **만들기**를 선택합니다.
+
+1. 역할의 이름을 지정하려면 선택한 텍스트를 **Salespeople**로 바꿉니다.
+
+    ![](../images/dp500-enforce-model-security-image61.png)
+
+2. 이번에는 역할을 하나만 만들어야 합니다.
+
+    ![](../images/dp500-enforce-model-security-image62.png)
+
+3. **Salesperson** 테이블의 **UPN** 열에 필터를 추가합니다.
+
+    ![](../images/dp500-enforce-model-security-image63.png)
+
+4. **테이블 필터 DAX 식** 상자에서 **“Value”** 를 **USERPRINCIPALNAME()** 으로 바꿉니다.
+
+    ![](../images/dp500-enforce-model-security-image64.png)
+
+    이 식은 인증된 사용자의 UPN(사용자 계정 이름)을 반환하는 USERPRINCIPALNAME 함수를 사용하여 **UPN** 열을 필터링합니다.
+
+5. UPN은 **Salesperson** 테이블을 필터링할 때 **Sales Territory** 테이블을 필터링하고 이 테이블은 차례로 **Sales** 테이블을 필터링합니다. 이렇게 하면 인증된 사용자에게 할당된 지역에 대한 판매 데이터만 표시됩니다.
+
+    ![](../images/dp500-enforce-model-security-image65.png)
+
+6. **저장**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image66.png)
+
+    동적 역할 유효성 검사
+
+    이 작업에서는 동적 역할의 유효성을 검사합니다.
+
+7. **모델링** 리본 탭의 **보안** 그룹 내에서 **표시 방법**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image67.png)
+
+### <a name="validate-the-dynamic-role"></a>**역할로 보기** 창에서 **다른 사용자** 항목을 선택하고 해당하는 상자에 **michael9@adventure-works.com** 을 입력합니다.
+
+테스트를 위해 **다른 사용자**는 USERPRINCIPALNAME 함수에서 반환되는 값입니다. 이 영업 사원은 **북동부** 지역에 할당됩니다.
+
+1. **Salespeople** 역할을 확인합니다.
+
+    ![](../images/dp500-enforce-model-security-image68.png)
+
+
+2. **확인**을 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image69.png)
+
+    보고서 페이지에서 누적 세로 막대형 차트 시각적 개체가 북동부에 대한 데이터만 표시합니다.
+
+3. 보고서 위쪽에서 적용된 역할을 확인하는 노란색 배너가 있습니다.
+
+    ![](../images/dp500-enforce-model-security-image70.png)
+
+4. 역할을 사용하여 보기를 중지하려면 노란색 배너 오른쪽에서 **보기 중지**를 선택합니다.
+
+    ![](../images/dp500-enforce-model-security-image71.png)
+
+5. 디자인 완료
+
+    ![](../images/dp500-enforce-model-security-image72.png)
+
+6. 이 작업에서는 보고서를 게시하고 보안 그룹을 역할에 매핑하여 디자인을 마무리합니다.
+
+    ![](../images/dp500-enforce-model-security-image73.png)
+
+
+7. 이 작업의 단계는 의도적으로 매우 간략하게 설명했습니다. 전체 단계 세부 정보는 이전 연습의 작업 단계를 참조하세요.
+
+    ![](../images/dp500-enforce-model-security-image74.png)
+
+### <a name="finalize-the-design"></a>Power BI Desktop 파일을 저장합니다.
+
+내 작업 영역에 보고서를 게시합니다.
+
+Power BI Desktop을 닫습니다.
+
+1. Power BI 서비스(웹 브라우저)로 전환합니다.
+
+    ![](../images/dp500-enforce-model-security-image75.png)
+
+2. **Sales Analysis - Enforce model security**에 대한 보안 설정으로 이동합니다. 
+
+3. **Salespeople** 보안 그룹을 **Salespeople** 역할에 매핑합니다.
+
+4. 이제 **Salespeople** 보안 그룹의 모든 멤버가 **Salespeople** 역할에 매핑됩니다. 인증된 사용자가 **Salesperson** 테이블에 행으로 표시되면 할당된 판매 영역이 판매 테이블을 필터링하는 데 사용됩니다.
+
+5. 이 디자인 방식은 데이터 모델이 사용자 계정 이름 값을 저장하는 경우 간단하고 효과적입니다. 영업 사원이 추가 또는 제거되거나 다른 판매 지역에 할당되는 경우 이 디자인 방식은 간단하게 작동합니다.
+
+6. Map the <bpt id="p1">**</bpt>Salespeople<ept id="p1">**</ept> security group the <bpt id="p2">**</bpt>Salespeople<ept id="p2">**</ept> role.
+
+    ![](../images/dp500-enforce-model-security-image76.png)
+
+    <bpt id="p1">*</bpt>Now all members of the <bpt id="p2">**</bpt>Salespeople<ept id="p2">**</ept> security group are mapped to the <bpt id="p3">**</bpt>Salespeople<ept id="p3">**</ept> role. Providing the authenticated user is represented by a row in the <bpt id="p4">**</bpt>Salesperson<ept id="p4">**</ept> table, the assigned sales territory will be used to filter the sales table.<ept id="p1">*</ept>
+
+    <bpt id="p1">*</bpt>This design approach is simple and effective when the data model stores the user principal name values. When salespeople are added or removed, or are assigned to different sales territories, this design approach will simply work.<ept id="p1">*</ept>
