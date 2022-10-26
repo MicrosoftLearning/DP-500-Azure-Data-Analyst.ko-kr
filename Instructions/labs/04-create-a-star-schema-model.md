@@ -155,6 +155,7 @@ lab:
 ### <a name="link-your-power-bi-workspace-to-azure-synapse-analytics"></a>Power BI 작업 영역을 Azure Synapse Analytics에 연결
 
 이 작업에서는 기존 Power BI 작업 영역을 Azure Synapse Analytics 작업 영역에 연결합니다.
+
 1. Azure Portal의 전용 SQL 풀에 있는 리본에서 **Synapse Studio에서 열기**를 선택합니다.
 
 1. Azure Synapse Studio의 홈페이지에서 **시각화**를 선택하여 Power BI 작업 영역을 연결합니다.
