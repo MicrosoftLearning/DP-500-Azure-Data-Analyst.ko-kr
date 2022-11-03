@@ -168,7 +168,7 @@ lab:
 
     ![](../images/dp500-create-a-star-schema-model-image3h.png)
 
-1. 메시지가 표시되면 **게시**를 선택합니다.
+1. **관리**로 이동하고 **모두 게시**를 선택하여 변경 내용이 게시되도록 합니다.
 
 ## <a name="develop-a-data-model"></a>데이터 모델 개발
 
