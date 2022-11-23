@@ -146,7 +146,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
         TOP 100 *
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/**',
             FORMAT = 'PARQUET'
         ) AS [result]
     ```
@@ -159,7 +159,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
            COUNT(*) AS OrderedItems
     FROM
         OPENROWSET(
-            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/',
+            BULK 'https://datalakexxxxxxx.dfs.core.windows.net/files/sales/parquet/**',
             FORMAT = 'PARQUET'
         ) AS [result]
     GROUP BY YEAR(OrderDate)
