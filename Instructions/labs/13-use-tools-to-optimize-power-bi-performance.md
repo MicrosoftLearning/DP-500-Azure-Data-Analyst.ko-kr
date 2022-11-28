@@ -149,7 +149,9 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
     테이블 형식 편집기가 새 창에서 열리고 Power BI Desktop에서 호스트되는 데이터 모델에 실시간으로 연결됩니다. 테이블 형식 편집기에서 모델에 대한 변경 내용은 저장할 때까지 Power BI Desktop에 전파되지 않습니다.
 
-2. BPA 규칙을 로드하려면 **고급 스크립팅** 탭을 선택합니다.
+2. BPA 규칙을 로드하려면 **C# 스크립트** 탭을 선택합니다.
+
+    참고: 테이블 형식 편집기의 이전 버전에서는 고급 스크립팅 탭을 선택하면 됩니다.
 
     ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image13.png)
 
@@ -243,7 +245,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
     팁: 모든 수식은 **D:\DP500\Allfiles\13\Assets\Snippets.txt** 파일에서 복사하여 붙여 넣을 수 있습니다.
 
     ```
-    DIVIDE ( [Profit], SUM ( 'Sales'[Sales Amount] ) )
+    DIVIDE ( [Profit], SUM ( 'Sales'[Sales Amount] ) )C#
     ```
 
 7. 모델 변경 내용을 저장하려면 도구 모음에서 **Save changes to the connected database**(연결된 데이터베이스에 변경 내용 저장) 명령을 선택하거나 **Ctrl+S**를 누릅니다.
@@ -268,9 +270,11 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
 12. BPA가 수정 스크립트를 클립보드에 복사했다는 알림이 표시되면 **확인**을 선택합니다.
 
-13. 테이블 형식 편집기로 전환하고 **고급 스크립팅** 탭을 선택합니다.
+13. 테이블 형식 편집기로 전환하여, **C# 스크립트** 탭을 선택합니다.
 
-    ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image26.png)
+    참고: 테이블 형식 편집기의 이전 버전에서는 고급 스크립팅 탭을 선택하면 됩니다.
+    
+    ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image13.png)
 
 14. 수정 스크립트를 복사하려면 창 내부를 마우스 오른쪽 단추로 클릭한 다음 **Ctrl+C**를 누릅니다.
 
@@ -280,7 +284,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
 15. 스크립트를 실행하려면 도구 모음에서 **스크립트 실행** 명령을 선택합니다.
 
-    ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image28.png)
+    ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image14.png)
 
 16. 모델 변경 내용을 저장합니다.
 
