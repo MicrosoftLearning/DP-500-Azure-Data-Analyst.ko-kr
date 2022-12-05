@@ -190,6 +190,8 @@ lab:
 
     ![](../images/dp500-create-a-star-schema-model-image5.png)
 
+    참고: 여기에 표시되는 데이터가 없으면 전용 SQL 풀이 실행 중인지, Power BI 작업 영역이 Synapse 작업 영역에 연결되어 있는지를 확인하세요.
+
 4. **Power BI 데이터 세트** 창에서 **새 Power BI 데이터 세트**를 선택합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image6.png)
@@ -234,11 +236,15 @@ lab:
 
     ![](../images/dp500-create-a-star-schema-model-image12.png)
 
-7. (모델 테이블이 될) 쿼리를 만들려면 다음 5개 테이블을 선택합니다.
+7. (모델 테이블이 될) 쿼리를 만들려면 다음 테이블 7개를 확인합니다.
 
     - FactOnlineSales
 
     - DimProduct
+  
+    - DimProductCategory
+  
+    - DimProductSubcategory
 
     - DimReseller
 
@@ -332,7 +338,6 @@ lab:
 
     - **FiscalYear**를 **Year**로
 
-
 23. 쿼리 디자인의 유효성을 검사하려면 창 아래쪽에 있는 상태 표시줄에서 쿼리에 5개의 열이 있는지 확인합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image26.png)
@@ -354,7 +359,40 @@ lab:
     ![](../images/dp500-create-a-star-schema-model-image28.png)
 
 
-27. **DimProduct** 쿼리를 선택합니다.
+27. **DimProductCategory** 테이블을 선택합니다. 
+    
+28. 쿼리 이름을 **Product Details**로 바꿉니다.
+
+29. 리본의 홈 탭에 있는 결합 그룹에서 **쿼리 병합**을 선택합니다. 
+
+    참고: 제품 세부 정보, 범주, 하위 범주를 얻기 위해 쿼리를 병합합니다. 이 정보는 제품 차원에서 사용됩니다.
+
+1. **DimProductSubcategory** 테이블을 선택하고 각 테이블에서 **ProductCategoryKey** 열을 선택합니다. **확인**을 선택합니다.
+
+    ![](../images/dp500-create-a-star-schema-model-image28a.png)
+
+    
+    참고: 왼쪽 우선 외부 조인인 이 병합에 기본 조인을 사용합니다.
+
+2. **DimProductSubcategory** 열을 확장하세요. **ProductSubcategoryKey**와 **EnglishProductSubcategoryName** 열을 선택합니다. **원래 열 이름을 접두사로 사용** 항목의 선택을 취소합니다.
+
+    ![](../images/dp500-create-a-star-schema-model-image28b.png)
+
+    확장 기능을 사용하면 원본 데이터의 외래 키 제약 조건에 따라 테이블을 조인할 수 있습니다. 이 랩에서 수행한 디자인 방법은 눈송이 차원 테이블을 함께 조인하여 데이터의 비정규화된 표현을 생성하는 것입니다.
+
+1. **확인**을 선택합니다.
+   
+2. 다음을 제외한 모든 열을 제거합니다.
+
+   - ProductSubcategoryKey
+   
+   - EnglishProductCategoryName
+
+   - EnglishProductSubcategoryName
+
+   이제 행이 37개인 열이 3개 있어야 합니다.
+
+3.  **DimProduct** 쿼리를 선택합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image29.png)
 
@@ -362,12 +400,25 @@ lab:
 
     ![](../images/dp500-create-a-star-schema-model-image30.png)
 
-29. 쿼리를 필터링하려면 **FinishedGoodsFlag** 열 머리글에서 드롭다운 메뉴를 열고 **FALSE**를 선택 취소합니다.
+1. 리본의 홈 탭에 있는 결합 그룹에서 **쿼리 병합**을 선택합니다. 
+
+1. **제품 세부 정보** 테이블을 선택하고 제품 테이블과 제품 세부 정보 테이블 모두에서 **ProductSubcategoryKey** 열을 선택합니다.
+
+    ![](../images/dp500-create-a-star-schema-model-image30a.png)
+
+1. **확인**을 선택합니다.
+
+1. 제품 세부 정보 열을 확장하고 **EnglishProductSubcategoryName**과 **EnglishProductCategoryName** 열을 선택합니다. 
+
+    ![](../images/dp500-create-a-star-schema-model-image30b.png)
+
+1. **확인**을 선택합니다.
+
+2.  쿼리를 필터링하려면 **FinishedGoodsFlag** 열 머리글에서 드롭다운 메뉴를 열고 **FALSE**를 선택 취소합니다.
 
     ![](../images/dp500-create-a-star-schema-model-image31.png)
 
 30. **확인**을 선택합니다.
-
 
 31. 다음을 제외한 모든 열을 제거합니다.
 
@@ -377,26 +428,9 @@ lab:
 
     - Color
 
-    - DimProductSubcategory
-
-32. 테이블을 조인하도록 쿼리를 구성하려면 **DimProductSubcategory** 열 머리글에서 **확장** 단추를 선택한 다음 **(모든 열 선택)** 을 선택 취소합니다.
-
-    이 기능을 사용하면 원본 데이터의 외래 키 제약 조건에 따라 테이블을 조인할 수 있습니다. 이 랩에서 수행한 디자인 방법은 눈송이 차원 테이블을 함께 조인하여 데이터의 비정규화된 표현을 생성하는 것입니다.
-
-33. **원래 열 이름을 접두사로 사용**을 선택 취소합니다.
-
-    ![](../images/dp500-create-a-star-schema-model-image32.png)
-
-34. 다음 두 열을 선택합니다.
-
     - EnglishProductSubcategoryName
 
-    - DimProductCategory
-
-35. **확인**을 선택합니다.
-
-36. 이전 단계를 반복하여 **DimProductCategory를** 확장하고 **EnglishProductCategoryName** 열을 소개합니다.
-
+    - EnglishProductCategoryName
 
 37. 다음과 같이 열 이름을 변경합니다.
 
@@ -411,8 +445,6 @@ lab:
     ![](../images/dp500-create-a-star-schema-model-image33.png)
 
 39. **기본 쿼리** 창에서 쿼리 디자인을 반영하는 SELECT 문을 검토합니다.
-
-    문에는 비정규화된 쿼리 결과를 생성하는 중첩된 하위 쿼리가 포함됩니다.
 
 40. **기본 쿼리** 창을 닫려면 **확인**을 선택합니다.
 
@@ -528,6 +560,11 @@ lab:
 
     **Sales** 쿼리의 디자인이 이제 완성되었습니다.
 
+1. **제품 세부 정보** 테이블을 마우스 오른쪽 단추로 클릭하고 **로드 사용**을 선택 해제합니다. 이렇게 하면 제품 세부 정보 테이블이 데이터 모델에 로드되지 않으며 보고서에 나타나지 않습니다.
+
+    ![](../images/dp500-create-a-star-schema-model-image40a.png)
+
+1. 이 단계를 반복하여 **DimProductSubcategory** 테이블의 로드 사용 선택을 해제합니다.
 
 63. 쿼리를 적용하려면 **홈** 리본 탭의 **닫기** 그룹 내에서 **닫기&amp;적용** 아이콘을 선택합니다.
 
