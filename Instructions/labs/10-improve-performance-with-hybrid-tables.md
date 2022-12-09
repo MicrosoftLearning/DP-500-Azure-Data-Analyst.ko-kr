@@ -254,7 +254,7 @@ lab:
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 뷰로 전환합니다.
+1. **모델** 보기로 전환합니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image24.png)
 
