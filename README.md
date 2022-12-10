@@ -1,9 +1,9 @@
-# <a name="dp-500-designing-and-implementing-enterprise-scale-analytics-solutions-using-microsoft-azure"></a>DP-500: Microsoft Azure 및 Microsoft Power BI를 통한 기업 규모의 분석 솔루션 디자인 및 구현
+# <a name="dp-500-designing-and-implementing-enterprise-scale-analytics-solutions-using-microsoft-azure"></a>DP-500: Designing and Implementing Enterprise Scale Analytics Solutions Using Microsoft Azure
 
 - **MCT이신가요?** - [MCT를 위한 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide/)를 살펴보세요.
-- ILT 모듈 및 관련 랩 목록을 위해 학생들을 [콘텐츠 디렉터리](https://microsoftlearning.github.io/DP-500-Azure-Data-Analyst/) 로 안내합니다.
+- ILT 모듈 및 관련 랩 목록을 보려면 학생들을 [콘텐츠 디렉터리](https://microsoftlearning.github.io/DP-500-Azure-Data-Analyst/)로 안내합니다.
 
-## <a name="what-are-we-doing"></a>Microsoft의 역할
+## <a name="what-are-we-doing"></a>우리가 하는 일
 
 - 이 과정을 지원하려면 과정 콘텐츠를 자주 업데이트하여, 과정에서 사용하는 Azure 서비스를 이용해 콘텐츠를 최신 상태로 유지해야 합니다.  과정 작성자와 MCT 사이의 개방된 기여를 통해 Azure 플랫폼의 변경 내용을 적용하여 콘텐츠를 최신 상태로 유지할 수 있도록, 랩 지침과 랩 파일을 GitHub에 게시합니다.
 
@@ -21,9 +21,9 @@
 
 - MCT라면 누구나 GitHub 리포지토리에서 코드 또는 콘텐츠에 대한 끌어오기 요청을 제출할 수 있으며, Microsoft와 과정 작성자는 필요한 경우 콘텐츠 및 랩 코드 변경 내용을 심사하고 포함합니다.
 
-- 버그, 변경 내용, 개선 사항 및 아이디어를 제출할 수 있습니다.  우리보다 먼저 새 Azure 기능을 찾으셨나요?  새로운 데모를 제출해 주세요!
+- 버그, 변경 내용, 개선 사항 및 아이디어를 제출할 수 있습니다.  우리보다 먼저 새 Azure 기능을 찾으셨나요?  새 데모를 제출하세요!
 
-## <a name="notes"></a>참고
+## <a name="notes"></a>메모
 
 ### <a name="classroom-materials"></a>강의 자료
 
