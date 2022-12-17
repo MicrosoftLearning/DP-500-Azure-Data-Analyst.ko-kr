@@ -87,7 +87,7 @@ lab:
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 뷰로 전환합니다.
+1. **모델** 보기로 전환합니다.
 
     ![](../images/dp500-improve-query-performance-with-aggregations-image4.png)
 
@@ -405,7 +405,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
 ### <a name="finish-up"></a>완료
 
-완료하겠습니다.
+이 작업에서는 마무리합니다.
 
 1. Power BI Desktop 파일을 저장합니다.
 

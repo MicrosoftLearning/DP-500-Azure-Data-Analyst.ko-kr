@@ -6,9 +6,9 @@ layout: home
 
 # <a name="data-analyst-exercises"></a>데이터 분석가 연습
 
-DP-500: Microsoft Azure 및 Microsoft Power BI를 통한 기업 규모의 분석 솔루션 디자인 및 구현
+이 연습은 Microsoft 과정 [DP-500: Designing and Implementing Enterprise-Scale Analytics Solutions Using Microsoft Azure and Microsoft Power BI](https://docs.microsoft.com/training/courses/dp-500t00)을 지원합니다.
 
-{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
+{% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/labs'" %}
 | ILT 모듈 | 랩 |
 | --- | --- | 
 {% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |

@@ -421,7 +421,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image59.png)
 
-4. 게시에 성공하면 **가져오기**를 선택합니다.
+4. 게시가 성공하면 **가져오기**를 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image60.png)
 
