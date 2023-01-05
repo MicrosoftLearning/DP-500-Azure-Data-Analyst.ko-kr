@@ -82,7 +82,8 @@ lab:
 
     스크립트를 실행하려면 10~15분 정도 걸립니다.
 
-    참고: 이 랩에서는 리소스 그룹이 Azure SQL 데이터베이스를 만들어야 합니다. 호스트된 랩 환경에 제고된 리소스 그룹이 없는 경우 Azure 구독에서 [리소스 그룹을 만듭니다](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
+    *참고: 이 랩에서는 Azure SQL 데이터베이스를 만들기 위한 리소스 그룹이 필요합니다. 호스트된 랩 환경에서 이 랩을 수행하는 경우 [Azure Portal](portal.azure.com)에 로그인하여 리소스 그룹 이름을 가져와야 할 수 있습니다. 호스트된 랩 환경에 리소스 그룹이 제공되지 않은 경우 Azure 구독에서 [리소스 그룹을 만듭니다](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).*
+
 3. 스크립트를 완료한 후 PowerShell 창을 닫습니다.
 
 ### <a name="set-up-the-azure-sql-database"></a>Azure SQL Database 설정
