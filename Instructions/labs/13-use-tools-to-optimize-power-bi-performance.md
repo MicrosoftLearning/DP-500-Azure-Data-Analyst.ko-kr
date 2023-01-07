@@ -276,7 +276,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
     
     ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image13.png)
 
-14. 수정 스크립트를 복사하려면 창 내부를 마우스 오른쪽 단추로 클릭한 다음 **Ctrl+C**를 누릅니다.
+14. 수정 스크립트를 붙여넣으려면 창 내부를 마우스 오른쪽 단추로 클릭한 다음, **Ctrl+V**를 누릅니다.
 
     ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image27.png)
 

@@ -82,7 +82,8 @@ lab:
 
     스크립트를 실행하려면 10~15분 정도 걸립니다.
 
-    참고: 이 랩에서는 리소스 그룹이 Azure SQL 데이터베이스를 만들어야 합니다. 호스트된 랩 환경에 제고된 리소스 그룹이 없는 경우 Azure 구독에서 [리소스 그룹을 만듭니다](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).
+    *참고: 이 랩에서는 Azure SQL 데이터베이스를 만들기 위한 리소스 그룹이 필요합니다. 호스트된 랩 환경에서 이 랩을 수행하는 경우 [Azure Portal](portal.azure.com)에 로그인하여 리소스 그룹 이름을 가져와야 할 수 있습니다. 호스트된 랩 환경에 리소스 그룹이 제공되지 않은 경우 Azure 구독에서 [리소스 그룹을 만듭니다](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#create-resource-groups).*
+
 3. 스크립트를 완료한 후 PowerShell 창을 닫습니다.
 
 ### <a name="set-up-the-azure-sql-database"></a>Azure SQL Database 설정
@@ -117,7 +118,31 @@ lab:
 
 8. Azure Portal 웹 브라우저 세션을 열어 두세요. **Power BI Desktop 설정 작업**에서 데이터베이스 연결 문자열을 복사해야 합니다.
 
-### <a name="set-up-the-power-bi-service"></a>Power BI 서비스 설정
+### <a name="set-up-power-bi"></a>Power BI 설정
+
+#### <a name="set-up-a-power-bi-account-in-power-bi-desktop"></a>Power BI Desktop에서 Power BI 계정 설정
+
+이 작업에서는 Power BI Desktop을 설정합니다.
+
+1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
+
+    ![](../images/dp500-create-a-dataflow-image1.png)
+
+1. **D:\DP500\Allfiles\10\Starter** 폴더로 이동합니다.
+
+1. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Improve performance with hybrid tables** 파일을 두 번 클릭합니다.
+
+1. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
+
+    ![](../images/dp500-create-a-dataflow-image2.png)
+
+    *참고: 로그인 프로세스를 완료할 수 있도록 Power BI 서비스로 이동하게 됩니다.*
+
+1. 파일을 저장하려면 **파일** 리본에서 **다른 이름으로 저장**을 선택합니다.
+
+1. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\10\MySolution** 폴더로 이동합니다.
+
+#### <a name="set-up-power-bi-premium-trial"></a>Power BI Premium 평가판 설정
 
 이 작업에서는 Power BI 서비스 로그인하고 평가판 라이선스를 시작합니다.
 
