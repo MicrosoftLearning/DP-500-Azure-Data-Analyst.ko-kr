@@ -47,31 +47,40 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="sign-in-to-the-power-bi-service"></a>Power BI 서비스에 로그인
+### <a name="set-up-power-bi"></a>Power BI 설정
 
-이 작업에서는 Power BI 서비스에 로그인하고, 평가판 라이선스를 시작하여 작업 영역을 만듭니다.
+이 작업에서는 Power BI를 설정합니다.
 
-중요: VM 환경에서 Power BI를 이미 설정한 경우 다음 작업을 계속 진행합니다.
+1. Power BI Desktop을 열려면 작업 표시줄에서 **Power BI Desktop** 바로 가기를 선택합니다.
 
-1. 웹 브라우저에서 [https://powerbi.com](https://powerbi.com/)로 이동합니다.
+    ![](../images/dp500-create-a-star-schema-model-image1.png)
 
-2. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
+2. 시작 창의 오른쪽 위에 있는 **X**를 선택합니다.
 
-    중요: Power BI Desktop에서 로그인하는 데 사용한 것과 동일한 자격 증명을 사용해야 합니다.
+    ![](../images/dp500-create-a-star-schema-model-image2.png)
 
-3. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
+3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image1.png)
+    ![](../images/dp500-create-a-star-schema-model-image3.png)
+4. Microsoft Edge의 Power BI 가입 페이지로 리디렉션됩니다. **계속**을 선택하여 가입을 완료합니다.
 
-4. 메시지가 표시되면 **평가판 시작**을 선택합니다.
+    ![](../images/dp500-create-a-star-schema-model-image3b.png)
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image2.png)
+5. 10자리 전화 번호를 입력하고 **시작**을 선택합니다. 다시 한 번 **시작**을 선택합니다. Power BI로 리디렉션됩니다.
 
-5. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
+1. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
+
+    ![](../images/dp500-create-a-dataflow-image3.png)
+
+1. 메시지가 표시되면 **평가판 시작**을 선택합니다.
+
+    ![](../images/dp500-create-a-dataflow-image4.png)
+
+1. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
 
     팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
 
-### <a name="create-a-workspace"></a>작업 영역 만들기
+### <a name="create-a-workspace-in-the-power-bi-service"></a>Power BI 서비스에서 작업 영역 만들기
 
 이 작업에서는 작업 영역을 만듭니다.
 
@@ -92,9 +101,7 @@ lab:
 
     만들어지고 나면 작업 영역이 열립니다. 다음 작업에서는 이 작업 영역에 데이터 세트를 게시합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
-
-이 작업에서는 Power BI Desktop을 설정합니다.
+### <a name="open-the-starter-file-in-power-bi-desktop"></a>Power BI Desktop에서 시작 파일 열기
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기**를 선택합니다.
 
@@ -421,7 +428,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image59.png)
 
-4. 게시가 성공하면 **가져오기**를 선택합니다.
+4. 게시에 성공하면 **가져오기**를 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image60.png)
 

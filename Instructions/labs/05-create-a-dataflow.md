@@ -199,7 +199,7 @@ lab:
 
 이 작업에서는 날짜 관련 데이터의 일관된 정의를 나타내는 데이터 흐름을 만듭니다.
 
-1. Power BI 서비스의 **탐색** 창 왼쪽 아래에서 **데이터 가져오기**를 선택합니다.
+1. Power BI 서비스에서 **새로 만들기**, **데이터 흐름**을 선택합니다.
 
     ![](../images/dp500-create-a-dataflow-image10.png)
 
@@ -220,9 +220,15 @@ lab:
     팁: 오른쪽 위에 있는 검색창을 사용하여 데이터 원본을 찾을 수 있습니다.
 
 1. Synapse 연결 설정을 입력합니다.
-     - Azure Portal에서 서버 이름 입력 ![](../images/synapse-sql-pool-connection-string.png)
+
+     - Azure Portal에서 서버 이름 입력 
      
-        서버 이름은 synapsewsxxxxx.sql.azuresynapse.net과 유사해야 합니다.
+     ![](../images/synapse-sql-pool-connection-string.png)
+     
+      서버 이름은 다음과 유사하게 표시됩니다.
+      
+      synapsewsxxxxx.sql.azuresynapse.net
+      
      - 인증 종류가 **조직 계정**인지 확인합니다. 로그인하라는 메시지가 표시되면 랩에서 제공한 자격 증명을 사용합니다.
      ![](../images/synapse-sql-pool-sign-in.png)
 
