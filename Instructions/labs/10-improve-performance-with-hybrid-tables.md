@@ -4,9 +4,9 @@ lab:
   module: Optimize enterprise-scale tabular models
 ---
 
-# <a name="improve-performance-with-hybrid-tables"></a>하이브리드 테이블을 사용하여 성능 향상
+# 하이브리드 테이블을 사용하여 성능 향상
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -18,11 +18,11 @@ lab:
 
 - 테이블 파티션을 검토합니다.
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -43,13 +43,11 @@ lab:
    
 1. 리포지토리가 복제된 경우 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다. **명령 프롬프트 창을 닫습니다**.
 
-### <a name="deploy-an-azure-sql-database"></a>Azure SQL Database 배포 
+### Azure SQL Database 배포 
 
 이 작업에서는 Power BI의 데이터 원본으로 사용할 Azure SQL 데이터베이스를 만듭니다. 설치 스크립트를 실행하면 Azure SQL 데이터베이스 서버가 만들어지고 AdventureWorksDW2022 데이터베이스가 로드됩니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
-
-    ![](../images/dp500-improve-performance-with-hybrid-tables-image13.png)
 
 2. **D:\DP500\Allfiles\10** 폴더로 이동합니다.
 
@@ -60,8 +58,6 @@ lab:
 5. 작업 표시줄의 검색 상자에 `PowerShell`를 입력합니다.  
    
    검색 결과가 표시되면 **관리자 권한으로 실행**을 선택합니다.
-    
-    ![](../images/run-powershell-admin.png)
     
     메시지가 표시되면 예를 선택하여 이 앱이 디바이스를 변경할 수 있도록 합니다.
 1. PowerShell에서 다음 2줄의 텍스트를 입력하여 스크립트를 실행합니다. 
@@ -86,7 +82,7 @@ lab:
 
 3. 스크립트를 완료한 후 PowerShell 창을 닫습니다.
 
-### <a name="set-up-the-azure-sql-database"></a>Azure SQL Database 설정
+### Azure SQL Database 설정
 
 이 작업에서는 VM(가상 머신)의 IP 주소에서 연결을 허용하도록 Azure SQL Database를 설정합니다. 이 스크립트는 사용자 이름, 암호 및 리소스 그룹을 입력한 후 실행하는 데 약 10분이 걸립니다.
 
@@ -118,9 +114,9 @@ lab:
 
 8. Azure Portal 웹 브라우저 세션을 열어 두세요. **Power BI Desktop 설정 작업**에서 데이터베이스 연결 문자열을 복사해야 합니다.
 
-### <a name="set-up-power-bi"></a>Power BI 설정
+### Power BI 설정
 
-#### <a name="set-up-a-power-bi-account-in-power-bi-desktop"></a>Power BI Desktop에서 Power BI 계정 설정
+#### Power BI Desktop에서 Power BI 계정 설정
 
 이 작업에서는 Power BI Desktop을 설정합니다.
 
@@ -142,7 +138,7 @@ lab:
 
 1. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\10\MySolution** 폴더로 이동합니다.
 
-#### <a name="set-up-power-bi-premium-trial"></a>Power BI Premium 평가판 설정
+#### Power BI Premium 평가판 설정
 
 이 작업에서는 Power BI 서비스 로그인하고 평가판 라이선스를 시작합니다.
 
@@ -166,7 +162,7 @@ lab:
 
     팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
 
-### <a name="create-a-workspace"></a>작업 영역 만들기
+### 작업 영역 만들기
 
 이 작업에서는 작업 영역을 만듭니다.
 
@@ -196,7 +192,7 @@ lab:
 
     만든 다음 Power BI 서비스가 해당 작업 영역을 엽니다. 이 랩의 뒷부분에서는 이 작업 영역으로 돌아갑니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI Desktop 솔루션을 열고, 데이터 원본 설정 및 권한을 설정한 다음, 데이터 모델을 새로 고칩니다.
 
@@ -265,7 +261,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image22.png)
 
-### <a name="review-the-report"></a>보고서 검토
+### 보고서 검토
 
 이 작업에서는 미리 개발된 보고서를 검토합니다.
 
@@ -275,11 +271,11 @@ lab:
 
     이 보고서 페이지에는 제목과 두 개의 시각적 개체가 있습니다. 슬라이서 시각적 개체를 사용하면 단일 회계 연도별로 필터링할 수 있으며 막대형 차트 시각적 개체는 분기별 매출을 표시합니다. 이 랩에서는 증분 새로 고침 및 하이브리드 테이블을 설정하여 보고서의 성능을 향상시킵니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 보기로 전환합니다.
+1. **모델** 뷰로 전환합니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image24.png)
 
@@ -291,13 +287,13 @@ lab:
 
     이 랩에서는 증분 새로 고침을 사용하고 하이브리드 테이블이 되도록 **Sales** 테이블을 설정합니다. 하이브리드 테이블에는 최신 기간을 나타내는 DirectQuery 파티션이 포함되어 있습니다. 해당 파티션은 Power BI 보고서에서 데이터 원본의 현재 데이터를 사용할 수 있도록 합니다.
 
-## <a name="set-up-incremental-refresh"></a>증분 새로 고침 설정
+## 증분 새로 고침 설정
 
 이 연습에서는 증분 새로 고침을 설정합니다.
 
 증분 새로 고침은 새 데이터와 업데이트된 데이터를 자주 로드하는 데이터 세트 테이블에 대해 자동화된 파티션 만들기 및 관리를 제공하여 예약된 새로 고침 작업을 확장합니다. 새로 고침 시간을 줄여 원본 데이터 및 Power BI에 대한 부담을 줄이는 데 도움이 됩니다. 또한 현재 데이터를 Power BI 보고서에 더 빠르게 노출하는 데 도움이 될 수 있습니다.
 
-### <a name="add-parameters"></a>매개 변수 추가
+### 매개 변수 추가
 
 이 작업에서는 두 개의 매개 변수를 추가합니다.
 
@@ -353,7 +349,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image32.png)
 
-### <a name="filter-the-query"></a> 쿼리 필터링
+###  쿼리 필터링
 
 이번 작업에서는 **Sales** 쿼리에 필터를 추가합니다.
 
@@ -397,7 +393,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image40.png)
 
-### <a name="set-up-incremental-refresh"></a>증분 새로 고침 설정
+### 증분 새로 고침 설정
 
 이 작업에서는 **Sales** 테이블에 대한 증분 새로 고침 정책을 설정합니다.
 
@@ -435,7 +431,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image47.png)
 
-### <a name="publish-the-dataset"></a>데이터 세트 게시
+### 데이터 세트 게시
 
 이 작업에서는 데이터 세트를 게시합니다.
 
@@ -457,7 +453,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image51.png)
 
-### <a name="set-up-the-dataset"></a>데이터 세트 설정
+### 데이터 세트 설정
 
 이 작업에서는 데이터 원본 자격 증명을 설정하고 데이터 세트를 새로 고칩니다.
 
@@ -525,7 +521,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image62.png)
 
-### <a name="review-the-table-partitions"></a>테이블 파티션 검토
+### 테이블 파티션 검토
 
 이 작업에서는 SSMS를 사용하여 테이블 파티션을 검토합니다.
 
@@ -567,11 +563,11 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image68.png)
 
-## <a name="test-the-hybrid-table"></a>하이브리드 테이블 테스트
+## 하이브리드 테이블 테스트
 
 이 연습에서는 보고서를 열고 판매 주문을 추가한 다음 보고서 데이터 업데이트를 확인합니다.
 
-### <a name="open-the-report"></a>보고서 열기
+### 보고서 열기
 
 이 작업에서는 보고서를 엽니다.
 
@@ -587,7 +583,7 @@ lab:
 
     2022년 8월 이후부터는 슬라이서의 기본값인 FY 2022에 포함되지 않습니다.
 
-### <a name="add-an-order-to-the-database"></a>데이터베이스에 주문 추가
+### 데이터베이스에 주문 추가
 
 이 작업에서는 데이터베이스에 주문을 추가합니다.
 
@@ -621,7 +617,7 @@ lab:
 
 11. 파일을 닫으려면 **파일** 메뉴에서 **닫기**를 선택합니다.
 
-### <a name="refresh-the-report"></a>보고서 새로 고침
+### 보고서 새로 고침
 
 이 작업에서는 보고서를 새로 고칩니다.
 
@@ -639,7 +635,7 @@ lab:
 
     팁: 하이브리드 테이블은 Power BI 보고서를 자동으로 새로 고치는 기능인 자동 페이지 새로 고침이 특히 잘 작동합니다.
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다. SSMS를 열고 데이터베이스인 AdventureWorksDW2022-DP500에 연결되어 있는지 확인합니다.
 
