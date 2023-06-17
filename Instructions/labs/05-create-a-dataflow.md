@@ -4,9 +4,9 @@ lab:
   module: Prepare data for tabular models in Power BI
 ---
 
-# <a name="create-a-dataflow"></a>데이터 흐름 만들기
+# 데이터 흐름 만들기
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -18,11 +18,11 @@ lab:
 
 - Power BI Desktop 사용하여 데이터 흐름을 사용합니다.
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="load-data-into-azure-synapse-analytics"></a>Azure Synapse Analytics에 데이터 로드
+### Azure Synapse Analytics에 데이터 로드
 
    > **참고**: git 복제본을 사용하여 Azure Synapse Analytics에 데이터를 이미 로드한 경우 이 작업을 건너뛰고 **Power BI 설정**으로 진행할 수 있습니다.
 
@@ -57,7 +57,7 @@ lab:
 
 1. Synapse 작업 영역 및 SQL 풀을 만들고 데이터를 로드한 후 스크립트는 불필요한 Azure 요금이 청구되지 않도록 풀을 일시 중지합니다. Azure Synapse Analytics에서 데이터를 사용할 준비가 되면 SQL 풀을 다시 시작해야 합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -82,15 +82,13 @@ lab:
    
 3. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 Power BI Desktop을 설정합니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
 
-    ![](../images/dp500-create-a-dataflow-image1.png)
-
-1. **D:\DP500\Allfiles\05\Starter** 폴더로 이동합니다.
+1. **D:\DP500\Allfiles\05\Starter 폴더로** 이동합니다.
 
 1. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Create a dataflow.pbix** 파일을 두 번 클릭합니다.
 
@@ -106,7 +104,7 @@ lab:
 
     데이터 흐름을 원본 날짜 차원 데이터로 사용하도록 Power BI Desktop 솔루션을 업데이트합니다.
 
-### <a name="sign-in-to-the-power-bi-service"></a>Power BI 서비스에 로그인
+### Power BI 서비스에 로그인
 
 이 작업에서는 Power BI 서비스에 로그인하고, 평가판 라이선스를 시작하여 작업 영역을 만듭니다.
 
@@ -124,36 +122,22 @@ lab:
 
 1. 메시지가 표시되면 **평가판 시작**을 선택합니다.
 
-    ![](../images/dp500-create-a-dataflow-image4.png)
 
-1. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
+2. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
 
     팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
 
-  
+9. 작업 영역, **작업 영역 만들기**를 차례로 선택합니다.
 
-### <a name="create-a-workspace"></a>작업 영역 만들기
+    ![](../images/dp500-create-a-star-schema-model-image2a.png)
 
-이 작업에서는 작업 영역을 만듭니다.
+10. DP500 labs라는 작업 영역을 만들고 **저장**을 선택합니다.
 
-1. Power BI 서비스에서 작업 영역을 만들려면 왼쪽에 있는 **탐색** 창에서 **작업 영역**을 선택한 다음, **작업 영역 만들기**를 선택합니다.
+    *참고: 작업 영역 이름은 테넌트 내에서 고유해야 합니다. 오류가 발생하면 작업 영역 이름을 변경합니다.*
 
-    ![](../images/dp500-create-a-dataflow-image5.png)
+일단 만들어지면 작업 영역이 열립니다. 이후 연습에서는 이 작업 영역에 대한 데이터 흐름을 만듭니다.
 
-
-1. 오른쪽에 있는 **작업 영역 만들기** 창에서 **작업 영역 이름** 상자에 작업 영역의 이름을 입력합니다.
-
-    작업 영역 이름은 테넌트 내에서 고유해야 합니다.
-
-    ![](../images/dp500-create-a-dataflow-image6.png)
-
-1. **저장**을 선택합니다.
-
-    ![](../images/dp500-create-a-dataflow-image7.png)
-
-    일단 만들어지면 작업 영역이 열립니다. 이후 연습에서는 이 작업 영역에 대한 데이터 흐름을 만듭니다.
-
-### <a name="start-the-sql-pool"></a>SQL 풀 시작
+### SQL 풀 시작
 
 이 작업에서는 SQL 풀을 시작합니다.
 
@@ -175,11 +159,11 @@ lab:
 
     중요: SQL 풀은 비용이 많이 드는 리소스입니다. 이 랩에서 작업할 때 이 리소스의 사용을 제한하세요. 랩의 마지막 작업에서는 이 리소스를 일시 중지하도록 안내합니다.
 
-## <a name="develop-a-dataflow"></a>데이터 흐름 개발
+## 데이터 흐름 개발
 
 이 연습에서는 Power BI 모델 개발을 지원하는 데이터 흐름을 개발합니다. 데이터 웨어하우스 날짜 차원 테이블의 일관된 표현을 제공합니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 Power BI Desktop에서 개발된 데이터 모델을 검토합니다.
 
@@ -195,17 +179,13 @@ lab:
 
     비즈니스 분석가가 만든 **Date** 테이블입니다. 날짜 관련 데이터의 일관된 정의를 나타내지 않으며 상대 날짜 필터를 지원하는 데 유용한 오프셋 열은 포함하지 않습니다. 이후 연습에서는 이 테이블을 데이터 흐름에서 원본으로 사용하는 새 테이블로 바꿉니다.
 
-### <a name="create-a-dataflow"></a>데이터 흐름 만들기
+### 데이터 흐름 만들기
 
 이 작업에서는 날짜 관련 데이터의 일관된 정의를 나타내는 데이터 흐름을 만듭니다.
 
 1. Power BI 서비스에서 **새로 만들기**, **데이터 흐름**을 선택합니다.
 
     ![](../images/dp500-create-a-dataflow-image10.png)
-
-1. 데이터 흐름을 만들려면 **데이터 흐름** 타일을 선택합니다.
-
-    ![](../images/dp500-create-a-dataflow-image11.png)
 
 1. **새 테이블 정의** 타일에서 **새 테이블 추가**를 선택합니다.
 
@@ -419,11 +399,11 @@ lab:
 
     설정을 구성하는 것 외에도 모든 콘텐츠 작성자가 데이터 흐름을 사용할 수 있는 권한을 부여해야 합니다.
 
-## <a name="consume-a-dataflow"></a>데이터 흐름 사용
+## 데이터 흐름 사용
 
 이 연습에서는 Power BI Desktop 솔루션에서 기존 **Date** 테이블을 데이터 흐름에서 데이터를 가져오는 새 테이블로 바꿉니다.
 
-### <a name="remove-the-original-date-table"></a>원래 Date 테이블 제거
+### 원래 Date 테이블 제거
 
 이 작업에서는 원래 **Date** 테이블을 제거합니다.
 
@@ -440,7 +420,7 @@ lab:
   
 
 
-### <a name="add-a-new-date-table"></a>새 Date 테이블 추가
+### 새 Date 테이블 추가
 
 이 작업에서는 데이터 흐름에서 데이터를 가져오는 새 **Date** 테이블을 추가합니다.
 
@@ -491,7 +471,7 @@ lab:
 
     열을 숨기거나 계층 구조를 만드는 것과 같이 수행할 수 있는 다른 많은 모델 구성이 있습니다.
 
-### <a name="validate-the-model"></a>모델의 유효성 검사
+### 모델의 유효성 검사
 
 이 작업에서는 간단한 보고서 레이아웃을 만들어 모델을 테스트합니다.
 
@@ -507,11 +487,11 @@ lab:
 
   
 
-1. **필드** 창에서 **Date** 테이블을 확장한 다음 **Month Offset** 필터 필드를 가로 막대형 차트 시각적 개체로 끌어옵니다.
+1. **데이터** 창에서 **날짜** 테이블을 확장한 다음 **월 오프셋 필터** 필드를 가로 막대형 차트 시각적 개체로 끌어옵니다.
 
     ![](../images/dp500-create-a-dataflow-image48.png)
 
-1. **필드** 창에서 **Sales** 테이블을 확장한 다음 **Sales Amount** 필드를 가로 막대형 차트 시각적 개체로 끌어옵니다.
+1. **데이터** 창에서 **Sales** 테이블을 확장한 다음 **Sales Amount** 필드를 가로 막대형 차트 시각적 개체로 끌어옵니다.
 
     ![](../images/dp500-create-a-dataflow-image49.png)
 
@@ -520,7 +500,7 @@ lab:
 
     ![](../images/dp500-create-a-dataflow-image50.png)
 
-1. 월 오프셋 필터 값이 시간순으로 정렬되도록 하려면 **필드** 창에서 **Month Offset** 필터 필드를 선택합니다.
+1. 월 오프셋 필터 값이 시간순으로 정렬되도록 하려면 **데이터** 창에서 **월 오프셋 필터** 필드를 선택합니다.
 
 1. **열 도구** 리본 탭의 **정렬** 그룹 내에서 **정렬**을 선택한 다음, **Month Offset**을 선택합니다.
 
@@ -534,7 +514,7 @@ lab:
 
 1. Power BI Desktop을 닫습니다.
 
-### <a name="pause-the-sql-pool"></a>SQL 풀 일시 중지
+### SQL 풀 일시 중지
 
 이 작업에서는 SQL 풀을 중지합니다.
 

@@ -4,9 +4,9 @@ lab:
   module: Design and build tabular models
 ---
 
-# <a name="enforce-model-security"></a>모델 보안 강화
+# 모델 보안 강화
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -22,11 +22,11 @@ lab:
 
 - 데이터 세트 역할에 보안 주체를 매핑합니다.
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -49,13 +49,11 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 Power BI Desktop을 설정합니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
-
-    ![](../images/dp500-enforce-model-security-image1.png)
 
 2. **D:\DP500\Allfiles\09\Starter** 폴더로 이동합니다.
 
@@ -73,7 +71,7 @@ lab:
 
     행 수준 보안을 적용하도록 Power BI Desktop 솔루션을 업데이트합니다.
 
-### <a name="sign-in-to-the-power-bi-service"></a>Power BI 서비스에 로그인
+### Power BI 서비스에 로그인
 
 이 작업에서는 Power BI 서비스에 로그인하고, 평가판 라이선스를 시작하여 작업 영역을 만듭니다.
 
@@ -91,14 +89,11 @@ lab:
 
 4. 메시지가 표시되면 **평가판 시작**을 선택합니다.
 
-    ![](../images/dp500-enforce-model-security-image4.png)
-
 5. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
 
     팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
 
-
-### <a name="create-a-workspace"></a>작업 영역 만들기
+### 작업 영역 만들기
 
 이 작업에서는 작업 영역을 만듭니다.
 
@@ -115,11 +110,9 @@ lab:
 
 3. **저장**을 선택합니다.
 
-    ![](../images/dp500-enforce-model-security-image7.png)
-
     일단 만들어지면 작업 영역이 열립니다. 이후 연습에서는 이 작업 영역에 대한 데이터 세트를 게시합니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 데이터 모델을 검토합니다.
 
@@ -142,11 +135,11 @@ lab:
 
     **Region** 열에는 Adventure Works 판매 지역이 저장됩니다. 이 조직에서는 영업 사원이 할당된 판매 지역과 관련된 데이터만 볼 수 있습니다. 이 랩에서는 데이터 권한을 적용하는 두 가지 행 수준 보안 기술을 구현합니다.
 
-## <a name="create-static-roles"></a>정적 역할 만들기
+## 정적 역할 만들기
 
 이 연습에서는 정적 역할을 만들고 유효성을 검사한 다음 보안 주체를 데이터 세트 역할에 매핑하는 방법을 살펴봅니다.
 
-### <a name="create-static-roles"></a>정적 역할 만들기
+### 정적 역할 만들기
 
 이 작업에서는 두 개의 정적 역할을 만듭니다.
 
@@ -199,7 +192,7 @@ lab:
 
     ![](../images/dp500-enforce-model-security-image20.png)
 
-### <a name="validate-the-static-roles"></a>정적 역할의 유효성 검사
+### 정적 역할의 유효성 검사
 
 이 작업에서는 정적 역할 중 한 가지 역할의 유효성을 검사합니다.
 
@@ -228,7 +221,7 @@ lab:
 
     ![](../images/dp500-enforce-model-security-image26.png)
 
-### <a name="publish-the-report"></a>보고서 게시
+### 보고서 게시
 
 이 태스크에서는 보고서를 게시합니다.
 
@@ -249,11 +242,11 @@ lab:
 
     ![](../images/dp500-enforce-model-security-image30.png)
 
-### <a name="configure-row-level-security-optional"></a>행 수준 보안 구성(선택 사항)
+### 행 수준 보안 구성(선택 사항)
 
 이 작업에서는 Power BI 서비스에서 행 수준 보안을 구성하는 방법을 살펴봅니다. 
 
-이 작업은 작업 중인 테넌트에 **Salespeople_Australia** 보안 그룹이 있는지 여부에 따라 달라집니다. 이 보안 그룹은 테넌트에 자동으로 존재하지 않습니다. 테넌트에 대한 권한이 있는 경우 아래 단계를 수행할 수 있습니다. 학습에서 제공된 테넌트를 사용하는 경우 보안 그룹을 만들 수 있는 적절한 권한이 없습니다. 작업 내용을 읽어보세요. 보안 그룹이 없으면 작업을 완료할 수 없습니다. **읽은 후 정리 작업을 진행합니다.**
+이 작업은 작업 중인 테넌트에 **Salespeople_Australia** 보안 그룹이 있는지 여부에 따라 달라집니다. 이 보안 그룹은 테넌트에 자동으로 존재하지 않습니다. 테넌트에 대한 권한이 있는 경우 아래 단계를 수행할 수 있습니다. 학습에서 제공된 테넌트 를 사용하는 경우 보안 그룹을 만들 수 있는 적절한 권한이 없습니다. 작업 내용을 읽어보세요. 보안 그룹이 없으면 작업을 완료할 수 없습니다. **읽은 후 정리 작업을 진행합니다.**
 
 1. Power BI 서비스(웹 브라우저)로 전환합니다.
 
@@ -297,7 +290,7 @@ lab:
 8. 작업 영역 방문 페이지로 돌아가려면 **탐색** 창에서 작업 영역을 선택합니다.
 
 
-### <a name="clean-up-the-solution"></a>솔루션 정리
+### 솔루션 정리
 
 이 작업에서는 데이터 세트 및 모델 역할을 제거하여 솔루션을 정리합니다.
 
@@ -333,11 +326,11 @@ lab:
     ![](../images/dp500-enforce-model-security-image42.png)
 
 
-## <a name="create-a-dynamic-role"></a>동적 역할 만들기
+## 동적 역할 만들기
 
 이 연습에서는 모델에 테이블을 추가하고, 동적 역할을 만들고 유효성을 검사한 다음, 보안 주체를 데이터 세트 역할에 매핑합니다.
 
-### <a name="add-the-salesperson-table"></a>Salesperson 테이블 추가
+### Salesperson 테이블 추가
 
 이 작업에서는 모델에 **Salesperson** 테이블을 추가합니다.
 
@@ -416,7 +409,7 @@ lab:
 
 17. 모델에 테이블이 추가되면 **Sales Territory** 테이블과의 관계가 자동으로 생성됩니다.
 
-### <a name="configure-the-relationship"></a>관계 구성
+### 관계 구성
 
 이 작업에서는 새 관계의 속성을 구성합니다.
 
@@ -444,7 +437,7 @@ lab:
     **Salesperson** 테이블의 용도는 데이터 권한을 적용하는 것입니다. 숨겨지면 보고서 작성자와 Q&A 환경에 테이블이나 필드가 표시되지 않습니다.
  
 
-### <a name="create-a-dynamic-role"></a>동적 역할 만들기
+### 동적 역할 만들기
 
 이 작업에서는 모델의 데이터에 따라 사용 권한을 적용하는 동적 역할을 만듭니다.
 
@@ -482,7 +475,7 @@ lab:
 
     ![](../images/dp500-enforce-model-security-image67.png)
 
-### <a name="validate-the-dynamic-role"></a>동적 역할 유효성 검사
+### 동적 역할 유효성 검사
 
 이 작업에서는 동적 역할의 유효성을 검사합니다.
 
@@ -518,7 +511,7 @@ lab:
 
     ![](../images/dp500-enforce-model-security-image74.png)
 
-### <a name="finalize-the-design"></a>디자인 완료
+### 디자인 완료
 
 이 작업에서는 보고서를 게시하고 보안 그룹을 역할에 매핑하여 디자인을 마무리합니다.
 
