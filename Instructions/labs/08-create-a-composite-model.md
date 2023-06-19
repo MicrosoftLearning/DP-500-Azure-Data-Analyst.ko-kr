@@ -4,9 +4,9 @@ lab:
   module: Design and build tabular models
 ---
 
-# <a name="create-a-composite-model"></a>복합 모델 만들기
+# 복합 모델 만들기
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
@@ -20,11 +20,11 @@ lab:
 
 - 측정값 만들기
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -47,21 +47,19 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI 템플릿 파일을 엽니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기**를 선택합니다.
 
-    ![](../images/dp500-create-a-composite-model-image1.png)
+2. **D:\DP500\Allfiles\08\Starter** 폴더로 이동합니다.
 
-1. **D:\DP500\Allfiles\08\Starter** 폴더로 이동합니다.
+3. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Create a composite model.pbit**를 두 번 클릭합니다. 
 
-1. 미리 개발된 Power BI Desktop 파일을 열려면 **Sales Analysis - Create a composite model.pbit**를 두 번 클릭합니다. 
+4. 잠재적인 보안 위험을 승인하라는 메시지가 표시되면 **확인**을 선택합니다.
 
-1. 잠재적인 보안 위험을 승인하라는 메시지가 표시되면 **확인**을 선택합니다.
-
-1. 아래에 제공된 대로 SQLServerInstance, SqlServerDatabase, Culture를 입력합니다. **로드**를 선택합니다.
+5. 아래에 제공된 대로 SQLServerInstance, SqlServerDatabase, Culture를 입력합니다. **로드**를 선택합니다.
 
     SqlServerInstance = ```localhost```
 
@@ -71,19 +69,19 @@ lab:
 
     ![](../images/dp500-create-a-composite-model-image3.png)
 
-1. SQL Server 데이터베이스 연결 프롬프트에서 **연결**을 선택합니다.
+6. SQL Server 데이터베이스 연결 프롬프트에서 **연결**을 선택합니다.
 
-1. 암호화 지원 창에서 **확인**을 선택합니다.
+7. 암호화 지원 창에서 **확인**을 선택합니다.
 
-1. 네이티브 데이터베이스 쿼리 창에서 **실행**을 선택합니다.
+8. 네이티브 데이터베이스 쿼리 창에서 **실행**을 선택합니다.
 
-1. 파일을 저장합니다. **파일** 리본 탭에서 **다른 이름으로 저장**을 선택합니다.
+9. 파일을 저장합니다. **파일** 메뉴에서 **다른 이름으로 저장**을 선택합니다.
 
-1. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\08\MySolution** 폴더로 이동합니다. 파일 이름은 Sales Analysis - Create a composite model.pbix입니다.
+10. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\08\MySolution** 폴더로 이동합니다. 파일 이름은 **Sales Analysis - 복합 model.pbix 만들기**입니다.
 
-1. **저장**을 선택합니다.
+11. **저장**을 선택합니다.
 
-### <a name="review-the-report"></a>보고서 검토
+### 보고서 검토
 
 이 작업에서는 미리 개발된 보고서를 검토합니다.
 
@@ -105,11 +103,11 @@ lab:
 
     슬라이서 선택은 세로 막대형 차트 시각적 개체에 적용되는 필터를 변경한다는 것을 이해하는 것이 중요합니다. Power BI는 세로 막대형 차트 시각적 개체를 새로 고칩니다. 여기에는 원본 데이터베이스에서 데이터를 검색하는 작업이 포함됩니다. 이렇게 하면 세로 막대형 차트 시각적 개체에 최신 원본 데이터가 표시됩니다(일부 보고서 수준 캐싱이 발생할 수 있으며, 보고서가 이전에 쿼리한 데이터를 다시 사용할 수 있습니다.)
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 보기로 전환합니다.
+1. **모델** 뷰로 전환합니다.
 
     ![](../images/dp500-create-a-composite-model-image7.png)
 
@@ -121,13 +119,13 @@ lab:
 
     모델을 다른 팩트 테이블로 확장하여 판매 대상 팩트 분석도 지원합니다.
 
-## <a name="create-a-composite-model"></a>복합 모델 만들기
+## 복합 모델 만들기
 
 이 연습에서는 DirectQuery 모델을 복합 모델로 변환하는 가져오기 테이블을 추가합니다.
 
 *복합 모델은 둘 이상의 원본 그룹으로 구성됩니다.*
 
-### <a name="add-a-table"></a>테이블 추가
+### 테이블 추가
 
 이 작업에서는 Excel 통합 문서에서 가져온 판매 목표를 저장하는 테이블을 추가합니다.
 
@@ -187,7 +185,7 @@ lab:
 
     막대가 없다는 것은 해당 테이블이 가져오기 원본 그룹에 속한다는 것을 나타냅니다.
 
-### <a name="create-model-relationships"></a>모델 관계 만들기
+### 모델 관계 만들기
 
 이 작업에서는 두 개의 모델 관계를 만듭니다.
 
@@ -229,7 +227,7 @@ lab:
 
     ![](../images/dp500-create-a-composite-model-image25.png)
 
-### <a name="set-model-properties"></a>모델 속성 설정
+### 모델 속성 설정
 
 이 작업에서는 새 테이블의 모델 속성을 설정하게 됩니다.
 
@@ -247,7 +245,7 @@ lab:
 
     ![](../images/dp500-create-a-composite-model-image27.png)
 
-### <a name="add-measures"></a>측정값 추가
+### 측정값 추가
 
 이 작업에서는 판매 목표 차이를 분석할 수 있는 두 개의 측정값을 추가합니다.
 
@@ -255,7 +253,7 @@ lab:
 
     ![](../images/dp500-create-a-composite-model-image28.png)
 
-1. 측정값을 만들려면 오른쪽에 있는 **필드** 창에서 **Targets** 테이블을 마우스 오른쪽 단추로 클릭한 다음, **새 측정값**을 선택합니다.
+1. 측정값을 만들려면 오른쪽에 있는 **데이터** 창에서 **대상** 테이블을 마우스 오른쪽 단추로 클릭한 다음 **새 측정값**을 선택합니다.
 
     ![](../images/dp500-create-a-composite-model-image29.png)
 
@@ -297,17 +295,17 @@ lab:
 
     ![](../images/dp500-create-a-composite-model-image31.png)
 
-1. **필드** 창의 **Targets** 테이블 내에서 두 개의 측정값이 있는지 확인합니다.
+1. **데이터** 창의 대상 테이블 내에서 두 개의 측정값이 있는지 확인**합니다**.
 
     ![](../images/dp500-create-a-composite-model-image32.png)
 
-### <a name="update-the-report-layout"></a>보고서 레이아웃 업데이트
+### 보고서 레이아웃 업데이트
 
 이 작업에서는 새 측정값을 사용하도록 보고서를 업데이트합니다.
 
 1. 보고서에서 세로 막대형 차트 시각적 개체를 선택합니다.
 
-1. **필드** 창의 **Target Amount** 필드를 **시각화** 창에 있는 **값** 웰 내의 **Sales Amount** 필드 바로 아래로 끌어옵니다.
+1. **데이터** 창에서 **대상 금액** 필드를 **시각화** 창으로 끌어서 **값** 웰 내**의 Sales Amount** 필드 바로 아래에 놓습니다.
 
     ![](../images/dp500-create-a-composite-model-image33.png)
 
@@ -323,7 +321,7 @@ lab:
 
     이제 DirectQuery와 가져오기 테이블을 결합하는 복합 모델 만들기를 완료했습니다. 모델을 최적화하여 이중 스토리지 모드를 사용하도록 차원 테이블을 설정하고 집계를 추가하여 쿼리 성능을 향상시킬 수 있습니다. 그러나 이러한 향상은 다른 랩의 학습 목표가 될 것입니다.
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다.
 
