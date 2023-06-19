@@ -4,9 +4,9 @@ lab:
   module: Design and build tabular models
 ---
 
-# <a name="work-with-model-relationships"></a>모델 관계 작업
+# 모델 관계 작업
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -20,12 +20,12 @@ lab:
 
 - 관계 동작을 수정하는 DAX 함수를 사용합니다.
 
-## <a name="explore-model-relationships"></a>모델 관계 살펴보기
+## 모델 관계 살펴보기
 
 이 연습에서는 미리 개발된 Power BI Desktop 솔루션을 열고 데이터 모델에 대해 알아봅니다. 그런 다음 활성 모델 관계의 동작을 탐색합니다.
 
-## <a name="get-started"></a>시작
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+## 시작
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
    
@@ -49,13 +49,11 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI Desktop 솔루션을 엽니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
-
-    ![](../images/dp500-work-with-model-relationships-image1.png)
 
 2. 파일 탐색기에서 **D:\DP500\Allfiles\06\Starter** 폴더로 이동합니다.
 
@@ -67,7 +65,7 @@ lab:
 
 6. **저장**을 선택합니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 데이터 모델을 검토합니다.
 
@@ -97,7 +95,7 @@ lab:
 
     이 랩에서는 롤플레잉 차원을 지원하도록 모델을 디자인하는 방법을 알아봅니다.
 
-### <a name="visualize-date-data"></a>날짜 데이터 시각화
+### 날짜 데이터 시각화
 
 이 작업에서는 날짜별로 판매 데이터를 시각화하고 관계의 활성 상태를 전환합니다.
 
@@ -109,7 +107,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image6.png)
 
-3. 테이블 시각적 개체에 열을 추가하려면 먼저 (오른쪽에 있는) **필드** 창에서 **Date** 테이블을 확장합니다.
+3. 테이블 시각적 개체에 열을 추가하려면 **데이터 창(** 오른쪽에 있음)에서 먼저 **날짜** 테이블을 확장합니다.
 
     ![](../images/dp500-work-with-model-relationships-image7.png)
 
@@ -143,7 +141,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image13.png)
 
-### <a name="modify-relationship-active-status"></a>관계의 활성 상태 수정
+### 관계의 활성 상태 수정
 
 이 작업에서는 두 관계의 활성 상태를 수정합니다.
 
@@ -191,15 +189,15 @@ lab:
 
     다음 연습에서는 DAX 수식에서 관계를 활성화하는 방법을 알아봅니다.
 
-## <a name="use-inactive-relationships"></a>비활성 관계 사용
+## 비활성 관계 사용
 
 이 연습에서는 DAX 수식에서 관계를 활성화하는 방법을 알아봅니다.
 
-### <a name="use-inactive-relationships"></a>비활성 관계 사용
+### 비활성 관계 사용
 
 이 작업에서는 USERELATIONSHIP 함수를 사용하여 비활성 관계를 활성화합니다.
 
-1. **필드** 창에서 **판매** 테이블을 마우스 오른쪽 단추로 클릭한 다음 **새 측정값**을 선택합니다.
+1. **데이터** 창에서 **Sales** 테이블을 마우스 오른쪽 단추로 클릭한 다음 **새 측정값을** 선택합니다.
 
     ![](../images/dp500-work-with-model-relationships-image21.png)
 
@@ -236,11 +234,11 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image25.png)
 
-## <a name="add-another-date-table"></a>다른 날짜 테이블 추가
+## 다른 날짜 테이블 추가
 
 이 연습에서는 배송 날짜 분석을 지원하기 위해 날짜 테이블을 추가합니다.
 
-### <a name="remove-the-inactive-relationships"></a>비활성 관계 제거
+### 비활성 관계 제거
 
 이 작업에서는 **ShipDateKey** 열에 대한 기존 관계를 제거합니다.
 
@@ -258,7 +256,7 @@ lab:
 
     관계를 삭제하면 **Sales Shipped** 측정값에 오류가 발생합니다. 이 랩의 뒷부분에서 측정값 수식을 다시 작성할 것입니다.
 
-### <a name="disable-relationship-options"></a>관계 옵션을 사용하지 않도록 설정
+### 관계 옵션을 사용하지 않도록 설정
 
 이 작업에서는 두 가지 관계 옵션을 사용하지 않도록 설정합니다.
 
@@ -280,7 +278,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image32.png)
 
-### <a name="add-another-date-table"></a>다른 날짜 테이블 추가
+### 다른 날짜 테이블 추가
 
 이 작업에서는 모델에 다른 날짜 테이블을 추가하는 쿼리를 만듭니다.
 
@@ -326,7 +324,7 @@ lab:
 
 9. 이제 **Ship Date** 테이블과 **Sales** 테이블 사이에 활성 관계가 있습니다.
 
-### <a name="visualize-ship-date-data"></a>배송 날짜 데이터 시각화
+### 배송 날짜 데이터 시각화
 
 이 작업에서는 새 테이블 시각적 개체에서 배송 날짜 데이터를 시각화합니다.
 
@@ -352,7 +350,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image42.png)
 
-7. **필드** 창에서 **Ship Date** 테이블을 확장하여 엽니다.
+7. **데이터** 창에서 **배송 날짜** 테이블을 엽니다.
 
 8. 새 테이블 시각적 개체에 새 필드를 추가하려면 **Ship Date** 테이블에서 **Ship Year** 필드를 **Sales Amount** 필드 위의 **값** 웰로 끌어옵니다.
 
@@ -368,15 +366,15 @@ lab:
 
     마지막으로, 하나의 시각적 개체에서 필터 조합을 달성할 수 없습니다. 예를 들어 측정값을 만들지 않으면 동일한 시각적 개체로 제공되는 주문 판매액 및 배송 판매액을 결합할 수 없습니다. 다음 연습에서 이러한 측정값을 만듭니다.
 
-## <a name="explore-other-relationship-functions"></a>다른 관계 함수 살펴보기
+## 다른 관계 함수 살펴보기
 
 이 연습에서는 다른 DAX 관계 함수를 사용합니다.
 
-### <a name="explore-other-relationship-functions"></a>다른 관계 함수 살펴보기
+### 다른 관계 함수 살펴보기
 
 이 작업에서는 CROSSFILTER 및 TREATAS 함수를 사용하여 계산 중에 관계 동작을 수정합니다.
 
-1. **필드** 창의 **Sales** 테이블 내부에서 **Sales Shipped** 측정값을 선택합니다.
+1. **데이터** 창의 **Sales** 테이블 내에서 **Sales Shipped** 측정값을 선택합니다.
 
     ![](../images/dp500-work-with-model-relationships-image45.png)
 
@@ -408,7 +406,7 @@ lab:
 
     **OrderDateKey** 열에 BLANK가 없으므로 BLANK 그룹이 생성되지 않았습니다. 발송되지 않은 판매액을 표시하려면 다른 방법이 필요합니다.
 
-### <a name="show-unshipped-sales"></a>발송되지 않은 판매액 표시
+### 발송되지 않은 판매액 표시
 
 이 작업에서는 발송되지 않은 판매액을 표시하는 측정값을 만듭니다.
 
@@ -439,7 +437,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image50.png)
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다.
 

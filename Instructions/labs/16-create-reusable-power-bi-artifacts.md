@@ -4,9 +4,9 @@ lab:
   module: Manage the analytics development lifecycle
 ---
 
-# <a name="create-reusable-power-bi-assets"></a>재사용 가능한 Power BI 자산 만들기
+# 재사용 가능한 Power BI 자산 만들기
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩을 완료하는 데 걸리는 예상 완료 시간은 45분입니다.**
 
@@ -20,11 +20,11 @@ lab:
 
 - 계보 보기를 사용하여 종속 Power BI 자산 검색
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -47,17 +47,13 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi"></a>Power BI 설정
+### Power BI 설정
 
 이 작업에서는 Power BI를 설정합니다.
 
 1. Power BI Desktop을 열려면 작업 표시줄에서 **Power BI Desktop** 바로 가기를 선택합니다.
 
-    ![](../images/dp500-create-a-star-schema-model-image1.png)
-
-2. 시작 창의 오른쪽 위에 있는 **X**를 선택합니다.
-
-    ![](../images/dp500-create-a-star-schema-model-image2.png)
+2. 시작 창을 닫습니다.
 
 3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
 
@@ -68,19 +64,18 @@ lab:
 
 5. 10자리 전화 번호를 입력하고 **시작**을 선택합니다. 다시 한 번 **시작**을 선택합니다. Power BI로 리디렉션됩니다.
 
-1. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
+6. 오른쪽 위에서 프로필 아이콘을 선택한 다음 **평가판 시작**을 선택합니다.
 
     ![](../images/dp500-create-a-dataflow-image3.png)
 
-1. 메시지가 표시되면 **평가판 시작**을 선택합니다.
+7. 메시지가 표시되면 **평가판 시작**을 선택합니다.
 
-    ![](../images/dp500-create-a-dataflow-image4.png)
 
-1. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
+8. 나머지 작업을 수행하여 평가판 설정을 완료합니다.
 
     팁: Power BI 웹 브라우저 환경은 **Power BI 서비스**라고 알려져 있습니다.
 
-### <a name="create-a-workspace-in-the-power-bi-service"></a>Power BI 서비스에서 작업 영역 만들기
+### Power BI 서비스에서 작업 영역 만들기
 
 이 작업에서는 작업 영역을 만듭니다.
 
@@ -101,11 +96,9 @@ lab:
 
     만들어지고 나면 작업 영역이 열립니다. 다음 작업에서는 이 작업 영역에 데이터 세트를 게시합니다.
 
-### <a name="open-the-starter-file-in-power-bi-desktop"></a>Power BI Desktop에서 시작 파일 열기
+### Power BI Desktop에서 시작 파일 열기
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기**를 선택합니다.
-
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image6.png)
 
 2. **D:\DP500\Allfiles\16\Starter** 폴더로 이동합니다.
 
@@ -115,7 +108,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image7.png)
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 데이터 모델을 검토합니다.
 
@@ -129,7 +122,7 @@ lab:
 
     이 모델은 여섯 개의 차원 테이블과 한 개의 팩트 테이블로 구성됩니다. **Sales** 팩트 테이블에는 판매 주문 세부 정보가 저장됩니다. 표준 별모양 스키마 디자인입니다.
 
-### <a name="publish-the-data-model"></a>데이터 모델 게시
+### 데이터 모델 게시
 
 이 작업에서는 데이터 모델을 게시합니다.
 
@@ -141,11 +134,7 @@ lab:
 
 2. **Power BI에 게시** 창에서 작업 영역(개인 작업 영역 아님)을 선택한 다음, **선택**을 선택합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image11.png)
-
 3. 게시가 성공하면 **가져오기**를 선택합니다.
-
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image12.png)
 
     일단 게시되면 모델은 Power BI 데이터 세트가 됩니다. 이 랩에서 이 데이터 세트는 비즈니스 분석가가 특수 데이터 세트를 만들기 위해 확장할 수 있는 핵심 데이터 세트입니다. 다음 연습에서는 특정 비즈니스 요구 사항을 해결하기 위해 특수 데이터 세트를 만듭니다.
 
@@ -153,23 +142,17 @@ lab:
 
 5. 변경 내용을 저장하라는 메시지가 표시되면 **저장하지 않음**을 선택합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image13.png)
-
-## <a name="create-a-specialized-dataset"></a>특수 데이터 세트 만들기
+## 특수 데이터 세트 만들기
 
 이 연습에서는 1인당 미국 매출을 분석할 수 있는 특수 데이터 세트를 만듭니다. 핵심 데이터 세트에는 인구 값이 포함되어 있지 않으므로 새 테이블을 추가하여 모델을 확장합니다.
 
-### <a name="create-a-live-connection"></a>라이브 연결 만들기
+### 라이브 연결 만들기
 
 이 작업에서는 이전 연습에서 게시한 **Sales Analysis - Create reusable Power BI artifacts** 데이터 세트에 대한 라이브 연결을 사용하는 새 보고서를 만듭니다.
 
 1. Power BI Desktop을 열려면 작업 표시줄에서 **Power BI Desktop** 바로 가기를 선택합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image14.png)
-
-2. 시작 창의 오른쪽 위에 있는 **X**를 선택합니다.
-
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image15.png)
+2. 시작 창을 닫습니다.
 
 3. 파일을 저장하려면 **파일** 리본에서 **다른 이름으로 저장**을 선택합니다.
 
@@ -185,37 +168,39 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image17.png)
 
-8. **보고서를 만들 데이터 세트 선택** 창에서 **Sales Analysis - Create reusable Power BI artifacts** 데이터 세트를 선택합니다.
+8. **데이터 허브** 창에서 **판매 분석 - 재사용 가능한 Power BI 아티팩트 데이터 세트 만들기를** 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image18.png)
 
-9. **만들기**를 선택합니다.
+9. **연결**을 선택합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image19.png)
+10. **데이터 연결** 대화 상자에서 **판매 분석 - 재사용 가능한 Power BI 아티팩트 만들기** 옆에 있는 상자를 검사 **제출을 선택하여** 데이터 원본에 연결합니다.
 
-10. 왼쪽 아래의 상태 표시줄에서 보고서가 데이터 세트에 라이브로 연결되어 있음을 확인합니다.
+11. 잠재적인 보안 위험에 대한 메시지가 표시되면 알림을 읽은 다음 **확인**을 선택합니다.
+
+12. 왼쪽 아래의 상태 표시줄에서 보고서가 데이터 세트에 라이브로 연결되어 있음을 확인합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image20.png)
 
-11. **모델** 뷰로 전환합니다.
+13. **모델** 뷰로 전환합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image21.png)
 
-12. 필요한 경우 모델 다이어그램을 화면에 맞추려면 오른쪽 아래에서 **화면에 맞추기**를 선택합니다.
+14. 필요한 경우 모델 다이어그램을 화면에 맞추려면 오른쪽 아래에서 **화면에 맞추기**를 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image22.png)
 
-13. 테이블 머리글 위로 커서를 가져가 도구 설명을 표시합니다. 데이터 원본 형식이 SQL Server Analysis Services이고, 서버가 작업 영역을 참조하며 데이터베이스가 데이터 세트임을 확인합니다.
+15. 테이블 머리글 위로 커서를 가져가 도구 설명을 표시합니다. 데이터 원본 형식이 SQL Server Analysis Services이고, 서버가 작업 영역을 참조하며 데이터베이스가 데이터 세트임을 확인합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image23.png)
 
     이러한 속성은 원격 모델이 테이블을 호스트함을 나타냅니다. 다음 작업에서는 모델을 변경하여 확장합니다. 이 프로세스에서는 다양한 방법으로 수정할 수 있는 로컬 DirectQuery 모델을 만듭니다.
 
-14. Power BI Desktop 파일을 저장합니다.
+16. Power BI Desktop 파일을 저장합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image24.png)
 
-### <a name="create-a-local-directquery-model"></a>로컬 DirectQuery 모델 만들기
+### 로컬 DirectQuery 모델 만들기
 
 이 작업에서는 로컬 DirectQuery 모델을 만듭니다.
 
@@ -232,11 +217,13 @@ lab:
 
     모델은 이제 DirectQuery 모델입니다. 특정 테이블 또는 열 속성을 수정하거나 계산 열을 추가하여 모델을 향상시킬 수 있습니다. 다른 데이터 원본에서 가져온 새 데이터 테이블로 모델을 확장할 수도 있습니다. 미국 인구 데이터를 모델에 추가하기 위해 테이블을 추가합니다.
 
-3. 테이블 머리글 위로 커서를 가져가 도구 설명을 표시하고 테이블 스토리지 모드가 **DirectQuery**로 설정되어 있는지 확인합니다.
+3. **데이터 연결** 대화 상자에서 **판매 분석 - 재사용 가능한 Power BI 아티팩트 만들기** 옆에 있는 상자에 검사 있는지 확인한 다음 **제출**을 선택하여 데이터 원본 스토리지 모드를 변경합니다.
+
+4. 테이블 머리글 위로 커서를 가져가 도구 설명을 표시하고 테이블 스토리지 모드가 **DirectQuery**로 설정되어 있는지 확인합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image27.png)
 
-### <a name="design-the-report-layout"></a>보고서 레이아웃 디자인
+### 보고서 레이아웃 디자인
 
 이 작업에서는 미국 주별 판매를 분석하기 위한 보고서 레이아웃을 디자인합니다.
 
@@ -244,7 +231,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image28.png)
 
-2. 오른쪽에 있는 **필드** 창에서 **Reseller** 테이블을 열어 확장합니다.
+2. 오른쪽에 있는 **데이터** 창에서 **재판매** 인 테이블을 엽니다.
 
 3. **Country-Region** 필드를 마우스 오른쪽 단추로 클릭한 다음 **필터에 추가** > **보고서 수준 필터**를 선택합니다.
 
@@ -262,21 +249,20 @@ lab:
 
 7. 전체 페이지를 채우도록 테이블의 위치를 변경하고 크기를 조정합니다.
 
-8. **필드** 창의 **Reseller** 테이블 내부에서 **State-Province** 필드를 끌어 테이블 시각적 개체에 가져다 놓습니다.
+8. **데이터** 창의 **Reseller** 테이블 내부에서 **State-Province** 필드를 끌어 테이블 시각적 개체에 놓습니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image32.png)
 
-9. **필드** 창에서 **Sales** 테이블을 확장한 다음, 테이블 시각적 개체에 **Sales Amount** 필드를 추가합니다.
+9. **데이터** 창에서 **Sales** 테이블을 확장한 다음, **Sales Amount** 필드를 테이블 시각적 개체에 추가합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image33.png)
 
-10. 판매 금액의 내림차순으로 상태를 정렬하려면 **Sales Amount** 머리글을 선택합니다.
+10. 판매 금액의 내림차순으로 상태를 정렬하려면 **Sales Amount 합계** 헤더를 선택합니다.
 
-    ![](../images/dp500-create-reusable-power-bi-artifacts-image34.png)
 
     이 보고서 레이아웃은 이제 미국 주별 판매에 대한 기본 세부 정보를 제공합니다. 그러나 추가 요구 사항은 1인당 매출을 표시하고 해당 측정값의 내림차순으로 상태를 정렬하는 것입니다.
 
-### <a name="add-a-table"></a>테이블 추가
+### 테이블 추가
 
 이 작업에서는 웹 페이지에서 가져온 미국 인구 데이터의 테이블을 추가합니다.
 
@@ -374,7 +360,7 @@ lab:
 
     보고서 작성자에게 테이블을 표시할 필요가 없습니다.
 
-### <a name="add-a-measure"></a>측정값 추가
+### 측정값 추가
 
 이 작업에서는 1인당 매출을 계산하는 측정값을 추가합니다.
 
@@ -382,7 +368,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image53.png)
 
-2. **필드** 창에서 **Sales** 테이블을 마우스 오른쪽 단추로 클릭한 다음, **새 측정값**을 선택합니다.
+2. **데이터** 창에서 **Sales** 테이블을 마우스 오른쪽 단추로 클릭한 다음 **새 측정값을** 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image54.png)
 
@@ -404,7 +390,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image55.png)
 
-5. 행렬 시각적 개체에 측정값을 추가하려면 **필드** 창의 **Sales** 테이블 내에서 **Sales per Capita** 필드를 테이블 시각적 개체로 끌어옵니다.
+5. 행렬 시각적 개체에 측정값을 추가하려면 **데이터** 창의 **Sales** 테이블 내부에서 **1인당 Sales** 필드를 테이블 시각적 개체로 끌어옵니다.
 
     이 측정값은 Power BI 서비스의 원격 모델에서 가져온 데이터를 새 모델로 가져온 로컬 테이블의 데이터와 결합하여 결과를 평가합니다.
 
@@ -412,7 +398,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image56.png)
 
-### <a name="publish-the-solution"></a>솔루션 게시
+### 솔루션 게시
 
 이 작업에서는 특수 데이터 모델 및 보고서로 구성된 솔루션을 게시합니다.
 
@@ -428,7 +414,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image59.png)
 
-4. 게시에 성공하면 **가져오기**를 선택합니다.
+4. 게시가 성공하면 **가져오기**를 선택합니다.
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image60.png)
 
@@ -438,7 +424,7 @@ lab:
 
     ![](../images/dp500-create-reusable-power-bi-artifacts-image61.png)
 
-### <a name="review-the-specialized-dataset"></a>특수 데이터 세트 검토
+### 특수 데이터 세트 검토
 
 이 작업에서는 Power BI 서비스의 특수 데이터 세트를 검토합니다.
 

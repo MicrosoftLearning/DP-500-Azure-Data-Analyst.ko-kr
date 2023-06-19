@@ -4,9 +4,9 @@ lab:
   module: Optimize enterprise-scale tabular models
 ---
 
-# <a name="improve-query-performance-with-aggregations"></a>집계를 사용하여 쿼리 성능 향상
+# 집계를 사용하여 쿼리 성능 향상
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
@@ -18,11 +18,11 @@ lab:
 
 - 성능 분석기를 사용하여 Power BI에서 집계를 사용하는지 여부를 확인합니다.
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -45,13 +45,11 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI Desktop 솔루션을 엽니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기**를 선택합니다.
-
-    ![](../images/dp500-improve-query-performance-with-aggregations-image1.png)
 
 2. **D:\DP500\Allfiles\12\Starter** 폴더로 이동합니다.
 
@@ -67,7 +65,7 @@ lab:
 
 6. **저장**을 선택합니다.
 
-### <a name="review-the-report"></a>보고서 검토
+### 보고서 검토
 
 이 작업에서는 미리 개발된 보고서를 검토합니다.
 
@@ -83,11 +81,11 @@ lab:
 
     이 보고서 페이지에는 제목과 두 개의 시각적 개체가 있습니다. 슬라이서 시각적 개체를 사용하면 단일 회계 연도별로 필터링할 수 있으며 세로 막대형 차트 시각적 개체는 분기별 매출 및 목표 금액을 표시합니다. 이 랩에서는 집계를 추가하여 보고서의 성능을 향상시킵니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 미리 개발된 데이터 모델을 검토합니다.
 
-1. **모델** 보기로 전환합니다.
+1. **모델** 뷰로 전환합니다.
 
     ![](../images/dp500-improve-query-performance-with-aggregations-image4.png)
 
@@ -101,7 +99,7 @@ lab:
 
     이 랩에서는 집계를 추가하여 특정 **Sales** 테이블 쿼리의 성능을 향상시킵니다.
 
-### <a name="use-performance-analyzer"></a>성능 분석기 사용
+### 성능 분석기 사용
 
 이 작업에서는 성능 분석기를 열고 이를 사용하여 새로 고침 이벤트를 검사합니다.
 
@@ -135,13 +133,13 @@ lab:
 
     이 랩에서는 **Sales** 테이블 데이터의 집계를 추가하여 날짜 및 판매 지역별로 **Sales Amount** 열의 합계를 쿼리하는 시각적 개체 새로 고침 성능을 향상시킵니다.
 
-## <a name="set-up-an-aggregation"></a>집계 설정
+## 집계 설정
 
 이 연습에서는 집계를 설정합니다.
 
 Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능을 향상시킬 수 있습니다. 데이터 모델은 집계를 사용하여 집계된 메모리 내 수준에서 데이터를 캐시합니다. Power BI는 가능하면 언제든지 집계를 자동으로 사용할 수 있습니다.
 
-### <a name="add-an-aggregation-table"></a>집계 테이블 추가
+### 집계 테이블 추가
 
 이 작업에서는 모델에 집계 테이블을 추가합니다.
 
@@ -207,7 +205,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
     ![](../images/dp500-improve-query-performance-with-aggregations-image23.png)
 
-### <a name="set-model-properties"></a>모델 속성 설정
+### 모델 속성 설정
 
 이 작업에서는 새 테이블의 모델 속성을 설정합니다.
 
@@ -257,7 +255,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
     ![](../images/dp500-improve-query-performance-with-aggregations-image31.png)
 
-### <a name="create-model-relationships"></a>모델 관계 만들기
+### 모델 관계 만들기
 
 이 작업에서는 두 개의 모델 관계를 만듭니다.
 
@@ -289,7 +287,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
     ![](../images/dp500-improve-query-performance-with-aggregations-image36.png)
 
-### <a name="set-up-an-aggregation"></a>집계 설정
+### 집계 설정
 
 이 작업에서는 집계를 설정합니다.
 
@@ -343,7 +341,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
     이제 시각적 개체가 **Sales** 테이블에 **Sales Amount** 열의 합계를 쿼리할 때마다 **Order Date** 또는 **Sales Territory** 테이블의 열을 기준으로 그룹화하면 Power BI에서 집계를 대신 사용합니다.
 
-### <a name="test-the-aggregation"></a>집계 테스트
+### 집계 테스트
 
 이 작업에서는 집계를 테스트하고 Power BI에서 집계를 사용하는지 여부를 결정합니다.
 
@@ -403,7 +401,7 @@ Power BI의 집계는 매우 큰 DirectQuery 테이블에 대한 쿼리 성능�
 
     이제 Power BI가 모델 캐시에서 데이터를 검색할 수 있도록 허용하여 특정 쿼리의 성능을 향상시켰습니다. 특히 특정 측정값 및 상위 수준 그룹화에 대해 집계를 통해 팩트 테이블 쿼리의 성능을 가속화할 수 있다는 점이 중요합니다. 또한 이중 스토리지 모드와 집계가 잘 작동함으로써 Power BI가 원본 데이터에 비용이 많이 드는 DirectQuery 연결을 사용하지 않도록 할 수 있는 기회를 제공할 수 있습니다.
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다.
 
