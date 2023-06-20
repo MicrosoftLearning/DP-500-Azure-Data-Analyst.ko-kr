@@ -4,9 +4,9 @@ lab:
   module: Implement advanced data visualization techniques by using Power BI
 ---
 
-# <a name="monitor-data-in-real-time"></a>실시간으로 데이터 모니터링
+# 실시간으로 데이터 모니터링
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
@@ -20,11 +20,11 @@ lab:
 
 - 변경 검색 기능을 만들고 사용합니다.
 
-## <a name="get-started"></a>시작
+## 시작
 
 이 연습에서는 환경을 준비합니다.
 
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -47,7 +47,7 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-### <a name="set-up-the-database"></a>데이터베이스 설정
+### 데이터베이스 설정
 
 이 작업에서는 두 개의 스크립트를 실행하여 SSMS(SQL Server Management Studio)를 사용하여 데이터베이스를 설정합니다.
 
@@ -59,8 +59,6 @@ lab:
     ![](../images/dp500-monitor-data-in-real-time-image2.png)
 
 3. **연결**을 선택합니다.
-    
-    ![](../images/dp500-monitor-data-in-real-time-image3.png)
 
 4. 스크립트 파일을 열려면 **파일** 메뉴에서**열기** > **파일**을 선택합니다.
 
@@ -94,13 +92,11 @@ lab:
 
 13. 스크립트를 실행하고 랩이 끝날 때까지 실행 상태로 둡니다.
 
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI Desktop 솔루션을 엽니다.
 
 1. 파일 탐색기를 열려면 작업 표시줄에서 **파일 탐색기** 바로 가기를 선택합니다.
-
-    ![](../images/dp500-monitor-data-in-real-time-image8.png)
 
 2. **D:\DP500\Allfiles\14\Starter** 폴더로 이동합니다.
 
@@ -112,7 +108,7 @@ lab:
 
 6. **저장**을 선택합니다.
 
-### <a name="review-the-report"></a>보고서 검토
+### 보고서 검토
 
 이 작업에서는 미리 개발된 보고서를 검토합니다.
 
@@ -142,13 +138,13 @@ lab:
 
     실시간 분석을 위해 보고서를 디자인할 때 사용자에게 보고서 페이지를 지속적으로 새로 고치도록 요청하는 것보다 더 좋은 방법이 있어야 합니다. 다음 연습에서 자동 페이지 새로 고침을 설정하면 더 나은 방법이 마련됩니다.
 
-## <a name="set-up-automatic-page-refresh"></a>자동 페이지 새로 고침 설정
+## 자동 페이지 새로 고침 설정
 
 이 연습에서는 변경 검색 기능을 사용하여 자동 페이지 새로 고침을 설정하고 실험합니다.
 
 페이지를 자동으로 새로 고치려면 DirectQuery 스토리지 모드를 사용하도록 설정된 하나 이상의 모델 테이블이 필요합니다.
 
-### <a name="set-up-automatic-page-refresh"></a>자동 페이지 새로 고침 설정
+### 자동 페이지 새로 고침 설정
 
 이 작업에서는 자동 페이지 새로 고침을 설정합니다.
 
@@ -182,7 +178,7 @@ lab:
 
     Power BI 서비스에 게시된 후 새로 고침 간격이 30분 미만이면 Premium 용량에 할당된 작업 영역에 보고서를 저장해야 합니다. 또한 용량 관리자는 이와 같이 빈번한 간격을 허용하도록 용량을 사용하도록 설정해야 합니다. 자세한 내용은 [Power BI에서 자동 페이지 새로 고침](https://docs.microsoft.com/power-bi/create-reports/desktop-automatic-page-refresh)을 참조하세요.
 
-### <a name="set-up-change-detection"></a>변경 검색 설정
+### 변경 검색 설정
 
 이 작업에서는 변경 검색을 설정합니다.
 
@@ -234,7 +230,7 @@ lab:
 
     이는 데이터베이스에 당시 새 인터넷 판매 주문이 삽입되지 않았기 때문입니다. 이제 필요한 경우에만 보고서 시각적 개체가 새로 고침되므로 이 설정이 더 효율적입니다.
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다.
 

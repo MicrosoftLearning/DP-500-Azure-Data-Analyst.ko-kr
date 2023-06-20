@@ -4,9 +4,9 @@ lab:
   module: Optimize enterprise-scale tabular models
 ---
 
-# <a name="use-tools-to-optimize-power-bi-performance"></a>도구를 사용하여 Power BI 성능 최적화
+# 도구를 사용하여 Power BI 성능 최적화
 
-## <a name="overview"></a>개요
+## 개요
 
 **이 랩의 예상 완료 시간은 30분입니다.**
 
@@ -18,8 +18,8 @@ lab:
 
 - DAX Studio 사용
 
-## <a name="get-started"></a>시작
-### <a name="clone-the-repository-for-this-course"></a>이 과정용 리포지토리 복제
+## 시작
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -42,14 +42,14 @@ lab:
    
 1. 파일 탐색기에서 D 드라이브를 열어 파일이 다운로드되었는지 확인합니다.
 
-## <a name="use-best-practice-analyzer"></a>모범 사례 분석기 사용
+## 모범 사례 분석기 사용
 
 이 연습에서는 테이블 형식 편집기 2를 설치하고 BPA(모범 사례 분석기) 규칙을 로드합니다. BPA 규칙을 검토한 다음 데이터 모델에 있는 특정 문제를 해결합니다.
 
 BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 잠재적인 모델링 실수나 수행할 수 있는 변경 내용을 알리는 무료 타사 도구입니다. 여기에는 성능 향상을 위해 적용할 수 있는 명명, 사용자 환경 및 일반적인 최적화에 대한 권장 사항이 포함됩니다. 자세한 내용은 [모델 성능 향상을 위한 모범 사례 규칙](https://powerbi.microsoft.com/blog/best-practice-rules-to-improve-your-models-performance/)을 참조하세요.
 
 
-### <a name="download-and-install-tabular-editor-2"></a>테이블 형식 편집기 2 다운로드 및 설치
+### 테이블 형식 편집기 2 다운로드 및 설치
 
 테이블 형식 편집기 2를 다운로드하여 설치해 계산 그룹을 만들 수 있습니다.
 
@@ -75,29 +75,19 @@ BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 �
 
 1.  **사용권 계약** 단계에서 동의하는 경우 **동의**를 선택하고 **다음**을 선택합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/image3.png)
-
 1.  **설치 폴더 선택** 단계에서 **다음**을 선택합니다.
 
-    ![중간 신뢰도로 자동 생성된 도형 설명](../images/image4.png)
-
 1.  **애플리케이션 바로 가기** 단계에서 **다음**을 선택합니다.
-
-    ![중간 신뢰도로 자동 생성된 도형 설명](../images/image4.png)
 
 1.  **설치 확인** 단계에서 **다음**을 선택합니다. 
 
     메시지가 표시되면 **예**를 선택하여 앱을 변경할 수 있도록 허용합니다.
 
-    ![중간 신뢰도로 자동 생성된 도형 설명](../images/image4.png)
-
 1. 설치가 완료되면 **닫기**를 선택합니다.
 
-    ![자동 생성된 모양 설명이 포함된 그림](../images/image5.png)
+    *이제 테이블 형식 편집기가 설치되고 Power BI Desktop 외부 도구로 등록됩니다.*
 
-    이제 테이블 형식 편집기가 설치되어 Power BI Desktop 외부 도구로 등록됩니다.
-
-### <a name="set-up-power-bi-desktop"></a>Power BI Desktop 설정
+### Power BI Desktop 설정
 
 이 작업에서는 미리 개발된 Power BI Desktop 솔루션을 엽니다.
 
@@ -121,7 +111,7 @@ BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 �
 
     이 연습의 뒷부분에서는 테이블 형식 편집기를 사용하여 BPA로 작업합니다.
 
-### <a name="review-the-data-model"></a>데이터 모델 검토
+### 데이터 모델 검토
 
 이 작업에서는 데이터 모델을 검토합니다.
 
@@ -137,7 +127,7 @@ BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 �
 
     이 연습에서는 BPA를 사용하여 모델 문제를 검색하고 해결합니다.
 
-### <a name="load-bpa-rules"></a>BPA 규칙 로드
+### BPA 규칙 로드
 
 이 작업에서는 BPA 규칙을 로드합니다.
 
@@ -180,7 +170,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
     ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image15.png)
 
-### <a name="review-the-bpa-rules"></a>BPA 규칙 검토
+### BPA 규칙 검토
 
 이 작업에서는 이전 작업에서 로드한 BPA 규칙을 검토합니다.
 
@@ -216,7 +206,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
     ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image19.png)
 
-### <a name="address-bpa-issues"></a>BPA 문제 해결
+### BPA 문제 해결
 
 이 작업에서는 BPA를 열고 검사 결과를 검토합니다.
 
@@ -296,13 +286,13 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
 
     또한 테이블 형식 편집기 변경 내용이 저장되도록 Power BI Desktop 파일을 저장해야 합니다.
 
-## <a name="use-dax-studio"></a>DAX Studio 사용
+## DAX Studio 사용
 
 DAX Studio를 다운로드하여 설치합니다.
 
 웹 사이트에 따르면 DAX Studio는 “Microsoft 테이블 형식 모델에 대해 DAX 쿼리를 실행하고 분석하기 위한 궁극적인 도구”입니다. DAX 작성, 진단, 성능 조정 및 분석을 위한 기능이 풍부한 도구입니다. 기능에는 개체 검색, 통합 추적, 자세한 통계를 사용한 쿼리 실행 분석, DAX 구문 강조 표시 및 서식 지정이 포함됩니다.
 
-### <a name="download-dax-studio"></a>DAX Studio 다운로드
+### DAX Studio 다운로드
 
 이 작업에서는 DAX Studio를 다운로드합니다.
 
@@ -354,15 +344,13 @@ DAX 쿼리를 최적화하기 위해 DAX Studio를 다운로드하여 설치합�
 
 1. 필요한 경우 DAX Studio 창을 최대화합니다.
 
-### <a name="use-dax-studio-to-optimize-a-query"></a>DAX Studio를 사용하여 쿼리 최적화
+### DAX Studio를 사용하여 쿼리 최적화
 
 이 작업에서는 향상된 측정값 수식을 사용하여 쿼리를 최적화합니다.
 
 데이터 모델 볼륨이 작은 경우 쿼리를 최적화하기 어렵습니다. 이 연습에서는 DAX 쿼리를 최적화하는 대신 DAX Studio를 사용하는 데 중점을 둡니다.
 
-1. **파일** 리본 탭에서 **찾아보기**를 선택합니다.
-
-    ![](../images/dp500-use-tools-to-optimize-power-bi-performance-image32.png)
+1. **파일** 메뉴에서 **찾아보기를** 선택합니다.
 
 2. **열기** 창에서 **D:D:\DP500\Allfiles\13\Assets** 폴더로 이동합니다.
 
@@ -422,7 +410,7 @@ DAX 쿼리를 최적화하기 위해 DAX Studio를 다운로드하여 설치합�
 
     이 경우 변수 및 시간 인텔리전스 함수를 사용하는 “더 나은” 쿼리가 쿼리 실행 시간을 거의 50% 단축하면서 더 효율적으로 수행하는지 확인할 수 있습니다.
 
-### <a name="finish-up"></a>완료
+### 완료
 
 이 작업에서는 마무리합니다.
 
