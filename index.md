@@ -4,7 +4,7 @@ permalink: index.html
 layout: home
 ---
 
-# <a name="data-analyst-exercises"></a>데이터 분석가 연습
+# 데이터 분석가 연습
 
 이 연습은 Microsoft 과정 [DP-500: Designing and Implementing Enterprise-Scale Analytics Solutions Using Microsoft Azure and Microsoft Power BI](https://docs.microsoft.com/training/courses/dp-500t00)을 지원합니다.
 

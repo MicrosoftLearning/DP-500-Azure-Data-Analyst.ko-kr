@@ -4,17 +4,17 @@ lab:
   module: 'Model, query, and explore data in Azure Synapse'
 ---
 
-# <a name="analyze-data-in-a-data-lake-with-spark"></a>Spark를 사용하여 데이터 레이크에서 데이터 분석
+# Spark를 사용하여 데이터 레이크에서 데이터 분석
 
 Apache Spark는 분산 데이터 처리를 위한 오픈 소스 엔진으로, Data Lake Storage에서 대량의 데이터를 탐색, 처리, 분석하는 데 널리 사용됩니다. Spark는 Microsoft Azure 클라우드 플랫폼의 Azure HDInsight, Azure Databricks, Azure Synapse Analytics를 비롯한 많은 데이터 플랫폼 제품에서 처리 옵션으로 사용할 수 있습니다. Spark의 이점 중 하나는 Java, Scala, Python, SQL을 포함한 다양한 프로그래밍 언어를 지원한다는 점입니다. Spark는 데이터 정리 및 조작, 통계 분석 및 기계 학습, 데이터 분석 및 시각화를 포함한 데이터 처리 워크로드를 위한 매우 유연한 솔루션입니다.
 
 이 랩을 완료하는 데 약 **45**분이 걸립니다.
 
-## <a name="before-you-start"></a>시작하기 전에
+## 시작하기 전에
 
 관리 수준 액세스 권한이 있는 [Azure 구독](https://azure.microsoft.com/free)이 필요합니다.
 
-## <a name="provision-an-azure-synapse-analytics-workspace"></a>Azure Synapse Analytics 작업 영역 프로비저닝
+## Azure Synapse Analytics 작업 영역 프로비저닝
 
 데이터 레이크 스토리지에 액세스할 수 있는 Azure Synapse Analytics 작업 영역과 데이터 레이크에서 파일을 쿼리하고 처리하는 데 사용할 수 있는 Apache Spark 풀이 필요합니다.
 
@@ -50,11 +50,11 @@ Apache Spark는 분산 데이터 처리를 위한 오픈 소스 엔진으로, Da
 
 8. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 10분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다. 기다리는 동안 Azure Synapse Analytics 설명서에서 [Azure Synapse Analytics의 Apache Spark](https://docs.microsoft.com/azure/synapse-analytics/spark/apache-spark-overview) 문서를 검토합니다.
 
-## <a name="query-data-in-files"></a>파일의 데이터 쿼리
+## 파일의 데이터 쿼리
 
 스크립트는 Azure Synapse Analytics 작업 영역 및 Azure Storage 계정을 프로비저닝하여 데이터 레이크를 호스트한 다음, 일부 데이터 파일을 데이터 레이크에 업로드합니다.
 
-### <a name="view-files-in-the-data-lake"></a>데이터 레이크에서 파일 보기
+### 데이터 레이크에서 파일 보기
 
 1. 스크립트가 완료되면 Azure Portal에서 만든 **dp500-*xxxxxxx*** 리소스 그룹으로 이동하여 Synapse 작업 영역을 선택합니다.
 2. Synapse 작업 영역에 있는 **개요** 페이지의 **Synapse Studio 열기** 카드에서 **열기**를 선택하여 새 브라우저 탭에서 Synapse Studio 엽니다. 메시지가 표시되면 로그인합니다.
@@ -66,7 +66,7 @@ Apache Spark는 분산 데이터 처리를 위한 오픈 소스 엔진으로, Da
 8. **sales** 폴더와 해당 폴더에 포함된 **orders** 폴더를 열고 **orders** 폴더에 3년간의 판매 데이터에 대한 .csv 파일이 포함되어 있는지 확인합니다.
 9. 파일을 마우스 오른쪽 단추로 클릭하고 **미리 보기**를 선택하여 포함된 데이터를 확인합니다. 파일에 머리글 행이 포함되어 있지 않으므로 열 머리글을 표시하는 옵션을 선택 취소할 수 있습니다.
 
-### <a name="use-spark-to-explore-data"></a>Spark를 사용하여 데이터 탐색
+### Spark를 사용하여 데이터 탐색
 
 1. **orders** 폴더에서 파일을 선택한 다음 도구 모음의 **새 Notebook** 목록에서 **DataFrame에 로드**를 선택합니다. 데이터 프레임은 테이블 형식 데이터 세트를 나타내는 Spark의 구조체입니다.
 2. 열려 있는 새 **Notebook 1** 탭의 **연결 대상** 목록에서 Spark 풀(**spark*xxxxxxx***)을 선택합니다. 그런 다음 **&#9655; 모두 실행** 단추를 사용하여 Notebook의 모든 셀을 실행합니다(현재는 하나만 있습니다!).
@@ -129,11 +129,11 @@ Apache Spark는 분산 데이터 처리를 위한 오픈 소스 엔진으로, Da
 
 9. 새 셀을 실행하고 데이터 프레임 스키마가 정의한 **orderSchema**와 일치하는지 확인합니다. **printSchema** 함수는 자동으로 유추된 스키마가 있는 데이터 프레임을 사용할 때 유용할 수 있습니다.
 
-## <a name="analyze-data-in-a-dataframe"></a>데이터 프레임에서 데이터 분석
+## 데이터 프레임에서 데이터 분석
 
 Spark의 **dataframe** 개체는 Python의 Pandas 데이터 프레임과 유사하며 포함된 데이터를 조작, 필터링, 그룹화, 분석하는 데 사용할 수 있는 다양한 함수를 포함합니다.
 
-### <a name="filter-a-dataframe"></a>데이터 프레임 필터링
+### 데이터 프레임 필터링
 
 1. Notebook에 새 코드 셀을 추가하고 Notebook에 다음 코드를 입력합니다.
 
@@ -160,7 +160,7 @@ Spark의 **dataframe** 개체는 Python의 Pandas 데이터 프레임과 유사�
 
 4. 수정된 코드를 실행하여 *Road-250 Red, 52* 제품을 구매한 고객을 확인합니다. 한 함수의 출력이 다음 함수의 입력이 되도록 여러 함수를 함께 “연결”할 수 있습니다. 이 경우에 **select** 메서드에서 만든 데이터 프레임은 필터링 조건을 적용하는 데 사용되는 **where** 메서드의 소스 데이터 프레임이 됩니다.
 
-### <a name="aggregate-and-group-data-in-a-dataframe"></a>데이터 프레임에서 데이터 집계 및 그룹화
+### 데이터 프레임에서 데이터 집계 및 그룹화
 
 1. Notebook에 새 코드 셀을 추가하고 Notebook에 다음 코드를 입력합니다.
 
@@ -180,11 +180,11 @@ Spark의 **dataframe** 개체는 Python의 Pandas 데이터 프레임과 유사�
 
 4. 추가한 코드 셀을 실행하면 결과에 연간 판매 주문 수가 표시되는지 확인합니다. **select** 메서드에는 *OrderDate* 필드의 연도 구성 요소를 추출하는 SQL **year** 함수가 포함되어 있으며, **alias** 메서드를 사용하여 추출된 연도 값에 열 이름을 할당합니다. 그런 다음 데이터를 파생된 *Year* 열로 그룹화하고 각 그룹의 행 수를 계산한 후, 마지막으로 **orderBy** 메서드를 사용하여 결과 데이터 프레임을 정렬합니다.
 
-## <a name="query-data-using-spark-sql"></a>Spark SQL을 사용하여 데이터 쿼리
+## Spark SQL을 사용하여 데이터 쿼리
 
 앞에서 보았듯이 데이터 프레임 개체의 네이티브 메서드를 사용하면 데이터를 매우 효과적으로 쿼리하고 분석할 수 있습니다. 그러나 많은 데이터 분석가들에게는 SQL 구문을 사용하는 것이 더 편리합니다. Spark SQL은 SQL 문을 실행하거나 관계형 테이블에서 데이터를 유지하는 데 사용할 수 있는 Spark의 SQL 언어 API입니다.
 
-### <a name="use-spark-sql-in-pyspark-code"></a>PySpark 코드에서 Spark SQL 사용
+### PySpark 코드에서 Spark SQL 사용
 
 Azure Synapse Studio Notebook의 기본 언어는 Spark 기반 Python 런타임인 PySpark입니다. 이 런타임 내에서 **spark.sql** 라이브러리를 사용하여 Python 코드 내에 Spark SQL 구문을 포함하고 테이블 및 뷰와 같은 SQL 구문으로 작업할 수 있습니다.
 
@@ -202,7 +202,7 @@ Azure Synapse Studio Notebook의 기본 언어는 Spark 기반 Python 런타임�
     - 그런 다음 **spark.sql** 메서드를 사용하여 **salesorders** 뷰에 대해 SQL 쿼리를 실행합니다.
     - 쿼리 결과는 데이터 프레임에 저장됩니다.
 
-### <a name="run-sql-code-in-a-cell"></a>셀에서 SQL 코드를 실행합니다.
+### 셀에서 SQL 코드를 실행합니다.
 
 PySpark 코드가 포함된 셀에 SQL 문을 포함시키는 것이 유용하겠지만 데이터 분석가는 SQL에서 직접 작업하려는 경우가 많습니다.
 
@@ -224,11 +224,11 @@ PySpark 코드가 포함된 셀에 SQL 문을 포함시키는 것이 유용하�
 
 > **참고**: Spark SQL 및 데이터 프레임에 대한 자세한 내용은 [Spark SQL 설명서](https://spark.apache.org/docs/2.2.0/sql-programming-guide.html)를 참조하세요.
 
-## <a name="visualize-data-with-spark"></a>Spark를 사용하여 데이터 시각화
+## Spark를 사용하여 데이터 시각화
 
 그림은 속담처럼 천 단어의 가치가 있으며 차트는 종종 천 행의 데이터보다 낫습니다. Azure Synapse Analytics의 Notebook에는 데이터 프레임 또는 Spark SQL 쿼리에서 표시되는 데이터의 기본 제공 차트 보기가 포함되어 있지만 포괄적인 차트 작성을 위해 설계되지는 않았습니다. 그러나 **matplotlib** 및 **seaborn**과 같은 Python 그래픽 라이브러리를 사용하여 데이터 프레임의 데이터에서 차트를 만들 수 있습니다.
 
-### <a name="view-results-as-a-chart"></a>결과를 차트로 보기
+### 결과를 차트로 보기
 
 1. Notebook에 새 코드 셀을 추가하고 Notebook에 다음 코드를 입력합니다.
 
@@ -251,7 +251,7 @@ PySpark 코드가 포함된 셀에 SQL 문을 포함시키는 것이 유용하�
 
     ![총 주문 수량별 제품의 가로 막대형 차트](../images/notebook-chart.png)
 
-### <a name="get-started-with-matplotlib"></a>**matplotlib** 시작
+### **matplotlib** 시작
 
 1. Notebook에 새 코드 셀을 추가하고 Notebook에 다음 코드를 입력합니다.
 
@@ -370,7 +370,7 @@ PySpark 코드가 포함된 셀에 SQL 문을 포함시키는 것이 유용하�
 
 > **참고**: matplotlib를 사용하여 그리는 방법에 대한 자세한 내용은 [matplotlib 설명서](https://matplotlib.org/)를 참조하세요.
 
-### <a name="use-the-seaborn-library"></a>**seaborn** 라이브러리 사용
+### **seaborn** 라이브러리 사용
 
 **matplotlib**를 사용하면 여러 종류의 복잡한 차트를 만들 수 있지만 최상의 결과를 얻으려면 몇 가지 복잡한 코드가 필요할 수 있습니다. 이러한 이유로 수년 동안 복잡성을 추상화하고 기능을 향상시키기 위해 matplotlib의 기반으로 많은 새로운 라이브러리가 구축되었습니다. 그러한 라이브러리 중 하나가 **seaborn**입니다.
 
@@ -419,7 +419,7 @@ PySpark 코드가 포함된 셀에 SQL 문을 포함시키는 것이 유용하�
 
 > **참고**: seaborn을 사용한 그리기에 대한 자세한 내용은 [ 설명서](https://seaborn.pydata.org/index.html)를 참조하세요.
 
-## <a name="delete-azure-resources"></a>Azure 리소스 삭제
+## Azure 리소스 삭제
 
 Azure Synapse Analytics 탐색을 완료했으므로, 지금까지 만든 리소스를 삭제하여 불필요한 Azure 비용을 방지해야 합니다.
 
