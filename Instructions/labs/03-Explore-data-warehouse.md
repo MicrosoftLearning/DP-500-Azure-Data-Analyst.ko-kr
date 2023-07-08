@@ -4,17 +4,17 @@ lab:
   module: 'Model, query, and explore data in Azure Synapse'
 ---
 
-# <a name="explore-a-relational-data-warehouse"></a>관계형 데이터 웨어하우스 탐색
+# 관계형 데이터 웨어하우스 탐색
 
 Azure Synapse Analytics는 데이터 레이크의 파일 기반 데이터 분석뿐만 아니라 대규모 관계형 데이터 웨어하우스와 이를 로드하는 데 사용되는 데이터 전송 및 변환 파이프라인을 포함하여 엔터프라이즈 데이터 웨어하우징을 지원하는 확장 가능한 집합 기능을 기반으로 합니다. 이 랩에서는 Azure Synapse Analytics의 전용 SQL 풀을 사용하여 관계형 데이터 웨어하우스에 데이터를 저장하고 쿼리하는 방법을 살펴봅니다.
 
 이 랩을 완료하는 데 약 **45**분이 걸립니다.
 
-## <a name="before-you-start"></a>시작하기 전에
+## 시작하기 전에
 
 관리 수준 액세스 권한이 있는 [Azure 구독](https://azure.microsoft.com/free)이 필요합니다.
 
-## <a name="provision-an-azure-synapse-analytics-workspace"></a>Azure Synapse Analytics 작업 영역 프로비저닝
+## Azure Synapse Analytics 작업 영역 프로비저닝
 
 Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타임을 관리하기 위한 중앙 지점을 제공합니다. Azure Portal에서 대화형 인터페이스를 사용하여 작업 영역을 프로비저닝하거나 스크립트 또는 템플릿을 사용하여 작업 영역 및 리소스를 배포할 수 있습니다. 대부분의 프로덕션 시나리오에서는 리소스 배포를 반복 가능한 개발 및 작업(*DevOps*) 프로세스에 통합할 수 있도록 스크립트와 템플릿을 사용하여 프로비저닝을 자동화하는 것이 가장 좋습니다.
 
@@ -50,11 +50,11 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 
 8. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 15분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다. 기다리는 동안 Azure Synapse Analytics 설명서에서 [Azure Synapse Analytics의 전용 SQL 풀이란?](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-overview-what-is) 문서를 검토합니다.
 
-## <a name="explore-the-data-warehouse-schema"></a>데이터 웨어하우스 스키마 살펴보기
+## 데이터 웨어하우스 스키마 살펴보기
 
 이 랩에서 데이터 웨어하우스는 Azure Synapse Analytics의 전용 SQL 풀에서 호스트됩니다.
 
-### <a name="start-the-dedicated-sql-pool"></a>전용 SQL 풀 시작
+### 전용 SQL 풀 시작
 
 1. 스크립트가 완료되면 Azure Portal에서 만든 **dp500-*xxxxxxx*** 리소스 그룹으로 이동하여 Synapse 작업 영역을 선택합니다.
 2. Synapse 작업 영역에 있는 **개요** 페이지의 **Synapse Studio 열기** 카드에서 **열기**를 선택하여 새 브라우저 탭에서 Synapse Studio 엽니다. 메시지가 표시되면 로그인합니다.
@@ -62,7 +62,7 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 4. **관리** 페이지에서 **SQL 풀** 탭이 선택되어 있는지 확인한 다음, **sql*xxxxxxx*** 전용 SQL 풀을 선택하고 **&#9655;** 아이콘을 사용하여 시작합니다. 메시지가 표시되면 다시 시작하려는지 확인합니다.
 5. SQL 풀이 다시 시작될 때까지 기다립니다. 몇 분 정도 걸릴 수 있습니다. **&#8635; 새로 고침** 단추를 사용하여 상태를 주기적으로 확인합니다. 준비되면 상태가 **온라인**으로 표시됩니다.
 
-### <a name="view-the-tables-in-the-database"></a>데이터베이스의 테이블 보기
+### 데이터베이스의 테이블 보기
 
 1. Synapse Studio에서 **데이터** 페이지를 선택하고 **작업 영역** 탭이 선택되어 있고 **SQL 데이터베이스** 범주가 포함되어 있는지 확인합니다.
 2. **SQL 데이터베이스**, **sql*xxxxxxx*** 풀, 해당 **Tables** 폴더를 확장하여 데이터베이스의 테이블을 확인합니다.
@@ -85,11 +85,11 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 
     데이터 웨어하우스의 시간 차원은 일반적으로 팩트 테이블의 측정값을 집계하려는 세분성(차원의 조직이라고도 함)의 가장 작은 임시 단위에 대한 행을 포함하는 차원 테이블로 구현됩니다. 이 경우 측정값을 집계할 수 있는 가장 낮은 조직은 개별 날짜이며 테이블에는 첫 번째 날짜부터 데이터에서 참조된 마지막 날짜까지의 각 날짜에 대한 행이 포함됩니다. **DimDate** 테이블의 특성을 사용하면 분석가가 일관된 임시 특성 집합을 사용하여 팩트 테이블의 날짜 키를 기준으로 측정값을 집계할 수 있습니다(예: 주문 날짜를 기준으로 월별 주문 보기). **FactInternetSales** 테이블에는 **DimDate** 테이블과 관련된 세 가지 키인 **OrderDateKey**, **DueDateKey**, **ShipDateKey**가 포함되어 있습니다.
 
-## <a name="query-the-data-warehouse-tables"></a>데이터 웨어하우스 테이블 쿼리
+## 데이터 웨어하우스 테이블 쿼리
 
 이제 데이터 웨어하우스 스키마의 더 중요한 측면 중 일부를 살펴보았으므로 테이블을 쿼리하고 일부 데이터를 검색할 준비가 되었습니다.
 
-### <a name="query-fact-and-dimension-tables"></a>쿼리 팩트 및 차원 테이블
+### 쿼리 팩트 및 차원 테이블
 
 관계형 데이터 웨어하우스의 숫자 값은 여러 특성에서 데이터를 집계하는 데 사용할 수 있는 관련 차원 테이블이 있는 팩트 테이블에 저장됩니다. 이 디자인은 대부분의 관계형 데이터 웨어하우스 쿼리 관련 테이블(JOIN 절 사용)에서 데이터 집계 및 그룹화(집계 함수 및 GROUP BY 절 사용)가 포함됨을 의미합니다.
 
@@ -160,7 +160,7 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 
 8. 스크립트를 게시하여 저장합니다.
 
-### <a name="use-ranking-functions"></a>순위 함수 사용
+### 순위 함수 사용
 
 대량의 데이터를 분석할 때 또 다른 일반적인 요구 사항은 데이터를 파티션별로 그룹화하고 특정 메트릭에 따라 파티션에서 각 엔터티의 순위를 결정하는 것입니다.
 
@@ -246,7 +246,7 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 
 > **팁**: ROW_NUMBER 및 RANK는 Transact-SQL에서 사용할 수 있는 순위 함수의 예입니다. 자세한 내용은 Transact-SQL 언어 설명서의 [순위 함수](https://docs.microsoft.com/sql/t-sql/functions/ranking-functions-transact-sql) 참조를 참조하세요.
 
-### <a name="retrieve-an-approximate-count"></a>대략적인 개수 검색
+### 대략적인 개수 검색
 
 매우 많은 양의 데이터를 탐색할 경우 쿼리를 실행하는 데 상당한 시간과 리소스가 소요될 수 있습니다. 데이터 분석에는 절대적으로 정확한 값이 필요하지 않은 경우가 많습니다. 대략적인 값만 비교해도 충분할 수 있습니다.
 
@@ -283,7 +283,7 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 
 > **팁**: 자세한 내용은 [APPROX_COUNT_DISTINCT](https://docs.microsoft.com/sql/t-sql/functions/approx-count-distinct-transact-sql) 함수 문서를 참조하세요.
 
-## <a name="challenge---analyze-reseller-sales"></a>과제 - 재판매인 판매 분석
+## 과제 - 재판매인 판매 분석
 
 1. **sql*xxxxxxx*** SQL 풀의 빈 스크립트를 새로 만들고 **재판매인 판매 분석**이라는 이름으로 저장합니다.
 2. 스크립트에서 SQL 쿼리를 만들어 **FactResellerSales** 팩트 테이블 및 관련 차원 테이블을 기반으로 다음 정보를 찾습니다.
@@ -298,7 +298,7 @@ Azure Synapse Analytics 작업 영역은 데이터 및 데이터 처리 런타�
 3. 쿼리를 실험하여 데이터 웨어하우스 스키마의 나머지 테이블을 참고용으로 살펴봅니다.
 4. 완료되면 **관리** 페이지에서 **sql*xxxxxxx*** 전용 SQL 풀을 일시 중지합니다.
 
-## <a name="delete-azure-resources"></a>Azure 리소스 삭제
+## Azure 리소스 삭제
 
 Azure Synapse Analytics 탐색을 완료했으므로, 지금까지 만든 리소스를 삭제하여 불필요한 Azure 비용을 방지해야 합니다.
 
