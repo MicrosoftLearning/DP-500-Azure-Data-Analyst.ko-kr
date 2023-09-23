@@ -187,7 +187,7 @@ CSV는 사용하기 쉬운 형식이지만, 빅 데이터 처리 시나리오에
 
 8. 결과를 검토하면 2019년과 2020년 판매 수만 포함합니다. 이 필터링은 BULK 경로(*year=\** )의 파티션 폴더 값에 대한 와일드카드와 OPENROWSET에서 반환된 결과의 *filepath* 속성(이 경우 별칭 *[result]* )을 기반으로 하는 WHERE 절을 포함함으로써 수행됩니다.
 
-7. 스크립트의 이름을 **Sales Parquet 쿼리**로 지정하고 게시합니다. 그런 다음 스크립트 창을 닫습니다.
+9. 스크립트의 이름을 **Sales Parquet 쿼리**로 지정하고 게시합니다. 그런 다음 스크립트 창을 닫습니다.
 
 ### SQL을 사용하여 JSON 파일 쿼리
 
@@ -348,6 +348,8 @@ JSON은 또 다른 인기 있는 데이터 형식이므로 서버리스 SQL 풀�
 3. **dbo.orders** 테이블의 **...** 메뉴에서 **새 SQL 스크립트** > **상위 100개 행**을 선택합니다.
 4. 생성된 SELECT 스크립트를 실행하고 테이블에서 처음 100개의 데이터 행을 검색하여 데이터 레이크의 파일을 참조하는지 확인합니다.
 
+    >**참고:** 항상 특정 요구 사항 및 사용 사례에 가장 적합한 방법을 선택해야 합니다. 자세한 내용은 Azure Synapse [Analytics에서 서버리스 SQL 풀을 사용하여 OPENROWSET을 사용하는 방법 및 Azure Synapse Analytics에서 서버](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/develop-openrowset)[리스 SQL 풀을 사용하여 외부 스토리지에 액세스 문서를 검사 수 있습니다](https://learn.microsoft.com/en-us/azure/synapse-analytics/sql/develop-storage-files-overview?tabs=impersonation).
+
 ## 쿼리 결과 시각화
 
 이제 SQL 쿼리를 사용하여 데이터 레이크의 파일을 쿼리하는 다양한 방법을 살펴보았으므로 이러한 쿼리의 결과를 분석하여 데이터에 대한 인사이트를 얻을 수 있습니다. 인사이트는 차트에서 쿼리 결과를 시각화하면 더 쉽게 파악할 수 있는 경우가 많으며, Synapse Studio 쿼리 편집기에서 통합 차트 기능을 사용하면 쉽게 시각화할 수 있습니다.
@@ -363,6 +365,7 @@ JSON은 또 다른 인기 있는 데이터 형식이므로 서버리스 SQL 풀�
     GROUP BY YEAR(OrderDate)
     ORDER BY OrderYear;
     ```
+
 4. **결과** 창에서 **차트**를 선택하고 만든 차트를 봅니다. 꺾은선형 차트여야 합니다.
 5. 꺾은선형 차트가 2019년부터 2021년까지 3년 동안의 수익 추세를 표시하도록 **범주** 열을 **OrderYear**로 변경합니다.
 
