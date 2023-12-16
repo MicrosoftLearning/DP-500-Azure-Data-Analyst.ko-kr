@@ -607,15 +607,19 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image71.png)
 
-9. 스크립트를 검토합니다.
+9. SQL Server Management Studio의 도구 모음에서 `master` `AdventureWorksDW2022-DP500` 드롭다운 메뉴를 사용하여 데이터베이스 컨텍스트를 변경합니다.
+
+    ![](../images/dp500-improve-performance-with-hybrid-tables-image72a.png)
+   
+10. 스크립트를 검토합니다.
 
     이 스크립트는 오늘을 주문 날짜로 사용하여 **FactInternetSales** 테이블에 단일 주문을 삽입합니다.**
 
-10. 스크립트를 실행하려면 도구 모음에서 **실행**을 선택하거나 **F5** 키를 누릅니다.
+11. 스크립트를 실행하려면 도구 모음에서 **실행**을 선택하거나 **F5** 키를 누릅니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image72.png)
 
-11. 파일을 닫으려면 **파일** 메뉴에서 **닫기**를 선택합니다.
+12. 파일을 닫으려면 **파일** 메뉴에서 **닫기**를 선택합니다.
 
 ### 보고서 새로 고침
 
