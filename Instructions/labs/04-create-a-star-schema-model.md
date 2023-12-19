@@ -28,7 +28,7 @@ lab:
 
    > **참고**: git 복제본을 사용하여 Azure Synapse Analytics에 데이터를 이미 로드한 경우 이 작업을 건너뛰고 **Power BI 설정**으로 진행할 수 있습니다.
 
-1. VM 오른쪽의 리소스 탭에 있는 로그인 정보를 사용하여 [Azure Portal](https://portal.azure.com)에 로그인합니다.
+1. [조직 자격 증명(또는 사용자에게 제공된 자격 증명)을 사용하여 Azure Portal](https://portal.azure.com)에 로그인합니다.
 2. 페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
 
     ![Cloud Shell 창이 있는 Azure Portal](../images/cloud-shell.png)
@@ -85,7 +85,7 @@ lab:
 
 2. 오른쪽 위에 있는 X**를 **선택하여 시작 창을 닫습니다.
 
-3. Power BI Desktop의 오른쪽 위 모서리에서 아직 로그인하지 않은 경우 로그인**을 선택합니다**. 랩 자격 증명을 사용하여 로그인 프로세스를 완료합니다.
+3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 조직 자격 증명(또는 사용자에게 제공된 랩 자격 증명)을 사용하여 로그인 프로세스를 완료합니다.
 
 4. Microsoft Edge의 Power BI 가입 페이지로 리디렉션됩니다. **계속**을 선택하여 가입을 완료합니다.
 
@@ -401,9 +401,9 @@ lab:
 
 - **EnglishProductName**을 **Product**로
 
-- **Product Details.EnglishProductCategoryName** as **Subcategory**
+- **제품 세부 정보.EnglishProductCategoryName** as **Category**
 
-- **제품 세부 정보입니다.** 범주로 ****
+- **Product Details.EnglishProductSubcategoryName** as **SubCategory**
 
 45. 다음을 제외한 모든 열을 제거합니다.
 
