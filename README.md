@@ -1,3 +1,5 @@
+**이 과정은 2024/4/30**에 **사용 중지됩니다.  과정이 사용 중지되면 모든 GitHub 리포지토리가 제거됩니다. 감사합니다.**
+
 # DP-500: Designing and Implementing Enterprise Scale Analytics Solutions Using Microsoft Azure
 
 - **MCT이신가요?** - [MCT를 위한 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide/)를 살펴보세요.
