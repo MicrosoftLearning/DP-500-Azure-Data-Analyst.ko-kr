@@ -1,4 +1,4 @@
-**이 과정은 2024/4/30**에 **사용 중지됩니다.  과정이 사용 중지되면 모든 GitHub 리포지토리가 제거됩니다. 감사합니다.**
+**이 과정은 2024/4/30**에 **사용 중지됩니다. 더 이상 이 리포지토리에서 문제 및 끌어오기 요청을 모니터링하지 않습니다. 과정이 사용 중지되면 모든 GitHub 리포지토리가 제거됩니다. Microsoft Fabric 리포지토리[에서 ](https://github.com/MicrosoftLearning/mslearn-fabric)관련 콘텐츠를 찾을 수 있습니다.**
 
 # DP-500: Designing and Implementing Enterprise Scale Analytics Solutions Using Microsoft Azure
 

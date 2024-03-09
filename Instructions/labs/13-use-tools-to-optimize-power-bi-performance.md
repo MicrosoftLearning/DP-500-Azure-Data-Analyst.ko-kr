@@ -19,7 +19,7 @@ lab:
 - DAX Studio 사용
 
 ## 시작하기
-### 이 과정에 대한 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -67,15 +67,11 @@ BPA는 모델 디자인 및 성능을 개선하기 위해 저지를 수 있는 �
 
 1. 완료되면 **파일 열기**를 선택하여 설치 관리자를 실행합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-
-자동 생성된 설명](../images/calculationgroups-downloadTE.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/calculationgroups-downloadTE.png)
 
 1.  테이블 형식 편집기 설치 관리자 창에서 **다음**을 선택합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-    
-자동 생성된 설명](../images/image2.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/image2.png)
 
 1.  **사용권 계약** 단계에서 동의하는 경우 **동의**를 선택하고 **다음**을 선택합니다.
 
@@ -239,7 +235,7 @@ BPA 규칙은 테이블 형식 편집기 설치 중에 추가되지 않으므로
     팁: 모든 수식은 **D:\DP500\Allfiles\13\Assets\Snippets.txt** 파일에서 복사하여 붙여 넣을 수 있습니다.**
 
     ```
-    DIVIDE ( [Profit], SUM ( 'Sales'[Sales Amount] ) )C#
+    DIVIDE ( [Profit], SUM ( 'Sales'[Sales Amount] ) )
     ```
 
 7. 모델 변경 내용을 저장하려면 도구 모음에서 **Save changes to the connected database**(연결된 데이터베이스에 변경 내용 저장) 명령을 선택하거나 **Ctrl+S**를 누릅니다.
@@ -311,32 +307,24 @@ DAX 쿼리를 최적화하기 위해 DAX Studio를 다운로드하여 설치합�
 
 1. 완료되면 **파일 열기**를 선택하여 설치 관리자를 실행합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-
-자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31b.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31b.png)
 
 1.  DAX Studio 설치 관리자 창에서 **모든 사용자에 대해 설치(권장)** 를 선택합니다.
 
 1. 사용자 계정 컨트롤 창에서 예를 선택하여 앱이 디바이스를 변경할 수 있도록 허용합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-
-자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31c.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31c.png)
 
 1.  **사용권 계약** 단계에서 사용 조건에 동의하는 경우 **계약에 동의함**을 선택하고 **다음**을 선택합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-    
-자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31d.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31d.png)
 
 1. **다음**을 선택하여 기본 대상 위치를 사용합니다.
 1. **다음**을 선택하여 설치할 기본 구성 요소를 선택합니다.
 1. **다음**을 선택하여 기본 시작 메뉴 폴더에 바로 가기를 배치합니다.
 1. **바탕 화면 바로 가기 만들기**를 선택하고 다음을 선택합니다.
 
-    ![그래픽 사용자 인터페이스, 애플리케이션
-   
-자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31e.png)
+    ![그래픽 사용자 인터페이스, 애플리케이션 자동 생성된 설명](../images/dp500-use-tools-to-optimize-power-bi-performance-image31e.png)
 1. **설치**를 선택합니다.
 
 1. 완료되면 **DAX Studio 시작**이 선택된 상태에서 **마침**을 선택합니다. 그러면 DAX Studio가 열립니다.
