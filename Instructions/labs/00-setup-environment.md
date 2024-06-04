@@ -16,7 +16,7 @@ lab:
 
 ### Windows 11(OS)
 
-1. Windows 11을 설치합니다.
+1. Windows 11 설치.
 
 2. 사용 가능한 모든 업데이트를 적용합니다.
 
@@ -41,7 +41,7 @@ lab:
 1. Microsoft Store에서 다운로드하여 설치합니다. Microsoft Store에 액세스할 수 없는 경우 [웹](https://www.microsoft.com/download/details.aspx?id=58494)에서 다운로드합니다.
 
     - 설치 관리자에서 기본 옵션을 사용합니다.
-    - 랩의 현재 버전은 2023년 4월입니다 **.**
+    - 랩의 현재 버전은 **2023년 4월**
 
 ### Power BI Report Builder
 

@@ -22,7 +22,7 @@ lab:
 
 이 연습에서는 환경을 준비합니다.
 
-### 이 과정에 대한 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -55,7 +55,7 @@ lab:
     - 스크립트가 설정하는 리소스를 이해하려면 메모장에서 스크립트를 읽어 보세요. #으로 시작하는 줄은 스크립트가 수행하는 작업을 나타냅니다.
     - 스크립트를 닫습니다.
 
-5. 작업 표시줄의 검색 상자에 .를 입력합니다 `PowerShell`.  
+5. 작업 표시줄의 검색 상자에 `PowerShell`을(를) 입력하세요.  
    
    검색 결과가 표시되면 **관리자 권한으로 실행**을 선택합니다.
     
@@ -325,7 +325,7 @@ lab:
 
 8. **현재 값** 상자에 **6/1/2022**(2022년 6월 1일 - VM에서 사용하는 미국 날짜 형식 사용)를 입력합니다. 
 
-    *비 MM-DD-YYY 형식 위치의 경우 날짜는 2022년 1월 6일로 입력해야 합니다.*
+    MM-DD-YYY 형식이 아닌 위치의 경우 날짜는 1/6/2022로 입력해야 합니다.**
 
     매개 변수를 설정하는 동안 임의의 값을 사용할 수 있습니다. Power BI는 파티션을 만들고 관리할 때 매개 변수 값을 업데이트합니다. 이 랩에서는 2022년 6월의 범위를 설정합니다.**
 
@@ -341,7 +341,7 @@ lab:
 
     - 현재 값: **7/1/2022**(2022년 7월 1일)
 
-     *비 MM-DD-YYY 형식 위치의 경우 날짜는 2022년 1월 7일로 입력해야 합니다.*
+     MM-DD-YYY 형식이 아닌 위치의 경우 날짜는 1/7/2022로 입력해야 합니다.**
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image31.png)
 
@@ -479,7 +479,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image54b.png)
 
-6. 로그인을** 선택합니다**.
+6. **로그인**을 선택합니다.
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image55.png)
 
@@ -581,7 +581,7 @@ lab:
 
     현재 월은 막대형 차트에 막대로 표시되어야 합니다.**
 
-    *2022년 8월 이후는 슬라이서의 기본값인 FY 2022가 아닙니다.*
+    2022년 8월 이후부터는 슬라이서의 기본값인 FY 2022에 포함되지 않습니다.**
 
 ### 데이터베이스에 주문 추가
 
@@ -607,7 +607,7 @@ lab:
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image71.png)
 
-9. SQL Server Management Studio의 도구 모음에서 `master` `AdventureWorksDW2022-DP500` 드롭다운 메뉴를 사용하여 데이터베이스 컨텍스트를 변경합니다.
+9. SQL Server Management Studio의 도구 모음에 있는 드롭다운 메뉴를 사용하여 데이터베이스 컨텍스트를 `master`에서 `AdventureWorksDW2022-DP500`(으)로 변경
 
     ![](../images/dp500-improve-performance-with-hybrid-tables-image72a.png)
    
