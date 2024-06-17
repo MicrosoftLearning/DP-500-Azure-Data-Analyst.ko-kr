@@ -28,7 +28,7 @@ lab:
 
    > **참고**: git 복제본을 사용하여 Azure Synapse Analytics에 데이터를 이미 로드한 경우 이 작업을 건너뛰고 **Power BI 설정**으로 진행할 수 있습니다.
 
-1. [조직 자격 증명(또는 사용자에게 제공된 자격 증명)을 사용하여 Azure Portal](https://portal.azure.com)에 로그인합니다.
+1. 조직 자격 증명(또는 사용자에게 제공된 자격 증명)을 사용하여 [Azure Portal](https://portal.azure.com)에 로그인하세요.
 2. 페이지 위쪽의 검색 창 오른쪽에 있는 **[\>_]** 단추를 사용하여 Azure Portal에서 새 Cloud Shell을 만들고 ***PowerShell*** 환경을 선택하고 메시지가 표시되면 스토리지를 만듭니다. Cloud Shell은 다음과 같이 Azure Portal 아래쪽 창에 명령줄 인터페이스를 제공합니다.
 
     ![Cloud Shell 창이 있는 Azure Portal](../images/cloud-shell.png)
@@ -58,7 +58,7 @@ lab:
 7. 스크립트가 완료될 때까지 기다리세요. 일반적으로 약 20분이 걸리지만 경우에 따라 더 오래 걸릴 수 있습니다.
 8. Synapse 작업 영역 및 SQL 풀을 만들고 데이터를 로드한 후 스크립트는 불필요한 Azure 요금이 청구되지 않도록 풀을 일시 중지합니다. Azure Synapse Analytics에서 데이터를 사용할 준비가 되면 SQL 풀을 다시 시작해야 합니다.
 
-### 이 과정에 대한 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
 
@@ -83,9 +83,9 @@ lab:
 
 1. Power BI Desktop을 열려면 작업 표시줄에서 **Power BI Desktop** 바로 가기를 선택합니다.
 
-2. 오른쪽 위에 있는 X**를 **선택하여 시작 창을 닫습니다.
+2. 오른쪽 위에 있는 **X**를 선택하여 시작 창을 닫으세요.
 
-3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 조직 자격 증명(또는 사용자에게 제공된 랩 자격 증명)을 사용하여 로그인 프로세스를 완료합니다.
+3. 아직 로그인하지 않은 경우 Power BI Desktop 오른쪽 위 모서리에서 **로그인**을 선택합니다. 조직 자격 증명(또는 사용자에게 제공된 랩 자격 증명)을 사용하여 로그인 프로세스를 완료하세요.
 
 4. Microsoft Edge의 Power BI 가입 페이지로 리디렉션됩니다. **계속**을 선택하여 가입을 완료합니다.
 
@@ -109,7 +109,7 @@ lab:
 
 10. DP500 labs라는 작업 영역을 만들고 **저장**을 선택합니다.
 
-    *참고: 작업 영역 이름은 테넌트 내에서 고유해야 합니다. 오류가 발생하면 작업 영역 이름을 변경합니다.*
+    *참고: 작업 영역 이름은 테넌트 내에서 고유해야 합니다. 오류가 발생하면 작업 영역 이름을 변경하세요.*
 
 11. Power BI Desktop으로 다시 이동합니다. 화면의 오른쪽 위 모서리에 **로그인**이 보이면 랩 환경의 리소스 탭에 제공된 자격 증명을 사용하여 다시 로그인합니다. 이미 로그인한 경우 다음 단계로 진행합니다.
 
@@ -165,7 +165,7 @@ lab:
 
 이 작업에서는 Synapse Studio에서 Power BI 데이터 원본 파일을 다운로드합니다.
 
-1. Synapse Studio**의 **왼쪽에서 개발** 허브를 **선택합니다.
+1. **Synapse Studio**왼쪽에서 **개발** 허브를 선택하세요.
 
  ![](../images/dp500-create-a-star-schema-model-image4.png)
 
@@ -173,7 +173,7 @@ lab:
 
  ![](../images/dp500-create-a-star-schema-model-image5.png)
 
- *참고: 여기에 데이터가 표시되지 않으면 전용 SQL 풀이 실행 중이고 Power BI 작업 영역이 Synapse 작업 영역에 연결되어 있는지 확인합니다.*
+ *참고: 여기에 표시되는 데이터가 없으면 전용 SQL 풀이 실행 중인지, Power BI 작업 영역이 Synapse 작업 영역에 연결되어 있는지를 확인하세요.*
 
 3. **Power BI 데이터 세트** 창에서 **새 Power BI 데이터 세트**를 선택합니다.
 
@@ -205,7 +205,7 @@ lab:
 
  ![](../images/dp500-create-a-star-schema-model-image10.png)
 
-2. 로그인을** 선택합니다**.
+2. **로그인**을 선택합니다.
 
 3. 제공된 랩 Azure 자격 증명을 사용하여 로그인합니다.
 
@@ -341,23 +341,23 @@ lab:
 
 29. 리본의 홈 탭에 있는 결합 그룹에서 **쿼리 병합**을 선택합니다.
 
- *참고: 제품 세부 정보, 범주 및 하위 범주를 가져오기 위해 쿼리를 병합하고 있습니다. Product 차원에 사용됩니다.*
+ *참고: 제품 세부 정보, 범주, 하위 범주를 얻기 위해 쿼리를 병합합니다. 이 정보는 제품 차원에서 사용됩니다.*
 
 30. **DimProductSubcategory** 테이블을 선택하고 각 테이블에서 **ProductCategoryKey** 열을 선택합니다. **확인**을 선택합니다.
 
  ![](../images/dp500-create-a-star-schema-model-image28a.png)
 
- *참고: 왼쪽 외부 조인인 이 병합에 기본 조인을 사용합니다.*
+ *참고: 왼쪽 우선 외부 조인인 이 병합에 기본 조인을 사용합니다.*
 
 31. **DimProductSubcategory** 열을 확장하세요. **ProductSubcategoryKey**와 **EnglishProductSubcategoryName** 열을 선택합니다. **원래 열 이름을 접두사로 사용** 항목의 선택을 취소합니다.
 
  ![](../images/dp500-create-a-star-schema-model-image28b.png)
 
- *확장 기능을 사용하면 원본 데이터의 외래 키 제약 조건에 따라 테이블을 조인할 수 있습니다. 이 랩에서 사용하는 디자인 방법은 눈송이 차원 테이블을 함께 조인하여 데이터의 비정규화된 표현을 생성하는 것입니다.*
+ *확장 기능을 사용하면 원본 데이터의 외래 키 제약 조건에 따라 테이블을 조인할 수 있습니다. 이 랩에서 수행한 디자인 방법은 눈송이 차원 테이블을 함께 조인하여 데이터의 비정규화된 표현을 생성하는 것입니다.*
 
 32. **확인**을 선택합니다.
 
-33. DimProductSubcategory.ProductSubcategoryKey** 열**의 이름을 ProductSubcategoryKey** 및 **DimProductSubcategory.EnglishProductSubcategoryName에서 EnglishProductSubcategoryName****으로 **바꿉**니다.
+33. **DimProductSubcategory.ProductSubcategoryKey** 열의 이름을 **ProductSubcategoryKey**로, **DimProductSubcategory.EnglishProductSubcategoryName** 열의 이름을 **EnglishProductSubcategoryName**으로 바꾸세요.
 
 34. 다음을 제외한 모든 열을 제거합니다.
 
@@ -401,9 +401,9 @@ lab:
 
 - **EnglishProductName**을 **Product**로
 
-- **제품 세부 정보.EnglishProductCategoryName** as **Category**
+- **Product Details.EnglishProductCategoryName**을 **Category**로
 
-- **Product Details.EnglishProductSubcategoryName** as **SubCategory**
+- **Product Details.EnglishProductSubcategoryName**을 **SubCategory**로
 
 45. 다음을 제외한 모든 열을 제거합니다.
 
@@ -577,7 +577,7 @@ lab:
 
  이제 별모양 스키마 모델 만들기가 완료되었습니다. 계층 구조 추가, 계산 및 열 표시 유형과 같은 속성 설정 등 적용할 수 있는 모델링 구성이 많이 있습니다.**
 
-6. 솔루션을 저장하려면 왼쪽 위에서 파일 메뉴를 선택하고 **여기에서 다른 이름으로** 저장을 선택합니다**.**
+6. 솔루션을 저장하려면 왼쪽 위에서 **파일** 메뉴를 선택하고 여기에서 **다른 이름으로 저장**을 선택하세요.
 
 7. **다른 이름으로 저장** 창에서 **D:\DP500\Allfiles\04\MySolution** 폴더로 이동합니다.
 

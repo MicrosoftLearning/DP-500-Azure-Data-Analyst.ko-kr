@@ -25,7 +25,7 @@ lab:
 이 연습에서는 미리 개발된 Power BI Desktop 솔루션을 열고 데이터 모델에 대해 알아봅니다. 그런 다음 활성 모델 관계의 동작을 탐색합니다.
 
 ## 시작하기
-### 이 과정에 대한 리포지토리 복제
+### 이 과정용 리포지토리 복제
 
 1. 시작 메뉴에서 명령 프롬프트를 엽니다.
    
@@ -107,7 +107,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image6.png)
 
-3. 테이블 시각적 **** 개체에 열을 추가하려면 데이터 창(오른쪽에 있음)에서 먼저 날짜** 테이블을 확장**합니다.
+3. 테이블 시각적 개체에 열을 추가하려면 먼저 (오른쪽에 있는) **데이터** 창에서 **Date** 테이블을 확장합니다.
 
     ![](../images/dp500-work-with-model-relationships-image7.png)
 
@@ -197,7 +197,7 @@ lab:
 
 이 작업에서는 USERELATIONSHIP 함수를 사용하여 비활성 관계를 활성화합니다.
 
-1. 데이터 창에서 Sales** 테이블을 마우스 오른쪽 단추로 **클릭한 다음 새 측정값**을 선택합니다**.** ** 
+1. **데이터** 창에서 **Sales** 테이블을 마우스 오른쪽 단추로 클릭한 다음 **새 측정값**을 선택합니다.
 
     ![](../images/dp500-work-with-model-relationships-image21.png)
 
@@ -350,7 +350,7 @@ lab:
 
     ![](../images/dp500-work-with-model-relationships-image42.png)
 
-7. **데이터** 창에서 배송 날짜** 테이블을 엽니다**.
+7. **데이터** 창에서 **Ship Date** 테이블을 확장하여 엽니다.
 
 8. 새 테이블 시각적 개체에 새 필드를 추가하려면 **Ship Date** 테이블에서 **Ship Year** 필드를 **Sales Amount** 필드 위의 **값** 웰로 끌어옵니다.
 
@@ -374,7 +374,7 @@ lab:
 
 이 작업에서는 CROSSFILTER 및 TREATAS 함수를 사용하여 계산 중에 관계 동작을 수정합니다.
 
-1. 데이터** 창의 **Sales 테이블 내에서 **Sales** Shipped 측정값을 **** 선택합니다.
+1. **데이터** 창의 **Sales** 테이블 내부에서 **Sales Shipped** 측정값을 선택합니다.
 
     ![](../images/dp500-work-with-model-relationships-image45.png)
 
