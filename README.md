@@ -1,3 +1,11 @@
+#README
+
+We've turned off the ability to report issues directly on this repo and do not monitor PRs.
+
+Provide feedback here: https://aka.ms/provide-feedback
+
+Or, if you are a trainer with a microsoft.com email address, please create a ticket in AzDO.
+
 ## **이 과정은 **2024/4/30**에 사용 중지됩니다. 더 이상 이 리포지토리에서 문제 및 끌어오기 요청을 모니터링하지 않습니다. 과정이 사용 중지되면 모든 GitHub 리포지토리가 제거됩니다. [Microsoft Fabric 리포지토리](https://github.com/MicrosoftLearning/mslearn-fabric)와 [DP-203 Azure Data Engineer 리포지토리](https://github.com/MicrosoftLearning/dp-203-azure-data-engineer) 관련 콘텐츠를 찾을 수 있습니다.**
 
 # DP-500: Designing and Implementing Enterprise Scale Analytics Solutions Using Microsoft Azure
